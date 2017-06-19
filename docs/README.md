@@ -34,3 +34,26 @@ sufficient CSS styling:
 [sample-state]: ./sample-state.md
 [api-endpoints]: ./api-endpoints.md
 [schema]: ./schema.md
+
+### Phase 1: Backend setup and Front End User Authentication (2 days)
+
+**Objective:** Functioning rails project with front-end Authentication.
+
+### Phase 2: User Page (2 days)
+
+**Objective:** User can view/edit their profile and see campaigns. They can
+also view other profiles.
+
+### Phase 3: Campaign Create and Show Page (2 days)
+
+**Objective:** Finish create and Edit forms for Campaigns. A Campaign can be
+created, user can navigate to its show page.
+
+### Phase 4:  Rewards (1 day)
+
+**Objective:** User is able to back the project or choose a Reward. This is
+solved by adding a Reward Component to Campaigns Show Page.
+
+### Phase 5: Home Page (2/3 days)
+
+**Objective:** Create all necessary rendering for Home Page and polish styling.
