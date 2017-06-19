@@ -2,8 +2,7 @@
   session: {
     currentUser: {
       id: 1,
-      email: "indieuser@mail.com",
-      username: "testuser"
+      email: "indieuser@mail.com"
     },
     errors: []
   }
@@ -26,16 +25,17 @@
     tagline: "Learn and adapt to your hearing.",
     goal_amount: 100000,
     current_amount: 57087,
+    end_date: 1203,
     img_url: "http://somecoolpic.domain.jpg",
     overview: "Cool project, very cool project",
-    story: "nuraphones have an in and over ear design and  automatically tune to your unique hearing in 30sec.",
+    description: "nuraphones have an in and over ear design and  automatically tune to your unique hearing in 30sec.",
   },
 
   rewards: {
     1: {
       title: "Early Bird",
       description: "As an early adopter, you'll get one Nura headphone",
-      cost: 199.99,
+      price: 199.99,
     },
   },
 
@@ -46,7 +46,7 @@
       first_name: "Indie",
       last_name: "UserUser",
       about_me: "Who am i?",
-      img_url: "http://theimage.whatever.jpg",
+      profile_img_url: "http://theimage.whatever.jpg",
       description: "Get money",
     },
   }
