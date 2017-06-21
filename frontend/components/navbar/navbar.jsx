@@ -1,6 +1,8 @@
 import React from 'react';
 
+import { Link, hashHistory } from 'react-router-dom';
 import Modal from 'react-modal';
+
 import GreetingContainer from '../greeting/greeting_container';
 import SessionFormContainer from '../session_form/session_form_container';
 
@@ -63,15 +65,22 @@ class NavBar extends React.Component {
   }
 
   render() {
-  return  (<nav >
-      <div>
+  return (
+    <nav className="nav-bar">
+      <div className="left">
+        <Link to="/" className="logo"><h3>IndieNoMo</h3></Link>
+        <button>Explore</button>
+        <button>How It Works</button>
+        <button>Equity Offerings</button>
       </div>
-      <div>
+      <div className="right">
+        <button className="nav-right-btn">START A CAMPAIGN</button>
         <GreetingContainer
           onClick={this.handleOpen}
           handleLogin={this.handleLogin}
           handleSignup={this.handleSignup}/>
-        <Modal isOpen={this.state.isOpen}
+        <Modal className="auth-modal"
+          isOpen={this.state.isOpen}
           onRequestClose={this.handleClose}
           style={customStyles}
           contentLabel="">

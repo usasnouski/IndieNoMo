@@ -12,11 +12,9 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import Modal from 'react-modal'
 
 const App = () => {
-  // debugger;
   return (
     <div>
       <header>
-        <h1>Indie NoMo</h1>
         <NavBarContainer />
       </header>
     </div>

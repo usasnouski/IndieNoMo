@@ -34,9 +34,17 @@ class SessionForm extends React.Component {
 
   navLink() {
     if (this.props.formType === 'login') {
-      return New to Indienomo?<button onClick={this.props.changeForm}></button>;
+      return (
+        <span>Already have an account?
+          <button onClick={this.props.changeForm}>Sign up</button>
+          </span>
+        );
     } else {
-      return <button onClick={this.props.changeForm}>log in instead</button>;
+      return (
+        <span>Already have an account?
+          <button onClick={this.props.changeForm}>Log in</button>
+        </span>
+      );
     }
   }
 
@@ -53,16 +61,15 @@ class SessionForm extends React.Component {
   }
 
   render() {
-    // debugger;
+    const { formType } = this.props;
+    const headerText = (formType === 'login' ? 'Login' : 'Sign up');
     return(
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          Login Box
+          {headerText} with email
           <br/>
-          {this.navLink()}
           {this.renderErrors()}
           <div className="login-form">
-            <br/>
             <label>Email:
               <input type="text"
                 value={this.state.email}
@@ -79,8 +86,9 @@ class SessionForm extends React.Component {
               />
             </label>
             <br/>
-            <input type="submit" value="Submit "/>
+            <input type="submit" value="Create An Account"/>
           </div>
+          {this.navLink()}
         </form>
       </div>
     );

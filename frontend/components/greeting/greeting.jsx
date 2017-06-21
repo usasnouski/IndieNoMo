@@ -4,7 +4,6 @@ import Modal from 'react-modal';
 
 
 const sessionLinks = (handleLogin, handleSignup) => {
-  // debugger;
   return (
     <nav className="login-signup">
     <button onClick={handleLogin}>Login</button>

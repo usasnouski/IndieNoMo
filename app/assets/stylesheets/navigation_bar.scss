@@ -1,0 +1,31 @@
+.nav-bar {
+  display: flex;
+  height: 74px;
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
+  white-space: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 14px;
+  color: #2a2a2a;
+}
+
+.nav-bar .left {
+  display: flex;
+  align-items: center;
+}
+
+.nav-bar .right {
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.nav-bar {
+  
+}
