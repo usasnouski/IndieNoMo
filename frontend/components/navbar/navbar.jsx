@@ -79,7 +79,7 @@ class NavBar extends React.Component {
           onClick={this.handleOpen}
           handleLogin={this.handleLogin}
           handleSignup={this.handleSignup}/>
-        <Modal className="auth-modal"
+        <Modal
           isOpen={this.state.isOpen}
           onRequestClose={this.handleClose}
           style={customStyles}
