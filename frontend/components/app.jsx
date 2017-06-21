@@ -7,20 +7,18 @@ import {
 
 import GreetingContainer from './greeting/greeting_container';
 import SessionFormContainer from './session_form/session_form_container';
+import NavBarContainer from './navbar/navbar_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import Modal from 'react-modal'
 
 const App = () => {
+  // debugger;
   return (
     <div>
       <header>
         <h1>Indie NoMo</h1>
-        <GreetingContainer />
+        <NavBarContainer />
       </header>
-
-      <Switch>
-        <AuthRoute path="/login" component={SessionFormContainer} />
-        <AuthRoute path="/signup" component={SessionFormContainer} />
-      </Switch>
     </div>
   );
 }

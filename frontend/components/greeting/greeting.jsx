@@ -1,13 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Modal from 'react-modal';
 
-const sessionLinks = () => (
-  <nav className="login-signup">
-    <Link to="/login">Login</Link>
+
+const sessionLinks = (handleLogin, handleSignup) => {
+  // debugger;
+  return (
+    <nav className="login-signup">
+    <button onClick={handleLogin}>Login</button>
      &nbsp;or&nbsp;
-    <Link to="/signup">Sign up!</Link>
+    <button onClick={handleSignup}>Sign Up</button>
   </nav>
-);
+  );
+};
 
 const personalGreeting = (currentUser, logout) => (
   <hgroup className="header-group">
@@ -16,8 +21,8 @@ const personalGreeting = (currentUser, logout) => (
 	</hgroup>
 );
 
-const Greeting = ({ currentUser, logout }) => (
-  currentUser ? personalGreeting(currentUser, logout) : sessionLinks()
+const Greeting = ({ currentUser, logout, handleLogin, handleSignup }) => (
+  currentUser ? personalGreeting(currentUser, logout) : sessionLinks(handleLogin, handleSignup)
 );
 
 export default Greeting;

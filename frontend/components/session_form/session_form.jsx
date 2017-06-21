@@ -7,7 +7,7 @@ class SessionForm extends React.Component {
     super(props);
     this.state = {
       email: '',
-      password: ''
+      password: '',
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -25,16 +25,18 @@ class SessionForm extends React.Component {
   }
 
   handleSubmit(e) {
+    const { handleClose } = this.props;
     e.preventDefault();
     const user = this.state;
-    this.props.processForm({user});
+    this.props.processForm({user})
+      .then(handleClose);
   }
 
   navLink() {
     if (this.props.formType === 'login') {
-      return <Link to="/signup">Sign up instead</Link>;
+      return New to Indienomo?<button onClick={this.props.changeForm}></button>;
     } else {
-      return <Link to="/login">log in instead</Link>;
+      return <button onClick={this.props.changeForm}>log in instead</button>;
     }
   }
 
@@ -57,7 +59,7 @@ class SessionForm extends React.Component {
         <form onSubmit={this.handleSubmit} className="login-form-box">
           Login Box
           <br/>
-          Please {this.props.formType} or {this.navLink()}
+          {this.navLink()}
           {this.renderErrors()}
           <div className="login-form">
             <br/>
