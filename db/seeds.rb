@@ -9,6 +9,6 @@
 User.delete_all
 
 User.create!(
-  email: "user@email.com",
-  password: "starward"
+  email: 'guestuser@mail.com',
+  password: 'password', 
 )

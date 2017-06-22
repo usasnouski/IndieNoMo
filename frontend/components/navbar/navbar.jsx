@@ -59,6 +59,7 @@ class NavBar extends React.Component {
 
   handleLogin() {
     this.setState({ isOpen: true, formType: 'login' });
+    this.props.clearErrors();
   }
 
   guestLogin() {
@@ -74,7 +75,7 @@ class NavBar extends React.Component {
 
   handleSignup() {
     this.setState({ isOpen: true, formType: 'signup' });
-
+    this.props.clearErrors();
   }
 
   handleClose() {
