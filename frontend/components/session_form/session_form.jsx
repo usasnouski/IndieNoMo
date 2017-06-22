@@ -36,13 +36,17 @@ class SessionForm extends React.Component {
     if (this.props.formType === 'login') {
       return (
         <span>Already have an account?
-          <button onClick={this.props.changeForm}>Sign up</button>
-          </span>
+          <button className="auth-link" onClick={this.props.changeForm}>
+            Sign up
+          </button>
+        </span>
         );
     } else {
       return (
         <span>Already have an account?
-          <button onClick={this.props.changeForm}>Log in</button>
+          <button className="auth-link" onClick={this.props.changeForm}>
+            Log in
+          </button>
         </span>
       );
     }
@@ -64,31 +68,30 @@ class SessionForm extends React.Component {
     const { formType } = this.props;
     const headerText = (formType === 'login' ? 'Login' : 'Sign up');
     return(
-      <div className="login-form-container">
+      <div className="auth-modal">
+        <p className="auth-divider">{headerText} with email
+          <span className="divider"></span>
+        </p>
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          {headerText} with email
-          <br/>
           {this.renderErrors()}
-          <div className="login-form">
-            <label>Email:
+          <div className="auth-form">
               <input type="text"
+                className="auth-input"
                 value={this.state.email}
+                placeholder={`Email`}
                 onChange={this.update('email')}
-                className="login-input"
               />
-            </label>
-            <br/>
-            <label>Password:
               <input type="password"
+                className="auth-input"
                 value={this.state.password}
+                placeholder={`Password`}
                 onChange={this.update('password')}
-                className="login-input"
               />
-            </label>
-            <br/>
-            <input type="submit" value="Create An Account"/>
+            <input className="submit-btn" type="submit" value="Create An Account"/>
           </div>
-          {this.navLink()}
+          <div className="auth-bottom">
+            {this.navLink()}
+          </div>
         </form>
       </div>
     );

@@ -1,0 +1,95 @@
+.auth-divider {
+  color: #A8A8A8;
+  position: relative;
+  margin: 0 0 10px;
+}
+
+.divider:after, .divider:before {
+  display: block;
+  border-top: 1px solid #DDDDDD;
+  height: 1px;
+  content: " ";
+  width: 20%;
+  position: absolute;
+  left: 0;
+  top: 10px;
+}
+
+.divider:after {
+  right: 0;
+  left: auto;
+}
+
+.auth-modal > form {
+  display: block;
+  margin-top: 0;
+}
+
+
+.auth-input {
+  margin: 10px 0px;
+  color: initial;
+  text-align: left;
+  line-height: 20px;
+  display: block;
+  width: 100%;
+  height: 40px;
+  padding: 5px 15px;
+  background-color: #FFFFFF;
+  border: 1px solid #DDDDDD;
+  border-radius: 2px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.submit-btn {
+  margin: 20px 0px;
+  font-family: "Libre Franklin", sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: inline-block;
+  cursor: pointer;
+  background-color: #eb1478;
+  border: 2px solid #eb1478;
+  padding: 11px 18px;
+  border-radius: 2px;
+  color: #ffffff;
+  text-align: center;
+  min-height: 40px;
+}
+
+.submit-btn:hover {
+  background-color: #FA1681;
+}
+
+.auth-form {
+  text-align: right;
+}
+
+input::placeholder {
+  color: #A8A8A8;
+}
+
+.auth-bottom{
+  text-align: right;
+  border-top: 1px solid #DDDDDD;
+  padding-top: 20px;
+}
+
+.auth-link {
+  color: #0EB4B6;
+  background: none;
+  border: none;
+  font-family: "Libre Franklin";
+  font-weight: 300;
+  font-size: 14px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.auth-link:hover {
+  text-decoration: underline;
+}

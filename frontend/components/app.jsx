@@ -14,9 +14,7 @@ import Modal from 'react-modal'
 const App = () => {
   return (
     <div>
-      <header>
-        <NavBarContainer />
-      </header>
+      <NavBarContainer />
     </div>
   );
 }

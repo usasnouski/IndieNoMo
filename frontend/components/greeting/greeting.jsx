@@ -6,18 +6,17 @@ import Modal from 'react-modal';
 const sessionLinks = (handleLogin, handleSignup) => {
   return (
     <nav className="login-signup">
-    <button onClick={handleLogin}>Login</button>
-     &nbsp;or&nbsp;
-    <button onClick={handleSignup}>Sign Up</button>
+    <button className="nav-btn" onClick={handleSignup}>Sign Up</button>
+    <button className="nav-btn" onClick={handleLogin}>Log In</button>
   </nav>
   );
 };
 
 const personalGreeting = (currentUser, logout) => (
-  <hgroup className="header-group">
-    <h2 className="header-name">Hi, {currentUser.email}!</h2>
-    <button className="header-button" onClick={logout}>Log Out</button>
-	</hgroup>
+  <nav className="logged-in">
+    <span className="nav-btn">{currentUser.email}</span>
+    <button className="nav-btn" onClick={logout}>Log Out</button>
+	</nav>
 );
 
 const Greeting = ({ currentUser, logout, handleLogin, handleSignup }) => (

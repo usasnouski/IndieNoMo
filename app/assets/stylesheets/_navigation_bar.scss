@@ -1,0 +1,86 @@
+.nav-bar {
+  display: flex;
+  height: 74px;
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
+  white-space: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 14px;
+  color: #2a2a2a;
+  // border: 1px solid black;
+}
+
+.nav-bar .left {
+  display: flex;
+  align-items: center;
+}
+
+.nav-bar .right {
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.nav-right-btn {
+  font-family: "Libre Franklin", sans-serif;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 12px;
+  letter-spacing: 1px;
+  padding: 10px 13px 9px;
+  min-height: 35px;
+  cursor: pointer;
+  background-color: #EB1478;
+  border: 2px solid #EB1478;
+  border-radius: 2px;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+.nav-right-btn:hover {
+  background-color: #FA1681;
+}
+
+.login-signup {
+  display: flex;
+  align-items: center;
+}
+
+.nav-btn {
+  font-family: "Libre Franklin";
+  font-weight: bold;
+  font-size: 14px;
+  text-decoration: none;
+  line-height: 20px;
+  margin-left: 30px;
+  padding: 27px 7px;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: #2A2A2A;
+}
+
+.nav-btn:hover {
+  color: #FA1681;
+}
+
+button:focus {
+  outline: 0;
+  border: none;
+  // -moz-outline-style: none;
+}
+
+.logo {
+  font-size: 16px;
+  color: #EB1478;
+}
+
+body {
+  margin: 0 auto;
+}

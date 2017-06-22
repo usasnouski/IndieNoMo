@@ -9,12 +9,30 @@ import SessionFormContainer from '../session_form/session_form_container';
 
 const customStyles = {
   content : {
+    minWidth              : '300px',
+    // position              : 'fixed',
+    width                 : '300px',
     top                   : '50%',
     left                  : '50%',
     right                 : 'auto',
     bottom                : 'auto',
-    marginRight           : '-50%',
-    transform             : 'translate(-50%, -50%)'
+    margin                : 'auto',
+    transform             : 'translate(-50%, -50%)',
+    backgroundColor       : '#F5F5F5',
+    borderRadius          : '0px',
+    paddingTop            : '30px',
+    paddingBottom         : '30px',
+    border                : '1px',
+    fontFamily            : "'Libre Franklin', 'sans-serif'",
+    fontSize              : '14px',
+    fontWeight            : '300',
+    padding               : '40px 10px',
+    zIndex                : '1050',
+    textAlign             : 'center',
+    color                 : '#6A6A6A',
+    justifyContent        : 'center'
+        // background: 'rgb(127, 127, 127)'
+    // opacity               : '1'
   }
 };
 
@@ -68,10 +86,10 @@ class NavBar extends React.Component {
   return (
     <nav className="nav-bar">
       <div className="left">
-        <Link to="/" className="logo"><h3>IndieNoMo</h3></Link>
-        <button>Explore</button>
-        <button>How It Works</button>
-        <button>Equity Offerings</button>
+        <Link to="/" ><h3>IndieNoMo</h3></Link>
+        <button className="nav-btn">Explore</button>
+        <button className="nav-btn">How It Works</button>
+        <button className="nav-btn">Equity Offerings</button>
       </div>
       <div className="right">
         <button className="nav-right-btn">START A CAMPAIGN</button>
