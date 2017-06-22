@@ -1,6 +1,6 @@
 #IndieNoMo
 
-[Heroku link](http://www.indiefomo.com/#/)
+[Heroku link](https://indienomo.herokuapp.com/#/)
 
 [Trello link][trello]
 
