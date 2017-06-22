@@ -10,7 +10,7 @@ import SessionFormContainer from '../session_form/session_form_container';
 const customStyles = {
   content : {
     minWidth              : '300px',
-    // position              : 'fixed',
+    // position              : 'relative',
     width                 : '300px',
     top                   : '50%',
     left                  : '50%',
@@ -49,6 +49,7 @@ class NavBar extends React.Component {
     this.handleOpen = this.handleOpen.bind(this);
     this.handleClose = this.handleClose.bind(this);
     this.changeForm = this.changeForm.bind(this);
+    this.guestLogin = this.guestLogin.bind(this);
 
   }
 
@@ -58,6 +59,17 @@ class NavBar extends React.Component {
 
   handleLogin() {
     this.setState({ isOpen: true, formType: 'login' });
+  }
+
+  guestLogin() {
+    const guestUser = { user:
+      {
+        email: 'guestuser@mail.com',
+        password: 'password',
+      }
+    };
+
+    this.props.login(guestUser);
   }
 
   handleSignup() {
@@ -75,6 +87,7 @@ class NavBar extends React.Component {
 
   changeForm(e) {
     e.preventDefault();
+    this.props.clearErrors();
     if(this.state.formType === 'login') {
       this.setState({ formType: 'signup' });
     } else {
@@ -96,7 +109,8 @@ class NavBar extends React.Component {
         <GreetingContainer
           onClick={this.handleOpen}
           handleLogin={this.handleLogin}
-          handleSignup={this.handleSignup}/>
+          handleSignup={this.handleSignup}
+          guestLogin={this.guestLogin}/>
         <Modal
           isOpen={this.state.isOpen}
           onRequestClose={this.handleClose}

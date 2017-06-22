@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { logout } from '../../actions/session_actions';
+import { login, logout, clearErrors } from '../../actions/session_actions';
 
 import NavBar from './navbar.jsx';
 
@@ -11,7 +11,9 @@ const mapStateToProps = ({ session: currentUser }) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
+    login: user => dispatch(login(user)),
     logout: () => dispatch(logout()),
+    clearErrors: () => dispatch(clearErrors()),
   };
 };
 

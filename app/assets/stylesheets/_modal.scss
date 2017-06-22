@@ -42,6 +42,12 @@
   font-size: 14px;
 }
 
+.auth-input:focus {
+  outline: 0;
+  border: 1px solid black;
+  // -moz-outline-style: none;
+}
+
 .submit-btn {
   margin: 20px 0px;
   font-family: "Libre Franklin", sans-serif;
@@ -92,4 +98,15 @@ input::placeholder {
 
 .auth-link:hover {
   text-decoration: underline;
+}
+
+.error {
+  list-style: none;
+  text-align: left;
+  color: #FF324B;
+  margin-bottom: 20px;
+}
+
+.login-form-box > ul {
+  padding-left: 0px;
 }
