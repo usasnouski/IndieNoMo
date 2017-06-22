@@ -2,7 +2,7 @@
 
 [Heroku link](https://indienomo.herokuapp.com/#/)
 
-[Trello link][trello]
+[Trello link](https://trello.com/b/f0SHpdRQ/indienomo)
 
 ## Minimum Viable Product
 

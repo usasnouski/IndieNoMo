@@ -10,9 +10,9 @@ import SessionFormContainer from '../session_form/session_form_container';
 const customStyles = {
   content : {
     minWidth              : '300px',
-    // position              : 'relative',
+    position              : 'fixed',
     width                 : '300px',
-    top                   : '50%',
+    top                   : '40%',
     left                  : '50%',
     right                 : 'auto',
     bottom                : 'auto',

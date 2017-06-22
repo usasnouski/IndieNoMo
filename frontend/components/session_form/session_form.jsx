@@ -66,7 +66,10 @@ class SessionForm extends React.Component {
 
   render() {
     const { formType } = this.props;
-    const headerText = (formType === 'login' ? 'Login' : 'Sign up');
+    const result = (formType === 'login');
+    const headerText = (result ? 'Login' : 'Sign up');
+    const buttonText = (result ? 'Log In' : 'Create Account');
+
     return(
       <div className="auth-modal">
         <p className="auth-divider">{headerText} with email
@@ -87,7 +90,7 @@ class SessionForm extends React.Component {
                 placeholder={`Password`}
                 onChange={this.update('password')}
               />
-            <input className="submit-btn" type="submit" value="Create An Account"/>
+            <input className="submit-btn" type="submit" value={buttonText}/>
           </div>
           <div className="auth-bottom">
             {this.navLink()}

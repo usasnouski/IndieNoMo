@@ -2,11 +2,11 @@ import { connect } from 'react-redux';
 
 import Homepage from './homepage.jsx';
 
-mapStateToProps = (store) => {
+const mapStateToProps = (store) => {
   return {};
 }
 
-mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch) => {
   return {};
 }
 

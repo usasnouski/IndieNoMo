@@ -1,0 +1,10 @@
+.carousel-img {
+  position: relative;
+  background: #FF9999;
+}
+
+@media (min-width: 670px) {
+  .carousel-img {
+    height: 350px;
+  }
+}
