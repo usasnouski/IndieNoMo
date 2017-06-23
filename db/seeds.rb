@@ -7,8 +7,20 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 #
 User.delete_all
+Campaign.delete_all
 
-User.create!(
+user55 = User.create!(
   email: 'guestuser@mail.com',
-  password: 'password', 
+  password: 'password',
+)
+
+Campaign.create!(
+  title: 'New campaign',
+  tagline: 'New tagline',
+  description: 'The description u have been waiting for',
+  overview: 'Lots of overview here',
+  goal_amount: 5000,
+  end_date: 'Jan-10-2017',
+  user_id: user55.id,
+  category_id: 4
 )

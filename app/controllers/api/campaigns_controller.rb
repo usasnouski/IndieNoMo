@@ -1,10 +1,10 @@
-class Api::SessionsController < ApplicationController
+class Api::CampaignsController < ApplicationController
   def index
     @campaigns = Campaign.all
   end
 
   def show
-    @campaign = campaign
+    @campaign = Campaign.find(params[:id])
     if @campaign
       render :show
     else

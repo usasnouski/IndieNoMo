@@ -19,6 +19,9 @@ class User < ApplicationRecord
 
   attr_reader :password
 
+  has_attached_file :profile_img, default_url: "missing.png"
+  validates_attachment_content_type :profile_img, content_type: /\Aimage\/.*\z/
+
   has_many :campaigns
 
   def self.find_by_credentials(email, password)
