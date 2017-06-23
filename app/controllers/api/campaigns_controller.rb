@@ -56,7 +56,7 @@ class Api::CampaignsController < ApplicationController
     params
       .require(:campaign)
       .permit(
-      :title, :tagline, :description, :overview, :goal_amount, :end_date
+      :title, :tagline, :description, :overview, :goal_amount, :end_date, :image_url
       )
   end
 end

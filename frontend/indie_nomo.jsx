@@ -11,6 +11,11 @@ import configureStore from './store/store';
 // window.login = login
 // window.logout = logout
 
+import { fetchAllCampaigns } from './util/campaign_util';
+import { requestAllCampaigns } from './actions/campaign_actions';
+window.fetchAllCampaigns = fetchAllCampaigns;
+window.requestAllCampaigns = requestAllCampaigns;
+
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -24,8 +29,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   //TEST
-  // window.getState = store.getState;
-  // window.dispatch = store.dispatch;
+  window.getState = store.getState;
+  window.dispatch = store.dispatch;
   // //TEST
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={ store }/>, root);

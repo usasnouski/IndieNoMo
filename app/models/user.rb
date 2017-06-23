@@ -2,12 +2,16 @@
 #
 # Table name: users
 #
-#  id              :integer          not null, primary key
-#  email           :string           not null
-#  password_digest :string           not null
-#  session_token   :string           not null
-#  created_at      :datetime         not null
-#  updated_at      :datetime         not null
+#  id                       :integer          not null, primary key
+#  email                    :string           not null
+#  password_digest          :string           not null
+#  session_token            :string           not null
+#  created_at               :datetime         not null
+#  updated_at               :datetime         not null
+#  profile_img_file_name    :string
+#  profile_img_content_type :string
+#  profile_img_file_size    :integer
+#  profile_img_updated_at   :datetime
 #
 
 class User < ApplicationRecord
@@ -19,7 +23,7 @@ class User < ApplicationRecord
 
   attr_reader :password
 
-  has_attached_file :profile_img, default_url: "missing.png"
+  has_attached_file :profile_img, default_url: "default_user.png"
   validates_attachment_content_type :profile_img, content_type: /\Aimage\/.*\z/
 
   has_many :campaigns
