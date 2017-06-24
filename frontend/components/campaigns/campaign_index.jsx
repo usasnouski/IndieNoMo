@@ -10,8 +10,21 @@ class CampaignIndex extends React.Component {
   render() {
     const { campaigns } = this.props;
     return (
-      <div className="campaigns">
-          {campaigns.map(campaign => <CampaignIndexItem key={campaign.id} campaign={campaign} />)}
+      <div className="allcamps-scope">
+        <h1 className="all-header">Emerging tech starts here</h1>
+        <div className="campaigns">
+          <div className="allcamps-text">
+            <span>Showing results for:</span>
+            <span className="allcamps-span">All Campaigns</span>
+          </div>
+          <div className="camp-list">
+          {campaigns
+            .map(campaign => <CampaignIndexItem
+              key={campaign.id}
+              campaign={campaign} />
+          )}
+          </div>
+        </div>
       </div>
     );
   }
