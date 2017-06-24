@@ -14,6 +14,11 @@
   }
 }
 
+.camp-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .all-header {
   font-family: "Libre Franklin", sans-serif;
   font-size: 40px;
@@ -28,13 +33,13 @@
   font-family: "Libre Franklin", sans-serif;
   font-size: 16px;
   font-weight: 500;
-  padding-left: 32px;
+  padding-left: 20px;
   margin-top: 0;
   margin-bottom: 20px;
 }
 
 .allcamps-text > span {
-  padding-right: 22px;
+  padding-right: 20px;
 }
 
 .allcamps-span {
@@ -53,24 +58,30 @@
 .tile-img {
   display: block;
   height: 273px;
-  width: 273px;
+  width: 100%;
   background-size: cover;
 }
 
 .camp-tile {
+  padding-left: 20px;
+  padding-right: 20px;
   margin-bottom: 30px;
+  position: relative;
+  float: left;
+  width: 21.5%;
+  min-width: 230px;
+  flex-grow: 1;
 }
 
-@media (min-width: 1280px) {
-  .camp-tile {
-    position: relative;
-    float: left;
-    // width: 25%;
-    min-height: 1px;
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-}
+// @media (min-width: 1280px) {
+//   .camp-tile {
+//     position: relative;
+//     float: left;
+//     min-height: 1px;
+//     padding-left: 20px;
+//     padding-right: 20px;
+//   }
+// }
 
 .tile-link {
   display: block;
@@ -85,6 +96,11 @@
   .tile-title-tagline div:first-of-type {
       text-decoration: underline;
     }
+
+    .progress-bar {
+      background-color: #EB1478;
+    }
+
 }
 
 .tile-info {

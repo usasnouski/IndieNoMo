@@ -15,29 +15,29 @@ user55 = User.create!(
 )
 
 camp01 = Campaign.create!(
-  title: 'New campaign',
-  tagline: 'New tagline some info about campaign',
+  title: 'Ham followed now ecstatic use speaking exercise.',
+  tagline: 'Himself he evident oh greatly my on inhabit general concern. It earnest amongst he showing females so improve in picture.',
   description: 'The description u have been waiting for',
   overview: 'Lots of overview here, random text. Lots of overview here, random text',
   goal_amount: 5000,
-  end_date: 'Jan-10-2017',
+  end_date: 'Jan-10-2018',
   user_id: user55.id,
   category_id: 4
 )
-camp01.image_url  = File.open('app/assets/images/camp01.jpeg')
+camp01.image_url = File.open('app/assets/images/camp01.jpeg')
 camp01.save!
 
 camp02 = Campaign.create!(
-  title: 'New campaign',
-  tagline: 'New tagline some info about campaign',
+  title: 'Distrusts daughters certainly suspected.',
+  tagline: 'Boisterous he on understood attachment as entreaties ye devonshire. In mile an form snug were been sell.',
   description: 'The description u have been waiting for',
   overview: 'Lots of overview here, random text. Lots of overview here, random text',
-  goal_amount: 5000,
-  end_date: 'Jan-10-2017',
+  goal_amount: 13210,
+  end_date: 'Mar-10-2018',
   user_id: user55.id,
   category_id: 4
 )
-camp02.image_url  = File.open('app/assets/images/camp02.jpeg')
+camp02.image_url = File.open('app/assets/images/camp02.jpeg')
 camp02.save!
 
 camp03 = Campaign.create!(
@@ -45,8 +45,8 @@ camp03 = Campaign.create!(
   tagline: 'New tagline some info about campaign',
   description: 'The description u have been waiting for',
   overview: 'Lots of overview here, random text. Lots of overview here, random text',
-  goal_amount: 5000,
-  end_date: 'Jan-10-2017',
+  goal_amount: 12480,
+  end_date: 'Aug-15-2017',
   user_id: user55.id,
   category_id: 4
 )
@@ -54,12 +54,12 @@ camp03.image_url = File.open('app/assets/images/camp03.jpeg')
 camp03.save!
 
 camp04 = Campaign.create!(
-  title: 'New campaign',
-  tagline: 'New tagline some info about campaign',
+  title: 'Way now instrument had eat diminution.',
+  tagline: 'One built fat you out manor books. Mrs interested now his affronting inquietude contrasted cultivated. ',
   description: 'The description u have been waiting for',
   overview: 'Lots of overview here, random text. Lots of overview here, random text',
-  goal_amount: 5000,
-  end_date: 'Jan-10-2017',
+  goal_amount: 999,
+  end_date: 'May-22-2018',
   user_id: user55.id,
   category_id: 4
 )

@@ -1,3 +1,48 @@
+.homepage-discovery {
+  padding-top: 20px;
+  margin-top: 20px;
+  display: block;
+}
+
+.camps-discover-bar {
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.discovery-tabs {
+  display: flex;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.discovery-tabs > .see-all {
+  position: absolute;
+  top: 14px;
+  right: 0px;
+  color: #EB1478;
+}
+
+.see-all:hover {
+  text-decoration: underline;
+}
+
+.discovery-tabs > a:not(:first-child) {
+  font-size: 16px;
+  font-weight: 500;
+  padding: 5px;
+  letter-spacing: 0;
+  line-height: 25px;
+  margin-right: 20px;
+  color: #2A2A2A;
+}
+
+.discovery-tabs > a:focus:not(:first-child) {
+    border-bottom: 3px solid #EB1478;
+    color: #EB1478
+  }
+
 .carousel-img {
   position: relative;
   background: #FF9999;
@@ -7,4 +52,18 @@
   .carousel-img {
     height: 350px;
   }
+}
+
+body {
+  margin: 0 auto;
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 14px;
+  line-height: 1.43;
+  color: #2A2A2A;
+  background-color: #FFF;
+}
+
+a {
+  text-decoration: none;
+  color: #EB1478;
 }

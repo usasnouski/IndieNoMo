@@ -44,7 +44,7 @@ class CampaignTile extends React.Component {
   daysLeft() {
     debugger;
     const endDate = this.props.campaign.end_date;
-    const result = Date.now() - Date.parse(endDate);
+    const result = Date.parse(endDate) - Date.now();
     debugger;
     const convertedMills = this.convertMiliseconds(result);
     return convertedMills['d'];
@@ -54,7 +54,7 @@ class CampaignTile extends React.Component {
     debugger;
     const campaign = this.props.campaign;
     return (
-      <div className="camp-tile-layout">
+
         <div className="camp-tile">
           <Link className="tile-link" to={`/campaigns/${campaign.id}` }>
 
@@ -81,7 +81,7 @@ class CampaignTile extends React.Component {
             </div>
           </Link>
         </div>
-      </div>
+
     );
   }
 };
