@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter, hashHistory } from 'react-router-dom';
-import CampaignIndexItem from './campaign_index_item';
+import CampaignTile from './campaign_index_item';
 
 class CampaignIndex extends React.Component {
   componentDidMount() {
@@ -9,6 +9,7 @@ class CampaignIndex extends React.Component {
 
   render() {
     const { campaigns } = this.props;
+    debugger;
     return (
       <div className="allcamps-scope">
         <h1 className="all-header">Emerging tech starts here</h1>
@@ -19,7 +20,7 @@ class CampaignIndex extends React.Component {
           </div>
           <div className="camp-list">
           {campaigns
-            .map(campaign => <CampaignIndexItem
+            .map(campaign => <CampaignTile
               key={campaign.id}
               campaign={campaign} />
           )}

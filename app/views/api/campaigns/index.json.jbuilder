@@ -4,6 +4,7 @@
     json.title campaign.title
     json.tagline campaign.tagline
     json.goal_amount campaign.goal_amount
+    json.end_date campaign.end_date
     json.image_url asset_path(campaign.image_url)
   end
 end
