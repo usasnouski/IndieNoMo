@@ -100,13 +100,13 @@ class NavBar extends React.Component {
   return (
     <nav className="nav-bar">
       <div className="left">
-        <Link to="/" ><h3>IndieNoMo</h3></Link>
+        <Link to="/"><h1>IndieNoMo</h1></Link>
         <button className="nav-btn">Explore</button>
         <button className="nav-btn">How It Works</button>
         <button className="nav-btn">Equity Offerings</button>
       </div>
       <div className="right">
-        <button className="nav-right-btn">START A CAMPAIGN</button>
+        <Link to="/start-a-campaign" className="nav-right-btn">Start a campaign</Link>
         <GreetingContainer
           onClick={this.handleOpen}
           handleLogin={this.handleLogin}

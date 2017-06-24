@@ -11,7 +11,7 @@
   box-sizing: border-box;
   font-family: 'Libre Franklin', sans-serif;
   font-size: 14px;
-  color: #2a2a2a;
+  color: #2A2A2A;
   border-bottom: 1px solid #DDDDDD;
 }
 
@@ -29,18 +29,19 @@
 
 .nav-right-btn {
   font-family: "Libre Franklin", sans-serif;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 12px;
   line-height: 12px;
   letter-spacing: 1px;
   padding: 10px 13px 9px;
-  min-height: 35px;
+  // min-height: 35px;
   cursor: pointer;
   background-color: #EB1478;
   border: 2px solid #EB1478;
   border-radius: 2px;
   color: #FFFFFF;
   text-align: center;
+  text-transform: capitalize;
 }
 
 .nav-right-btn:hover {
