@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
 
 import { createCampaign } from '../../actions/campaign_actions';
-
 import StartCampaignForm from './start_campaign_form';
 
 const mapStateToProps = (state) => {
