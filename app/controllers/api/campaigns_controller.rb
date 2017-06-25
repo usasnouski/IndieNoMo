@@ -19,7 +19,7 @@ class Api::CampaignsController < ApplicationController
     end
 
     @campaign = Campaign.new(campaign_params)
-    campaign.user_id = current_user.id
+    @campaign.user_id = current_user.id
     if @campaign.save
       render :show
     else
@@ -56,7 +56,9 @@ class Api::CampaignsController < ApplicationController
     params
       .require(:campaign)
       .permit(
-      :title, :tagline, :description, :overview, :goal_amount, :end_date, :image_url
+      :title, :tagline, :description, :overview,
+      :goal_amount, :end_date, :image_url, :launch,
+      :user_id, :category_id
       )
   end
 end

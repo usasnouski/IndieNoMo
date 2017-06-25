@@ -7,9 +7,23 @@ class CampaignIndex extends React.Component {
     this.props.requestAllCampaigns();
   }
 
+  selectLaunchedCamps() {
+    debugger;
+    let activeCampaigns = [];
+    this.props.campaigns.forEach(campaign => {
+      if (campaign.launch) {
+        activeCampaigns.push(<CampaignTile
+        key={campaign.id}
+        campaign={campaign} />);
+      }
+    });
+    return activeCampaigns;
+  }
+
   render() {
     const { campaigns } = this.props;
-    debugger;
+    let launchedCampaigns = this.selectLaunchedCamps();
+
     return (
       <div className="allcamps-scope">
         <h1 className="all-header">Emerging tech starts here</h1>
@@ -19,15 +33,12 @@ class CampaignIndex extends React.Component {
             <span className="allcamps-span">All Campaigns</span>
           </div>
           <div className="camp-list">
-          {campaigns
-            .map(campaign => <CampaignTile
-              key={campaign.id}
-              campaign={campaign} />
-          )}
+          {launchedCampaigns}
           </div>
         </div>
       </div>
     );
+
   }
 }
 

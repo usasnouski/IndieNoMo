@@ -2,17 +2,19 @@ import { connect } from 'react-redux';
 
 import { createCampaign } from '../../actions/campaign_actions';
 
-import StartCampaignForm from './new_campaign';
+import StartCampaignForm from './start_campaign_form';
 
 const mapStateToProps = (state) => {
   return {
-    user: session.state.currentUser,
+    user: state.session.currentUser,
+    errors: state.errors,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
+  debugger;
  return {
-   createCampaign: (campaign) => createCampaign(campaign),
+   createCampaign: (campaign) => dispatch(createCampaign(campaign)),
  };
 };
 

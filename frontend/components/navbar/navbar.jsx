@@ -9,9 +9,9 @@ import SessionFormContainer from '../session_form/session_form_container';
 
 const customStyles = {
   content : {
-    minWidth              : '300px',
+    minWidth              : '278px',
     position              : 'fixed',
-    width                 : '300px',
+    width                 : '278px',
     top                   : '40%',
     left                  : '50%',
     right                 : 'auto',
@@ -20,13 +20,11 @@ const customStyles = {
     transform             : 'translate(-50%, -50%)',
     backgroundColor       : '#F5F5F5',
     borderRadius          : '0px',
-    paddingTop            : '30px',
-    paddingBottom         : '30px',
     border                : '1px',
     fontFamily            : "'Libre Franklin', 'sans-serif'",
     fontSize              : '14px',
     fontWeight            : '300',
-    padding               : '40px 10px',
+    padding               : '50px 10px',
     zIndex                : '1050',
     textAlign             : 'center',
     color                 : '#6A6A6A',

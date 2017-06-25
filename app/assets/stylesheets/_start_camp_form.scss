@@ -1,0 +1,157 @@
+.start-header {
+  padding-top: 46px;
+  padding-bottom: 25px;
+}
+
+.start-header, .start-camp-form {
+  box-sizing: border-box;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 1280px) {
+  .start-header, .start-camp-form {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .start-header, .start-camp-form {
+    max-width: 1280px;
+  }
+}
+
+.start-header > h1 {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 40px;
+  line-height: 48px;
+  letter-spacing: 1px;
+  text-align: left;
+  margin-top: auto;
+  margin-bottom: 10px;
+}
+
+.start-header > div {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 28px;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.start-camp-section {
+  margin-bottom: 21px;
+  width: 540px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.start-camp-section > label {
+  display: block;
+  font-size: 16px;
+  color: #6A6A6A;
+  margin-top: 40px;
+  margin-bottom: 10px;
+  font-weight: 200;
+}
+
+.goal-input {
+  display: table;
+  border: none;
+  position: relative;
+  box-sizing: border-box;
+  clear: both;
+}
+
+.dollar-sign {
+  position: absolute;
+  color: #0EB4B6;
+  font-size: 16px;
+  top: 50%;
+  margin-top: -11px;
+  left: 10px;
+}
+
+.goal-input > input {
+  border: 1px solid #DDDDDD;
+  border-radius: 2px;
+  width: 168px;
+  margin-right: 6px;
+  padding-left: 26px;
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  height: 48px;
+}
+
+.goal-input > input:focus {
+  border: 1px solid black;
+}
+
+.usd {
+  display: table-cell;
+  // position: relative;
+  vertical-align: top;
+  width: 60px;
+  margin-right: 0;
+  border: 1px solid #DDDDDD;
+  border-radius: 0px;
+  min-height: 20px;
+  padding: 15px 15px;
+  background-color: #0EB4B6;
+  color: #FFFFFF;
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 20px;
+}
+
+.camp-start-undertext {
+  margin-top: 5px;
+  margin-right: 15px;
+  color: #A8A8A8;
+  font-weight: 200;
+}
+
+.start-camp-title {
+  width: 100%;
+  border: 1px solid #DDDDDD;
+  padding: 5px 15px;
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 26px;
+  letter-spacing: 0;
+  height: 38px;
+}
+
+.start-camp-btn {
+  width: 270px;
+  padding-top: 20px;
+  margin: 40px auto 60px 0;
+}
+
+.start-camp-btn > input {
+  width: 100%;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 1px;
+  min-height: 50px;
+  background-color: #EB1478;
+  border: 2px solid #EB1478;
+  border-radius: 2px;
+  color: #FFFFFF;
+  text-align: center;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.start-camp-btn > input:hover {
+  background-color: #FA1681;
+}

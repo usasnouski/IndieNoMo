@@ -22,7 +22,8 @@ camp01 = Campaign.create!(
   goal_amount: 5000,
   end_date: 'Jan-10-2018',
   user_id: user55.id,
-  category_id: 4
+  category_id: 4,
+  launch: true
 )
 camp01.image_url = File.open('app/assets/images/camp01.jpeg')
 camp01.save!
@@ -35,7 +36,8 @@ camp02 = Campaign.create!(
   goal_amount: 13210,
   end_date: 'Mar-10-2018',
   user_id: user55.id,
-  category_id: 4
+  category_id: 4,
+  launch: true
 )
 camp02.image_url = File.open('app/assets/images/camp02.jpeg')
 camp02.save!
@@ -48,7 +50,8 @@ camp03 = Campaign.create!(
   goal_amount: 12480,
   end_date: 'Aug-15-2017',
   user_id: user55.id,
-  category_id: 4
+  category_id: 4,
+  launch: true
 )
 camp03.image_url = File.open('app/assets/images/camp03.jpeg')
 camp03.save!
@@ -61,7 +64,8 @@ camp04 = Campaign.create!(
   goal_amount: 999,
   end_date: 'May-22-2018',
   user_id: user55.id,
-  category_id: 4
+  category_id: 4,
+  launch: true
 )
 camp04.image_url  = File.open('app/assets/images/camp04.jpeg')
 camp04.save!
@@ -74,7 +78,8 @@ camp05 = Campaign.create!(
   goal_amount: 5000,
   end_date: 'Jan-10-2017',
   user_id: user55.id,
-  category_id: 4
+  category_id: 4,
+  launch: true
 )
 camp05.image_url  = File.open('app/assets/images/camp05.jpeg')
 camp05.save!
@@ -87,7 +92,8 @@ camp06 = Campaign.create!(
   goal_amount: 5000,
   end_date: 'Jan-10-2017',
   user_id: user55.id,
-  category_id: 4
+  category_id: 4,
+  launch: true
 )
 camp06.image_url  = File.open('app/assets/images/camp06.jpeg')
 camp06.save!
@@ -100,7 +106,8 @@ camp07 = Campaign.create!(
   goal_amount: 5000,
   end_date: 'Jan-10-2017',
   user_id: user55.id,
-  category_id: 4
+  category_id: 4,
+  launch: true
 )
 camp07.image_url  = File.open('app/assets/images/camp07.jpeg')
 camp07.save!
@@ -113,7 +120,8 @@ camp08 = Campaign.create!(
   goal_amount: 5000,
   end_date: 'Jan-10-2017',
   user_id: user55.id,
-  category_id: 4
+  category_id: 4,
+  launch: true
 )
-camp08.image_url  = File.open('app/assets/images/camp08.jpeg')
+camp08.image_url = File.open('app/assets/images/camp08.jpeg')
 camp08.save!

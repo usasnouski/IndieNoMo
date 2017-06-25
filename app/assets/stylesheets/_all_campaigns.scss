@@ -51,7 +51,7 @@
 .camp-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  // justify-content: center;
   align-items: center;
 }
 
@@ -70,6 +70,7 @@
   float: left;
   width: 21.5%;
   min-width: 230px;
+  max-width: 280px;
   flex-grow: 1;
 }
 

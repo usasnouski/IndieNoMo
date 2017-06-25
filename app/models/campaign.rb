@@ -20,8 +20,7 @@
 #
 
 class Campaign < ApplicationRecord
-  validates :title, :tagline, :description, :overview, :goal_amount,
-            :end_date, :user_id, presence: true
+  validates :title, :goal_amount, :category_id, :user_id, presence: true
   validates :title, length: { maximum: 50, allow_nil: true }
   #add category_id to validation
 
