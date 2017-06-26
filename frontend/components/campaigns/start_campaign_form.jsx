@@ -5,7 +5,7 @@ class StartCampaignForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: 'My campaign title...',
+      title: 'My campaign title',
       goal_amount: 500,
       user_id: null,
       category_id: 86,
@@ -17,7 +17,7 @@ class StartCampaignForm extends React.Component {
 
   update(field) {
     return e => {
-      this.setState({ [field] : e.currentTarget.value });
+      this.setState({ [field]: e.currentTarget.value });
     }
   }
 
@@ -41,11 +41,9 @@ class StartCampaignForm extends React.Component {
               <span className="dollar-sign">$</span>
               <input
                 type="text"
-                min="500.0"
-                pattern="\d+(\.\d{2})?"
+                pattern="^([5-9])(\d+)(\.\d{2})?"
                 placeholder={this.state.goal_amount}
-
-                onChange={this.update("target-amount")}/>
+                onChange={this.update("goal_amount")}/>
               <span className="usd">USD</span>
             </div>
             <div className="camp-start-undertext">Minimum $500.</div>

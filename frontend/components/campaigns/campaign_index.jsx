@@ -8,7 +8,6 @@ class CampaignIndex extends React.Component {
   }
 
   selectLaunchedCamps() {
-    debugger;
     let activeCampaigns = [];
     this.props.campaigns.forEach(campaign => {
       if (campaign.launch) {

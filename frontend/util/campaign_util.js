@@ -13,7 +13,6 @@ export const fetchSingleCampaign = (id) => {
 };
 
 export const createCampaign = (campaign) => {
-  debugger;
   return $.ajax({
     method: 'POST',
     url: 'api/campaigns',

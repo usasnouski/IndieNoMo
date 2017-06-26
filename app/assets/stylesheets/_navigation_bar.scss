@@ -1,7 +1,6 @@
 .nav-bar {
   display: flex;
   height: 74px;
-  max-width: 1440px;
   margin-left: auto;
   margin-right: auto;
   padding: 0 20px;
@@ -13,6 +12,7 @@
   font-size: 14px;
   color: #2A2A2A;
   border-bottom: 1px solid #DDDDDD;
+  width: 100%;
 }
 
 .nav-bar .left {
