@@ -7,9 +7,16 @@ class Sidebar extends React.Component {
     super(props);
   }
 
+  handleRedirect(tabName) {
+    e.preventDefault();
+    this.setState({
+      tab: tabName
+    });
+  }
+
   render() {
     const { tab, id } = this.props.campaign;
-    const className = (tab === 'basics' ? 'active-tab' : 'tab');
+    const className = (tab !== 'tab' ? 'active-tab' : 'tab');
 
     return (
       <div className="sidebar-layout">
@@ -27,8 +34,8 @@ class Sidebar extends React.Component {
             <li>
               <div className='sbar-list-head'>Campaign Editor</div>
               </li>
-            <li><div className={className}><Link to={`/campaigns/${id}/edit/basics`}>1. &nbsp;Basics</Link></div></li>
-            <li><div className="tab">2. &nbsp;Story</div></li>
+            <li><div className={className}><button onClick={this.props.handleRedirectToBasics}>1. &nbsp;Basics</button></div></li>
+            <li><div className={className}><button onClick={this.props.handleRedirectToStory}>2. &nbsp;Story</button></div></li>
             <li><div className="tab">3. &nbsp;Perks</div></li>
             <li><div className="tab">4. &nbsp;Items</div></li>
             <li><div className="tab">5. &nbsp;Team</div></li>

@@ -23,7 +23,7 @@ const App = () => {
       <Route exact path="/" component={Homepage} />
       <Route exact path="/campaigns/all" component={CampaignIndexContainer} />
       <Route exact path="/start-a-campaign" component={NewCampaignContainer} />
-      <Route exact path="/campaigns/:campaignId/edit" component={EditCampaignContainer} />
+      <Route path="/campaigns/:campaignId/edit/" component={EditCampaignContainer} />
     </div>
   );
 }

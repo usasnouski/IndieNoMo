@@ -24,7 +24,7 @@ class StartCampaignForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.createCampaign(this.state)
-      .then(data => this.props.history.push(`campaigns/${data.campaign.id}/edit/`));
+      .then(data => this.props.history.push(`campaigns/${data.campaign.id}/edit/basics`));
   }
 
   render() {

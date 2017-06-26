@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router';
+import { Route, withRouter } from 'react-router-dom';
 
 import Sidebar from './sidebar';
 
@@ -14,16 +14,19 @@ class EditForm extends React.Component {
       overview: '',
       end_date: null,
       user_id: null,
-      campaign_id: 86,
+      category_id: 86,
       launch: false,
       tab: 'basics'
     }
+
+    this.handleRedirectToBasics = this.handleRedirectToBasics.bind(this);
+    this.handleRedirectToStory = this.handleRedirectToStory.bind(this);
   }
 
   componentDidMount() {
     let id = this.props.match.params.campaignId
-    if (id) {
-      this.props.requestSingleCampaign(id);
+    if (this.props.match.params.campaignIdstat) {
+      this.props.requestSingleCampaign(parseInt(id));
     }
   }
 
@@ -44,9 +47,26 @@ class EditForm extends React.Component {
     }
   }
 
+  handleRedirectToBasics() {
+    this.setState({
+      tab: 'basics'
+    });
+  }
+
+  handleRedirectToStory() {
+    this.setState({
+      tab: 'story'
+    });
+  }
+
   render() {
     return (
-      <div><Sidebar campaign={this.state} /></div>
+      <div className="edit-p"><Sidebar
+        handleRedirectToBasics={this.handleRedirectToBasics}
+        handleRedirectToStory={this.handleRedirectToStory}
+        campaign={this.state} />
+      <div className="HOLA">"HOLA"</div>
+      </div>
     )
   }
 }
