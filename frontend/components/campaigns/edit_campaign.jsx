@@ -7,7 +7,7 @@ class EditForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: 'My campaign title...',
+      title: 'My campaign title',
       goal_amount: 0,
       tagline: '',
       description: '',

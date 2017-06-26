@@ -9,7 +9,7 @@ class Sidebar extends React.Component {
 
   render() {
     const { tab, id } = this.props.campaign;
-    const className = (tab === 'basics' ? 'activeTab' : 'tab');
+    const className = (tab === 'basics' ? 'active-tab' : 'tab');
 
     return (
       <div className="sidebar-layout">
@@ -27,14 +27,14 @@ class Sidebar extends React.Component {
             <li>
               <div className='sbar-list-head'>Campaign Editor</div>
               </li>
-            <li><div className="{className}"><Link to={`\campaigns\${id}\edit\basics`}>Basics</Link></div></li>
-            <li><div className="tab">Story</div></li>
-            <li><div className="tab">Perks</div></li>
-            <li><div className="tab">Items</div></li>
-            <li><div className="tab">Team</div></li>
-            <li><div className="tab">Funding</div></li>
-            <li><div className="tab">Extras</div></li>
-            <li><div className="tab">Indemand</div></li>
+            <li><div className={className}><Link to={`/campaigns/${id}/edit/basics`}>1. &nbsp;Basics</Link></div></li>
+            <li><div className="tab">2. &nbsp;Story</div></li>
+            <li><div className="tab">3. &nbsp;Perks</div></li>
+            <li><div className="tab">4. &nbsp;Items</div></li>
+            <li><div className="tab">5. &nbsp;Team</div></li>
+            <li><div className="tab">6. &nbsp;Funding</div></li>
+            <li><div className="tab">7. &nbsp;Extras</div></li>
+            <li><div className="tab">8. &nbsp;Indemand</div></li>
           </ul>
         </div>
       </div>
