@@ -67,7 +67,7 @@
   letter-spacing: 1px;
 }
 
-.tab, .active-tab > button {
+.tab {
   background-color: black;
   font-size: 12px;
   font-weight: 100;
@@ -79,23 +79,64 @@
   cursor: pointer;
 }
 
+// .passive-tab > button, .active-tab > button {
+//   background-color: black;
+//   font-size: 12px;
+//   font-weight: 100;
+//   line-height: 18px;
+//   text-transform: uppercase;
+//   letter-spacing: 1px;
+//   color: #C8C8C8;
+//   padding: 15px 28px;
+//   border: none;
+//   cursor: pointer;
+// }
+//
+
+.passive-tab > button, .active-tab > button {
+  border: none;
+  width: 215px;
+  background-color: black;
+  font-size: 12px;
+  line-height: 18px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  text-align: left;
+  padding: 15px 28px;
+  padding-left: 20px;
+  color: #FFFFFF;
+}
+
+.passive-tab > button {
+  text-align: left;
+  font-weight: 100;
+  background-color: black;
+  padding: 15px 28px;
+  color: #C8C8C8;
+}
+
+
 .active-tab {
   background-color: black;
   border-left: 7px solid #7A69B3;
-  padding-left: 20px;
-}
-
-.active-tab > button {
-  color: #FFFFFF;
-  font-weight: 500;
-  border: none;
-  background: none;
   padding-left: 0px;
 }
 
-.tab:hover, .active-tab:hover {
+.passive-tab {
+  background-color: black;
+  // padding-left: 28px;
+  // padding: 28px;
+}
+
+.tab:hover, .active-tab:hover, .passive-tab:hover  {
   background-color: #7A69B3;
   color: #FFFFFF;
+}
+
+.passive-tab > button:hover, .active-tab > button:hover {
+  background-color: inherit;
+  color: inherit;
 }
 
 li {

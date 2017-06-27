@@ -16,7 +16,8 @@ class Sidebar extends React.Component {
 
   render() {
     const { tab, id } = this.props.campaign;
-    const className = (tab !== 'tab' ? 'active-tab' : 'tab');
+    const basicsClass = (tab === 'basics' ? 'active-tab' : 'passive-tab');
+    const storyClass = (tab === 'story' ? 'active-tab' : 'passive-tab');
 
     return (
       <div className="sidebar-layout">
@@ -34,8 +35,20 @@ class Sidebar extends React.Component {
             <li>
               <div className='sbar-list-head'>Campaign Editor</div>
               </li>
-            <li><div className={className}><button onClick={this.props.handleRedirectToBasics}>1. &nbsp;Basics</button></div></li>
-            <li><div className={className}><button onClick={this.props.handleRedirectToStory}>2. &nbsp;Story</button></div></li>
+            <li>
+              <div className={basicsClass}>
+                <button onClick={this.props.handleRedirectToBasics}>
+                  1. &nbsp;Basics
+                </button>
+              </div>
+            </li>
+            <li>
+              <div className={storyClass}>
+                <button onClick={this.props.handleRedirectToStory}>
+                  2. &nbsp;Story
+                </button>
+              </div>
+            </li>
             <li><div className="tab">3. &nbsp;Perks</div></li>
             <li><div className="tab">4. &nbsp;Items</div></li>
             <li><div className="tab">5. &nbsp;Team</div></li>
