@@ -23,6 +23,7 @@ class Basics extends React.Component {
   }
 
   render() {
+    debugger;
     return (
       <div className="basics-scope">
         {this.renderControllBar()}
@@ -51,6 +52,25 @@ class Basics extends React.Component {
                   value={this.props.campaign.tagline}
                   onChange={this.props.handleUpdate('tagline')}/>
               </div>
+              <div className="entre-field">
+                <label>Campaign Card Image<span> *</span></label>
+                <div className="field-sublabel">Upload an image that represents your campaign.
+                  <br/>
+                    640 x 640 recommended resolution, 220 x 220 minimum resolution.
+                </div>
+                <div className="image-wrapper">
+                  <div className="entre-image">
+                    <input type="file"
+                      className="enter-image-file"
+                      onChange={this.props.updateFile}></input>
+
+                    <img src="http://www.iconsplace.com/icons/preview/7a69b3/slr-camera-256.png"
+                      className="camera-img" />
+                  </div>
+                </div>
+              </div>
+
+              <div className="entre-field"></div>
             </div>
         </form>
       </div>

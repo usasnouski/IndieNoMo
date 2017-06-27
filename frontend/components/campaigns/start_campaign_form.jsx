@@ -5,7 +5,7 @@ class StartCampaignForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: 'My campaign title',
+      title: 'My Campaign Title',
       goal_amount: 500,
       user_id: null,
       category_id: 86,

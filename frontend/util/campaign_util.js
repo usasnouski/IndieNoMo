@@ -23,6 +23,8 @@ export const createCampaign = (campaign) => {
 export const editCampaign = (campaign) => {
   return $.ajax({
     method: 'PATCH',
+    contentType: false,
+    processData: false,
     url: `posts/campaigns/${campaign.id}`,
     data: { campaign }
   });
