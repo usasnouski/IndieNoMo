@@ -6,13 +6,13 @@
   left: 0;
   width: 230px;
   overflow: auto;
-  height: 100vh;
+  height: 101vh;
   max-height: 100%;
 }
 
 .sidebar-header {
   position: relative;
-  height: 160px;
+  height: 230px;
   margin-bottom: 50px;
   overflow: hidden;
 }
@@ -158,4 +158,11 @@ ul {
 .edit-p {
   display: flex;
   justify-content: center;
+}
+
+select {
+  background-color: #FFFFFF;
+  outline: none;
+  -webkit-border-radius: 1px;
+  -webkit-appearance: none;
 }

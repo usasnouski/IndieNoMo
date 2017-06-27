@@ -4,7 +4,6 @@ import { updateCampaign, requestSingleCampaign } from '../../actions/campaign_ac
 import EditCampaign from './edit_campaign';
 
 const mapStateToProps = (state, ownProps) => {
-  debugger;
   return {
     campaign: state.campaign[ownProps.match.params.campaignId],
     campaignId: ownProps.match.params.campaignId

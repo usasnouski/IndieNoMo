@@ -43,7 +43,13 @@ class CampaignTile extends React.Component {
 
   daysLeft() {
     const endDate = this.props.campaign.end_date;
-    const result = Date.parse(endDate) - Date.now();
+    let result;
+    if (typeof endDate === 'number') {
+      result = endDate - Date.now();
+    } else {
+      result = Date.parse(endDate) - Date.now();
+    }
+
     const convertedMills = this.convertMiliseconds(result);
     return convertedMills['d'];
   }

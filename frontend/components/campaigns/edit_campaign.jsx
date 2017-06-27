@@ -16,6 +16,7 @@ class EditForm extends React.Component {
       description: '',
       overview: '',
       image_url: null,
+      imageFile: null,
       end_date: null,
       user_id: null,
       category_id: 86,
@@ -25,8 +26,10 @@ class EditForm extends React.Component {
 
     this.handleRedirectToBasics = this.handleRedirectToBasics.bind(this);
     this.handleRedirectToStory = this.handleRedirectToStory.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
     this.handleUpdate = this.handleUpdate.bind(this);
     this.updateFile = this.updateFile.bind(this);
+    this.updateDate = this.updateDate.bind(this);
   }
 
   componentDidMount() {
@@ -38,7 +41,7 @@ class EditForm extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     // this.props.path !== nextProps.path
-    if (nextProps.campaign && nextProps.campaign.title) {
+    if (nextProps.campaign && nextProps.campaign.id) {
       this.setState({
         id: nextProps.match.params.campaignId,
         title: nextProps.campaign.title,
@@ -81,10 +84,16 @@ class EditForm extends React.Component {
     const file = e.currentTarget.files[0];
     const fileReader = new FileReader();
     fileReader.onloadend = () => {
-      this.setState({ imageFile: file, imageUrl: fileReader.result });
+      this.setState({ imageFile: file, image_url: fileReader.result });
     }
 
     if (file) { fileReader.readAsDataURL(file); }
+  }
+
+  updateDate() {
+    return e => {
+      this.setState({ ['end_date']: Date.parse(e.currentTarget.value) });
+    }
   }
 
   handleSubmit() {
@@ -98,8 +107,8 @@ class EditForm extends React.Component {
       }
     });
 
-    // this.props.updateCampaign(formData)
-    //   .then(this.props.history.push(`/campaigns/${this.state.id}`));
+    this.props.updateCampaign(formData)
+      .then(this.props.history.push(`/campaigns/${this.state.id}`));
   }
 
   validate() {
@@ -115,20 +124,26 @@ class EditForm extends React.Component {
 
   renderBasics() {
     return(
-      <Basics campaign={this.state} handleUpdate={this.handleUpdate}/>
+      <Basics
+        campaign={this.state}
+        handleSubmit={this.handleSubmit}
+        handleUpdate={this.handleUpdate}
+        updateFile={this.updateFile}
+        updateDate={this.updateDate} />
     );
   }
 
   renderStory() {
     return (
-      <Story campaign={this.state} handleUpdate={this.handleUpdate}/>
+      <Story campaign={this.state}
+      handleUpdate={this.handleUpdate}
+      updateFile={this.updateFile}/>
     );
   }
 
   render() {
     const formType = this.props.match.params.formType;
     let tabPage = '';
-    debugger;
     return (
       <div className="edit-p"><Sidebar
         handleRedirectToBasics={this.handleRedirectToBasics}

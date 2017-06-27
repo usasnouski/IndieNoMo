@@ -13,7 +13,8 @@ class Basics extends React.Component {
             <h1>Campaign / <span>Basics</span></h1>
           </div>
           <div className="control-bar-controls">
-            <button className="launch-btn btn-purple">
+            <button className="launch-btn btn-purple"
+              onClick={this.props.handleSubmit}>
               Review & Launch
             </button>
           </div>
@@ -23,7 +24,6 @@ class Basics extends React.Component {
   }
 
   render() {
-    debugger;
     return (
       <div className="basics-scope">
         {this.renderControllBar()}
@@ -62,15 +62,48 @@ class Basics extends React.Component {
                   <div className="entre-image">
                     <input type="file"
                       className="enter-image-file"
-                      onChange={this.props.updateFile}></input>
-
+                      onChange={this.props.updateFile} />
                     <img src="http://www.iconsplace.com/icons/preview/7a69b3/slr-camera-256.png"
                       className="camera-img" />
                   </div>
+                  <img className="camera-img" src={this.props.campaign.image_url} />
                 </div>
               </div>
-
-              <div className="entre-field"></div>
+              <div className="entre-field">
+                <label>Category<span> *</span></label>
+                <div className="field-sublabel">
+                  To help backers find your campaign, select a category
+                  that best represents your project.
+                </div>
+                <select className="select-cat" placeholder="Select a category">
+                  <option>Home</option>
+                  <option>Phones & Accessories</option>
+                  <option>Travel & Outdoors</option>
+                  <option>Film</option>
+                  <option>Community Projects</option>
+                  <option>Health & Fitness</option>
+                  <option>Fashion & Wearables</option>
+                  <option>Tabletop Games</option>
+                  <option>Music</option>
+                  <option>Equity</option>
+                  <option></option>
+                </select>
+              </div>
+              <div className="entre-field">
+                <label>Campaign Duration<span> *</span></label>
+                  <div className="field-sublabel">How long will you
+                    be running your campaign for?
+                  </div>
+                  <input type="date"
+                    className="entre-duration"
+                    onChange={this.props.updateDate()}/>
+              </div>
+            </div>
+            <div className="save-n-cont">
+              <button className="btn-purple launch-btn"
+                onClick={this.handleSubmit}>
+                Save & Continue
+              </button>
             </div>
         </form>
       </div>

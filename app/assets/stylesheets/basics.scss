@@ -181,3 +181,59 @@
   width: 30%;
   height: 30%;
 }
+
+.entre-duration {
+  height: 30px;
+  width: 150px;
+}
+
+input[type=date]::-webkit-inner-spin-button,
+input[type=date]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type=date] {
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 14px;
+  padding: 1px 0px;
+  padding-left: 30px;
+  text-align: center;
+  color: #7A69B3;
+}
+
+.save-n-cont {
+  border-top: 1px solid #C8C8C8;
+  padding-top: 60px;
+  text-align-last: right;
+  margin-bottom: 60px;
+  width: 756px;
+}
+
+
+
+.select-cat {
+  background-color: #FFFFFF;
+  border-radius: 1px;
+  width: 373px;
+  height: 50px;
+  text-decoration: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 5px 15px;
+  padding-right: 35px;
+  color: #2a2a2a;
+}
+
+.select-cat select {
+  position: absolute;
+  background: #FFFFFF;
+  width: 320px;
+  border-radius: 1px;
+}
+
+// select:focus
+// {
+//   background-color: #FFFFFF;
+//   color: #2A2A2A;
+//   outline-offset: 0px;
+// }
