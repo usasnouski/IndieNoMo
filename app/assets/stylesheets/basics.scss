@@ -1,0 +1,154 @@
+.basics-scope {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 0em;
+}
+
+.control-bar-area {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.control-bar {
+  // position: fixed;
+  // z-index: 1000;
+  display: flex;
+  background: #F5F5F5;
+  width: 100%;
+  height: 30px;
+  padding: 26px 40px;
+  align-items: center;
+  border-bottom: 1px solid #C8C8C8;
+}
+
+.control-bar-content {
+  box-flex: 2 0px;
+  -webkit-flex: 2 0px;
+  flex: 2 0px;
+}
+
+.control-bar-content > h1 {
+  display: block;
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 20px;
+  line-height: 26px;
+  letter-spacing: 0;
+  font-weight: 300;
+  margin: 0;
+}
+
+.control-bar-content > h1 > span {
+  color: #7A69B3;
+}
+
+.launch-btn {
+  position: fixed;
+  left: 20;
+  margin: 5px;
+  text-decoration: none;
+  font-family: "Libre Franklin", sans-serif;
+  font-weight: 500;
+  line-height: 12px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 14px 15px;
+  min-width: 86px;
+}
+
+.btn-purple {
+  background-color: #7A69B3;
+  border: none;
+  color: #FFFFFF;
+}
+
+.basics-form {
+  background-color: #FAFAFA;
+  min-height: 500;
+  padding: 30px 50px;
+}
+
+.entre-section {
+  margin-bottom: 60px;
+  width: 756px;
+}
+
+.entre-header {
+  display: flex;
+  align-items: center;
+  font-family: "Libre Franklin", "Helvetica", sans-serif;
+  font-size: 24px;
+  line-height: 34px;
+  font-weight: 300;
+  margin-bottom: 5px;
+}
+
+.entre-subheader {
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: 0;
+  line-height: 24px;
+  margin-bottom: 10px;
+  max-width: 620px;
+}
+
+.entre-field {
+  position: relative;
+  margin: 60px 0;
+}
+
+.entre-field > label {
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: 0;
+  line-height: 24px;
+  min-height: 24px;
+  margin-bottom: 5px;
+  background-color: #FAFAFA;
+}
+
+.entre-field > label > span {
+  color: #EF324B;
+  font-size: inherit;
+  line-height: 24px;
+  font-weight: 600;
+}
+
+.field-sublabel {
+  font-size: 14px;
+  font-weight: 200;
+  line-height: 20px;
+  color: #A8A8A8;
+  margin: 0 0 10px;
+}
+
+.text-field {
+  height: 38px;
+  border: 1px solid #C8C8C8;
+  border-radius: 2px;
+  font-family: "Libre Franklin", "Helvetica", sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 20px;
+  width: 100%;
+  padding: 5px 15px;
+  background-color: #FFFFFF;
+}
+
+.text-area-en {
+  overflow: auto;
+  vertical-align: top;
+}
+
+.text-area-en:focus {
+  outline: none;
+  border: 1px solid black;
+}
+
+.text-field, select, textarea {
+  font-size: 16px;
+  font-weight: 300;
+}
