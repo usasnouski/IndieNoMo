@@ -27,6 +27,7 @@ class User < ApplicationRecord
   validates_attachment_content_type :profile_img, content_type: /\Aimage\/.*\z/
 
   has_many :campaigns
+  has_many :contributions
 
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)

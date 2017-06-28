@@ -43,6 +43,7 @@ class CampaignTile extends React.Component {
 
   daysLeft() {
     const endDate = this.props.campaign.end_date;
+
     let result;
     if (typeof endDate === 'number') {
       result = endDate - Date.now();
@@ -56,6 +57,8 @@ class CampaignTile extends React.Component {
 
   render() {
     const campaign = this.props.campaign;
+    const progress = (campaign.current_amount * 100 / campaign.goal_amount)
+    const progressPercent = `${Math.round(progress)}%`
     return (
 
         <div className="camp-tile">
@@ -73,11 +76,11 @@ class CampaignTile extends React.Component {
                 <span>${campaign.goal_amount}</span>
                 &nbsp;
                 <span>USD</span>
-                <div className="progress-bar">
-                  <span></span>
+                <div className="progress-bar" style={{width: `${progressPercent}`}}>
+
                 </div>
                 <div className="progress-label">
-                  <div className="tile-percent">100%</div>
+                  <div className="tile-percent">{progressPercent}</div>
                   <div>{this.daysLeft()} days left</div>
                 </div>
               </div>

@@ -6,6 +6,7 @@ class Api::CampaignsController < ApplicationController
   def show
     @campaign = Campaign.find(params[:id])
     if @campaign
+      @amount = @campaign.contributions.sum(:amount)
       render :show
     else
       render json: "No campaign found", status: 422

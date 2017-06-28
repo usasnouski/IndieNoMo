@@ -125,3 +125,105 @@ camp08 = Campaign.create!(
 )
 camp08.image_url = File.open('app/assets/images/camp08.jpeg')
 camp08.save!
+
+contr01 = Contribution.create!(
+  user_id: user55.id,
+  campaign_id: camp01.id,
+  amount: 22.00
+)
+
+contr02 = Contribution.create!(
+user_id: user55.id,
+campaign_id: camp01.id,
+amount: 778
+)
+
+contr03 = Contribution.create!(
+user_id: user55.id,
+campaign_id: camp01.id,
+amount: 90
+)
+
+contr04 = Contribution.create!(
+user_id: user55.id,
+campaign_id: camp02.id,
+amount: 4240
+)
+
+contr05 = Contribution.create!(
+user_id: user55.id,
+campaign_id: camp02.id,
+amount: 3200
+)
+
+contr06 = Contribution.create!(
+user_id: user55.id,
+campaign_id: camp03.id,
+amount: 3500
+)
+
+contr07 = Contribution.create!(
+user_id: user55.id,
+campaign_id: camp04.id,
+amount: 333
+)
+
+contr08 = Contribution.create!(
+user_id: user55.id,
+campaign_id: camp04.id,
+amount: 14
+)
+
+contr09 = Contribution.create!(
+user_id: user55.id,
+campaign_id: camp04.id,
+amount: 113.45
+)
+
+contr10 = Contribution.create!(
+user_id: user55.id,
+campaign_id: camp05.id,
+amount: 1213.11
+)
+
+contr11 = Contribution.create!(
+user_id: user55.id,
+campaign_id: camp05.id,
+amount: 122.93
+)
+
+contr12 = Contribution.create!(
+user_id: user55.id,
+campaign_id: camp05.id,
+amount: 1.17
+)
+
+contr13 = Contribution.create!(
+user_id: user55.id,
+campaign_id: camp05.id,
+amount: 11.22
+)
+
+contr14 = Contribution.create!(
+user_id: user55.id,
+campaign_id: camp06.id,
+amount: 500
+)
+
+contr15 = Contribution.create!(
+user_id: user55.id,
+campaign_id: camp06.id,
+amount: 225
+)
+
+contr16 = Contribution.create!(
+user_id: user55.id,
+campaign_id: camp07.id,
+amount: 779.88
+)
+
+contr17 = Contribution.create!(
+user_id: user55.id,
+campaign_id: camp08.id,
+amount: 12.15
+)
