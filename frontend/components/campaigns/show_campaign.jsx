@@ -56,7 +56,15 @@ class ShowCampaign extends React.Component {
   }
 
   renderCampProgress() {
-
+    return (
+      <div className='camp-progress'>
+        <div className="progress-raised">
+          <span className="total-amount">{campaign.current_amount} </span>
+           USD
+          <span> raised by XXX backers</span>
+        </div>
+      </div>
+    )
   }
 
   render() {

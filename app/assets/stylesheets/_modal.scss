@@ -111,7 +111,11 @@ input::placeholder {
   padding-left: 0px;
 }
 
-input:focus {
-  outline: 0;
+input[type="text"]:focus {
+  outline: none;
   border: 1px solid black;
+}
+
+input:focus {
+  outline: none;
 }

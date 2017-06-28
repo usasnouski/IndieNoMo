@@ -25,10 +25,10 @@ const App = () => {
       <Switch>
         <Route exact path="/" component={Homepage} />
         <Route path="/campaigns/all" component={CampaignIndexContainer} />
+        <ProtectedRoute exact path="/campaigns/:campaignId/edit/:formType" component={EditCampaignContainer} />
         <Route path ="/campaigns/:campaignId" component={ShowCampaignContainer} />
       </Switch>
       <ProtectedRoute exact path="/start-a-campaign" component={NewCampaignContainer} />
-      <ProtectedRoute exact path="/campaigns/:campaignId/edit/:formType" component={EditCampaignContainer} />
     </div>
   );
 }
