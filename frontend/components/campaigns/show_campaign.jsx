@@ -56,12 +56,20 @@ class ShowCampaign extends React.Component {
   }
 
   renderCampProgress() {
+    const { progress } = this.props.campaign;
+    const percentage = `${progress}%`;
     return (
-      <div className='camp-progress'>
+      <div className="camp-progress">
         <div className="progress-raised">
-          <span className="total-amount">{campaign.current_amount} </span>
+          <span className="total-amount">{this.props.campaign.current_amount} </span>
            USD
           <span> raised by XXX backers</span>
+        </div>
+        <div className="camp-goal-bar">
+          <div className="camp-goal-bar" style={{ width: `${percentage}` }}></div>
+        </div>
+        <div className="camp-progress-details">
+          {percentage} of ${this.props.campaign.goal_amount}
         </div>
       </div>
     )
