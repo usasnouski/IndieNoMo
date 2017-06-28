@@ -11,5 +11,5 @@ export const receiveSingleContribution = (contribution) => {
 
 export const createContribution = (contribution) => (dispatch) => {
   return ContributionAPI.createContribution(contribution)
-    .then(contribution => dispatch(receiveSingleContribution)));
+    .then(contribution => dispatch(receiveSingleContribution(contribution)));
 };

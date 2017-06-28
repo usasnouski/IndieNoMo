@@ -93,7 +93,7 @@ class NavBar extends React.Component {
       this.setState({ formType: 'login' });
     }
   }
-
+  //if logged in start start campaign works else open module
   render() {
   return (
     <nav className="nav-bar">

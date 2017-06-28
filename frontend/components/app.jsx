@@ -14,7 +14,8 @@ import NavBarContainer from './navbar/navbar_container';
 import Homepage from './homepage/homepage_container';
 import CampaignIndexContainer from './campaigns/campaign_index_container';
 import NewCampaignContainer from './campaigns/new_campaign_container';
-import EditCampaignContainer from './campaigns/edit_campaign_container'
+import EditCampaignContainer from './campaigns/edit_campaign_container';
+import ShowCampaignContainer from './campaigns/show_campaign_container'
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
       <NavBarContainer />
       <Route exact path="/" component={Homepage} />
       <Route exact path="/campaigns/all" component={CampaignIndexContainer} />
+      <Route exact path ="/campaigns/:campaignId" component={ShowCampaignContainer} />
       <ProtectedRoute exact path="/start-a-campaign" component={NewCampaignContainer} />
       <ProtectedRoute exact path="/campaigns/:campaignId/edit/:formType" component={EditCampaignContainer} />
     </div>

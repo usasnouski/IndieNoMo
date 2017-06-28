@@ -1,7 +1,7 @@
 export const createContribution = (contribution) => {
-  return $.ajax(
+  return $.ajax({
     method: 'POST',
     url: 'api/contributions',
-    data: { contribution },
-  )
-}
+    data: { contribution }
+  });
+};

@@ -76,9 +76,7 @@ class CampaignTile extends React.Component {
                 <span>${campaign.goal_amount}</span>
                 &nbsp;
                 <span>USD</span>
-                <div className="progress-bar" style={{width: `${progressPercent}`}}>
-
-                </div>
+                <div className="progress-bar" style={{width: `${progressPercent}`}} />
                 <div className="progress-label">
                   <div className="tile-percent">{progressPercent}</div>
                   <div>{this.daysLeft()} days left</div>
