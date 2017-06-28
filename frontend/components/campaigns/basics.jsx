@@ -3,6 +3,14 @@ import React from 'react';
 class Basics extends React.Component {
   constructor(props) {
     super(props);
+
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    debugger;
+    this.props.sendUpdate(e);
   }
 
   renderControllBar() {
@@ -27,7 +35,7 @@ class Basics extends React.Component {
     return (
       <div className="basics-scope">
         {this.renderControllBar()}
-        <form className="basics-form camp-form">
+        <form onSubmit={this.handleSubmit} className="basics-form camp-form">
             <div className="entre-section">
               <div className="entre-header">Basics</div>
               <div className="entre-subheader">
@@ -48,7 +56,7 @@ class Basics extends React.Component {
                 <div className="field-sublabel">Provide a short description
                    that best describes your campaign to your audience.
                  </div>
-                <textarea className="text-field text-area-en"
+                <textarea className="text-field text-area-en basics-txt"
                   value={this.props.campaign.tagline}
                   onChange={this.props.handleUpdate('tagline')}/>
               </div>
@@ -100,10 +108,9 @@ class Basics extends React.Component {
               </div>
             </div>
             <div className="save-n-cont">
-              <button className="btn-purple launch-btn"
-                onClick={this.handleSubmit}>
-                Save & Continue
-              </button>
+              <input type="submit" className="btn-purple launch-btn"
+                value="Save & Continue"
+              />
             </div>
         </form>
       </div>

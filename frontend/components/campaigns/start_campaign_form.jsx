@@ -6,8 +6,9 @@ class StartCampaignForm extends React.Component {
     super(props);
     this.state = {
       title: 'My Campaign Title',
+      tagline: '',
+      overview: '',
       goal_amount: 500,
-      user_id: null,
       category_id: 86,
       launch: false
     }
@@ -39,9 +40,10 @@ class StartCampaignForm extends React.Component {
             <label>How much money would you like to raise?</label>
             <div className="goal-input">
               <span className="dollar-sign">$</span>
-              <input
-                type="text"
-                pattern="^([5-9])(\d+)(\.\d{2})?"
+              <input className="amount-input"
+                type="number"
+                pattern="^([0-9])(\d+)(\.\d{2})?"
+                min="500"
                 placeholder={this.state.goal_amount}
                 onChange={this.update("goal_amount")}/>
               <span className="usd">USD</span>

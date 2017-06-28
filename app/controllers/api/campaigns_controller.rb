@@ -28,6 +28,7 @@ class Api::CampaignsController < ApplicationController
   end
 
   def update
+    # debugger;
     @campaign = Campaign.find(params[:id])
 
     unless logged_in?
@@ -35,8 +36,9 @@ class Api::CampaignsController < ApplicationController
       return
     end
 
+    js_date = campaign_params[:end_date]
+    campaign_params[:end_date] = js_date.to_date
     #can user edit other users' campaigns
-
     if @campaign.update(campaign_params)
       render :show
     else
@@ -58,7 +60,7 @@ class Api::CampaignsController < ApplicationController
       .permit(
       :title, :tagline, :description, :overview,
       :goal_amount, :end_date, :image_url, :launch,
-      :user_id, :category_id
+      :category_id
       )
   end
 end

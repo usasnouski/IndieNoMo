@@ -12,7 +12,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    updateCampaign: (campaign) => dispatch(updateCampaign(campaign)),
+    updateCampaign: (campaign, id) => dispatch(updateCampaign(campaign, id)),
     requestSingleCampaign: (id) => dispatch(requestSingleCampaign(id)),
   };
 };

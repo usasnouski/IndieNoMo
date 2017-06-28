@@ -22,6 +22,7 @@
 class Campaign < ApplicationRecord
   validates :title, :goal_amount, :category_id, :user_id, presence: true
   validates :title, length: { maximum: 50, allow_nil: true }
+  validates :goal_amount, numericality: { greater_than: 499 }
   #add category_id to validation
 
   has_attached_file :image_url, default_url: "default.jpg"

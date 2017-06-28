@@ -20,13 +20,14 @@ export const createCampaign = (campaign) => {
   });
 };
 
-export const editCampaign = (campaign) => {
+export const editCampaign = (campaign, id) => {
+  debugger;
   return $.ajax({
     method: 'PATCH',
     contentType: false,
     processData: false,
-    url: `posts/campaigns/${campaign.id}`,
-    data: { campaign }
+    url: `api/campaigns/${id}`,
+    data: campaign 
   });
 };
 

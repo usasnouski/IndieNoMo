@@ -1,4 +1,4 @@
-.basics-scope {
+.basics-scope, .story-scope {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -64,7 +64,7 @@
   color: #FFFFFF;
 }
 
-.basics-form {
+.basics-form, .story-form {
   background-color: #FAFAFA;
   min-height: 500;
   padding: 30px 50px;
@@ -133,8 +133,20 @@
   font-weight: 300;
   line-height: 20px;
   width: 100%;
-  padding: 5px 15px;
+  padding: 10px 15px;
   background-color: #FFFFFF;
+  box-sizing: border-box;
+}
+.text-area {
+  width: 100%
+}
+
+.overview {
+  height: 222px;
+}
+
+.basics-txt {
+  height: 62px;
 }
 
 .text-area-en {

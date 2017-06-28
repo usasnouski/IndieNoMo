@@ -40,8 +40,8 @@ export const createCampaign = (campaign) => (dispatch) => {
     .then(campaign => dispatch(receiveSingleCampaign(campaign)));
 };
 
-export const updateCampaign = (campaign) => (dispatch) => {
-  return CampAPIUtil.editCampaign(campaign)
+export const updateCampaign = (campaign, id) => (dispatch) => {
+  return CampAPIUtil.editCampaign(campaign, id)
     .then(campaign => dispatch(receiveSingleCampaign(campaign)));
 };
 

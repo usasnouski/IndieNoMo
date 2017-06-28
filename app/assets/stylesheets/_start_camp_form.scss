@@ -155,3 +155,9 @@
 .start-camp-btn > input:hover {
   background-color: #FA1681;
 }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}

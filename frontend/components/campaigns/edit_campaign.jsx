@@ -12,13 +12,12 @@ class EditForm extends React.Component {
       id: parseInt(this.props.match.params.campaignId),
       title: 'My Campaign Title',
       goal_amount: 500,
-      tagline: ' ',
-      description: '',
+      tagline: '',
+      description: ' ',
       overview: '',
       image_url: null,
       imageFile: null,
-      end_date: null,
-      user_id: null,
+      end_date: '',
       category_id: 86,
       launch: false,
       tab: 'basics'
@@ -26,7 +25,7 @@ class EditForm extends React.Component {
 
     this.handleRedirectToBasics = this.handleRedirectToBasics.bind(this);
     this.handleRedirectToStory = this.handleRedirectToStory.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.sendUpdate = this.sendUpdate.bind(this);
     this.handleUpdate = this.handleUpdate.bind(this);
     this.updateFile = this.updateFile.bind(this);
     this.updateDate = this.updateDate.bind(this);
@@ -34,27 +33,17 @@ class EditForm extends React.Component {
 
   componentDidMount() {
     let id = this.props.match.params.campaignId
-    if (this.props.match.params.campaignIdstat) {
-      this.props.requestSingleCampaign(parseInt(id));
-    }
-  }
-
-  componentWillReceiveProps(nextProps) {
-    // this.props.path !== nextProps.path
-    if (nextProps.campaign && nextProps.campaign.id) {
-      this.setState({
-        id: nextProps.match.params.campaignId,
-        title: nextProps.campaign.title,
-        goal_amount: nextProps.campaign.goal_amount,
-        tagline: nextProps.campaign.tagline,
-        description: nextProps.campaign.description,
-        overview: nextProps.campaign.overview,
-        end_date: nextProps.campaign.end_date,
-        user_id: nextProps.campaign.user_id,
-        category_id: nextProps.campaign.category_id,
-        launch: nextProps.campaign.launch,
+    if (this.props.match.params.campaignId) {
+      this.props.requestSingleCampaign(parseInt(id))
+      .then(() => {
+        this.setState({
+          title: this.props.campaign.title,
+          goal_amount: this.props.campaign.goal_amount
+        });
       });
     }
+
+
   }
 
   handleRedirectToBasics() {
@@ -92,33 +81,38 @@ class EditForm extends React.Component {
 
   updateDate() {
     return e => {
-      this.setState({ ['end_date']: Date.parse(e.currentTarget.value) });
+      let date = new Date(e.currentTarget.value);
+      date = date.toString();
+      this.setState({ ['end_date']: date });
     }
   }
 
-  handleSubmit() {
-    // const isValid = this.validate();
+  sendUpdate(e) {
+    e.preventDefault();
 
+    if (!this.validate()) { return; }
+    debugger;
     const formData = new FormData();
+    let copyObj = Object.assign(this.state, {['launch']: true});
 
-    this.props.campaign.keys.forEach(key => {
-      if (!formData[key]) {
-        formData.append(`campaign[${key}]`, this.state[key]);
+    Object.keys(copyObj).forEach(key => {
+      if (!formData[key] && key !== 'tab') {
+        formData.append(`campaign[${key}]`, copyObj[key]);
       }
     });
 
-    this.props.updateCampaign(formData)
+    this.props.updateCampaign(formData, this.props.campaign.id)
       .then(this.props.history.push(`/campaigns/${this.state.id}`));
   }
 
   validate() {
-    for (key in this.props.campaign) {
-      if (!this.state[key]) {
+    debugger;
+    for (let key in this.state) {
+      if (!this.state[key] && key !== 'launch') {
         return false;
       }
     }
 
-    this.setState({ launch: true });
     return true;
   }
 
@@ -126,7 +120,7 @@ class EditForm extends React.Component {
     return(
       <Basics
         campaign={this.state}
-        handleSubmit={this.handleSubmit}
+        sendUpdate={this.sendUpdate}
         handleUpdate={this.handleUpdate}
         updateFile={this.updateFile}
         updateDate={this.updateDate} />
@@ -134,8 +128,10 @@ class EditForm extends React.Component {
   }
 
   renderStory() {
+    // debugger;
     return (
       <Story campaign={this.state}
+      sendUpdate={this.sendUpdate}
       handleUpdate={this.handleUpdate}
       updateFile={this.updateFile}/>
     );
@@ -144,6 +140,7 @@ class EditForm extends React.Component {
   render() {
     const formType = this.props.match.params.formType;
     let tabPage = '';
+    // debugger;
     return (
       <div className="edit-p"><Sidebar
         handleRedirectToBasics={this.handleRedirectToBasics}
