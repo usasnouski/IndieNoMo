@@ -28,9 +28,13 @@ const customStyles = {
     zIndex                : '1050',
     textAlign             : 'center',
     color                 : '#6A6A6A',
-    justifyContent        : 'center'
-        // background: 'rgb(127, 127, 127)'
+    justifyContent        : 'center',
+    // backgroundColor: 'rgb(127, 127, 127)'
     // opacity               : '1'
+  },
+
+  overlay: {
+    backgroundColor       : 'rgba(39, 36, 36, 0.75)',
   }
 };
 

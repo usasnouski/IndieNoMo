@@ -21,9 +21,12 @@ const App = () => {
   return (
     <div>
       <NavBarContainer />
-      <Route exact path="/" component={Homepage} />
-      <Route exact path="/campaigns/all" component={CampaignIndexContainer} />
-      <Route exact path ="/campaigns/:campaignId" component={ShowCampaignContainer} />
+
+      <Switch>
+        <Route exact path="/" component={Homepage} />
+        <Route path="/campaigns/all" component={CampaignIndexContainer} />
+        <Route path ="/campaigns/:campaignId" component={ShowCampaignContainer} />
+      </Switch>
       <ProtectedRoute exact path="/start-a-campaign" component={NewCampaignContainer} />
       <ProtectedRoute exact path="/campaigns/:campaignId/edit/:formType" component={EditCampaignContainer} />
     </div>

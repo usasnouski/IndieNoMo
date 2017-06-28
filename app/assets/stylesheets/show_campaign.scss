@@ -1,0 +1,15 @@
+.show-camp-scope {
+  padding-top: 40px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+@media (min-width: 1280px) {
+  .show-camp-scope {
+    padding-left: 30px;
+    padding-right: 30px;
+    max-width: 1280px;
+  }
+}
