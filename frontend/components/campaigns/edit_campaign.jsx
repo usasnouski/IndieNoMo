@@ -91,7 +91,7 @@ class EditForm extends React.Component {
     e.preventDefault();
 
     if (!this.validate()) { return; }
-    debugger;
+
     const formData = new FormData();
     let copyObj = Object.assign(this.state, {['launch']: true});
 
@@ -106,7 +106,7 @@ class EditForm extends React.Component {
   }
 
   validate() {
-    debugger;
+
     for (let key in this.state) {
       if (!this.state[key] && key !== 'launch') {
         return false;
@@ -128,7 +128,6 @@ class EditForm extends React.Component {
   }
 
   renderStory() {
-    // debugger;
     return (
       <Story campaign={this.state}
       sendUpdate={this.sendUpdate}
@@ -140,7 +139,6 @@ class EditForm extends React.Component {
   render() {
     const formType = this.props.match.params.formType;
     let tabPage = '';
-    // debugger;
     return (
       <div className="edit-p"><Sidebar
         handleRedirectToBasics={this.handleRedirectToBasics}

@@ -21,13 +21,12 @@ export const createCampaign = (campaign) => {
 };
 
 export const editCampaign = (campaign, id) => {
-  debugger;
   return $.ajax({
     method: 'PATCH',
     contentType: false,
     processData: false,
     url: `api/campaigns/${id}`,
-    data: campaign 
+    data: campaign
   });
 };
 

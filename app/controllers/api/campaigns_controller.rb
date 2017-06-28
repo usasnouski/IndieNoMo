@@ -28,7 +28,6 @@ class Api::CampaignsController < ApplicationController
   end
 
   def update
-    # debugger;
     @campaign = Campaign.find(params[:id])
 
     unless logged_in?
