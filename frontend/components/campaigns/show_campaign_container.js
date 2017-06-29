@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import { selectCampaign } from '../../reducers/selectors';
-import { createContribution } from '../../actions/campaign_actions';
+import { createContribution } from '../../actions/contribution_actions';
 import { requestSingleCampaign } from '../../actions/campaign_actions';
 
 import ShowCampaign from './show_campaign';
@@ -17,6 +17,7 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
+  debugger;
   return {
     requestSingleCampaign: (id) => dispatch(requestSingleCampaign(id)),
     createContribution: (contribution) => dispatch(createContribution(contribution)),

@@ -4,6 +4,14 @@ import { Link, Route, withRouter } from 'react-router-dom';
 class ShowCampaign extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      backIt: false,
+      amount: 0,
+      campaign_id: this.props.campaignId
+    }
+
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleOpenContributions = this.handleOpenContributions.bind(this);
   }
 
   componentDidMount() {
@@ -12,6 +20,36 @@ class ShowCampaign extends React.Component {
       this.props.requestSingleCampaign(id)
         .then(action => this.props.history.push(`/campaigns/${id}`));
     }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    console.log(nextProps.campaign);
+  }
+
+  handleSubmit(e) {
+    debugger;
+    e.preventDefault;
+    const contribution = Object.assign(
+    {},
+    {
+      amount: this.state.amount,
+      campaign_id: this.state.campaign_id
+    });
+
+    this.props.createContribution(contribution)
+      // .then(action => console.log('yo'));
+      .then(action => this.props.requestSingleCampaign(this.props.campaignId));
+    // this.setState({ amount: 0 });
+  }
+
+  update(field) {
+    return e => this.setState({
+      [field]: e.currentTarget.value
+    });
+  }
+
+  handleOpenContributions() {
+    this.setState({ backIt: true });
   }
 
   renderImageBox() {
@@ -34,6 +72,7 @@ class ShowCampaign extends React.Component {
             <div className="camp-tagline">{campaign.tagline}</div>
             {this.renderCreatorBox()}
             {this.renderCampProgress()}
+            {this.state.backIt === true ? this.renderContributionReady() : this.renderContributionNotReady()}
           </div>
         </div>
       </div>
@@ -73,6 +112,39 @@ class ShowCampaign extends React.Component {
         </div>
       </div>
     )
+  }
+
+  renderContributionNotReady() {
+    return (
+      <div className="contribute-section">
+        <div className="contribution-action">
+          <div className="contr-non-active">
+            <button className="open-contr-btn" onClick={this.handleOpenContributions}>
+              Back It
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  renderContributionReady() {
+    return (
+      <div className="contribute-section">
+        <div className="contribution-action">
+          <div className="contr-active">
+            <form onSubmit={this.handleSubmit}>
+              <input className="text-field"
+                type="number"
+                min="1.00"
+                onChange={this.update('amount')}
+                placeholder="Donation Amount"/>
+              <input type="submit" value="CHECK OUT" />
+            </form>
+          </div>
+        </div>
+      </div>
+    );
   }
 
   render() {

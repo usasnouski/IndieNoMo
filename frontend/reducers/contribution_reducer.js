@@ -1,6 +1,6 @@
 import RECEIVE_CONTRIBUTION from '../actions/contribution_actions';
 
-import merger from 'lodash/merge';
+import merge from 'lodash/merge';
 
 const ContributionReducer = (state = {}, action) => {
   Object.freeze(state);
