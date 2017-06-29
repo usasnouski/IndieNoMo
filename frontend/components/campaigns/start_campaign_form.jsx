@@ -41,8 +41,8 @@ class StartCampaignForm extends React.Component {
             <div className="goal-input">
               <span className="dollar-sign">$</span>
               <input className="amount-input"
-                type="number"
-                pattern="^([0-9])(\d+)(\.\d{2})?"
+                type="text"
+                pattern="^\d+([,.][0-9]{1,2})?$"
                 min="500"
                 placeholder={this.state.goal_amount}
                 onChange={this.update("goal_amount")}/>

@@ -135,9 +135,9 @@ class ShowCampaign extends React.Component {
           <div className="contr-active">
             <form className="contribute-form" onSubmit={this.handleSubmit}>
               <input className="text-field contr-input"
-                type="number"
+                type="text"
                 min="1.00"
-                pattern="^[0-9]{1,2}([,.][0-9]{1,2})?$"
+                pattern="^\d+([,.][0-9]{1,2})?$"
                 onChange={this.update('amount')}
                 placeholder="Donation Amount"/>
               <input className="submit-btn cntr-btn" type="submit" value="CHECK OUT" />
