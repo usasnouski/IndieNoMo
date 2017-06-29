@@ -52,6 +52,73 @@ class SessionForm extends React.Component {
     }
   }
 
+  renderLogin(email, password, btn) {
+    return (
+      <form onSubmit={this.handleSubmit} className="login-form-box">
+        {this.renderErrors()}
+        <div className="auth-form">
+            <input type="text"
+              className="auth-input"
+              value={email}
+              placeholder={`Email`}
+              pattern="\S+@\S+\.\S+"
+              onChange={this.update('email')}
+            />
+            <input type="password"
+              className="auth-input"
+              value={password}
+              placeholder={`Password`}
+              onChange={this.update('password')}
+            />
+          <input className="submit-btn" type="submit" value={btn}/>
+        </div>
+        <div className="auth-bottom">
+          {this.navLink()}
+        </div>
+      </form>
+    );
+  }
+
+  renderSignup(email, password, btn, fname, lname) {
+    return (
+      <form onSubmit={this.handleSubmit} className="login-form-box">
+        {this.renderErrors()}
+        <div className="auth-form">
+            <input type="text"
+              className="auth-input"
+              value={email}
+              placeholder={`Email`}
+              pattern="\S+@\S+\.\S+"
+              onChange={this.update('email')}
+            />
+            <input type="password"
+              className="auth-input"
+              value={password}
+              placeholder={`Password`}
+              onChange={this.update('password')}
+            />
+            <input type="text"
+              className="auth-input"
+              value={fname}
+              placeholder={`First Name`}
+              onChange={this.update('first_name')}
+            />
+            <input type="text"
+              className="auth-input"
+              value={lname}
+              placeholder={`Last Name`}
+              onChange={this.update('last_name')}
+            />
+          <input className="submit-btn" type="submit" value={btn}/>
+        </div>
+        <div className="auth-bottom">
+          {this.navLink()}
+        </div>
+      </form>
+    );
+  }
+
+
   renderErrors() {
     return (
       <ul>
@@ -67,36 +134,18 @@ class SessionForm extends React.Component {
   render() {
     const { formType } = this.props;
     const result = (formType === 'login');
+    const formText = (result ? 'Login' : 'Signup');
     const headerText = (result ? 'Login' : 'Sign up');
     const buttonText = (result ? 'Log In' : 'Create Account');
+    const { email, password, fname, lname } = this.state;
 
     return(
       <div className="auth-modal">
         <p className="auth-divider">{headerText} with email
           <span className="divider"></span>
         </p>
-        <form onSubmit={this.handleSubmit} className="login-form-box">
-          {this.renderErrors()}
-          <div className="auth-form">
-              <input type="text"
-                className="auth-input"
-                value={this.state.email}
-                placeholder={`Email`}
-                pattern="\S+@\S+\.\S+"
-                onChange={this.update('email')}
-              />
-              <input type="password"
-                className="auth-input"
-                value={this.state.password}
-                placeholder={`Password`}
-                onChange={this.update('password')}
-              />
-            <input className="submit-btn" type="submit" value={buttonText}/>
-          </div>
-          <div className="auth-bottom">
-            {this.navLink()}
-          </div>
-        </form>
+        {result ? this.renderLogin(email, password, buttonText) :
+          this.renderSignup(email, password, buttonText, fname, lname)}
       </div>
     );
   }

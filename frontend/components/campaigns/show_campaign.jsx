@@ -98,7 +98,7 @@ class ShowCampaign extends React.Component {
     const { progress } = this.props.campaign;
     const percentage = `${progress}%`;
     const backersNum = this.props.campaign.backers + '';
-    const backersStr = (backersNum.includes('1') ? 'backer' : 'backers')
+    const backersStr = (backersNum[backersNum.length - 1] === '1' ? 'backer' : 'backers')
     return (
       <div className="camp-progress">
         <div className="progress-raised">
