@@ -27,7 +27,6 @@ class ShowCampaign extends React.Component {
   }
 
   handleSubmit(e) {
-    debugger;
     e.preventDefault;
     const contribution = Object.assign(
     {},
@@ -53,10 +52,10 @@ class ShowCampaign extends React.Component {
   }
 
   renderImageBox() {
-    const { campaign } = this.props
+    const { image_url } = this.props.campaign
     return (
-      <div>
-
+      <div className="media-box">
+        <img className="media-box-img" src={`${image_url}`}/>
       </div>
     );
   }
@@ -65,8 +64,8 @@ class ShowCampaign extends React.Component {
     const { campaign } = this.props
     return (
       <div className="camp-summary-scope">
-        <div className="camp-media-box"></div>
         <div className="camp-summary-cont">
+          {this.renderImageBox()}
           <div className="camp-show-header">
             <div className="camp-title">{campaign.title}</div>
             <div className="camp-tagline">{campaign.tagline}</div>
@@ -86,6 +85,7 @@ class ShowCampaign extends React.Component {
           className="creator-pic"/>
         <div className="creator-details">
           <div className="details-name">Creator Name</div>
+          Manhattan, NY
           <div className="details-link">
             <Link to="/">About</Link>
           </div>
@@ -100,15 +100,15 @@ class ShowCampaign extends React.Component {
     return (
       <div className="camp-progress">
         <div className="progress-raised">
-          <span className="total-amount">{this.props.campaign.current_amount} </span>
+          <span className="total-amount">${this.props.campaign.current_amount} </span>
            USD
           <span> raised by XXX backers</span>
         </div>
         <div className="camp-goal-bar">
-          <div className="camp-goal-bar" style={{ width: `${percentage}` }}></div>
+          <div className="camp-prog-bar" style={{ width: `${percentage}` }}></div>
         </div>
         <div className="camp-progress-details">
-          {percentage} of ${this.props.campaign.goal_amount}
+          <em>{percentage}</em> of ${this.props.campaign.goal_amount}
         </div>
       </div>
     )
@@ -119,7 +119,7 @@ class ShowCampaign extends React.Component {
       <div className="contribute-section">
         <div className="contribution-action">
           <div className="contr-non-active">
-            <button className="open-contr-btn" onClick={this.handleOpenContributions}>
+            <button className="open-contr-btn submit-btn" onClick={this.handleOpenContributions}>
               Back It
             </button>
           </div>
@@ -133,13 +133,14 @@ class ShowCampaign extends React.Component {
       <div className="contribute-section">
         <div className="contribution-action">
           <div className="contr-active">
-            <form onSubmit={this.handleSubmit}>
-              <input className="text-field"
+            <form className="contribute-form" onSubmit={this.handleSubmit}>
+              <input className="text-field contr-input"
                 type="number"
                 min="1.00"
+                pattern="^[0-9]{1,2}([,.][0-9]{1,2})?$"
                 onChange={this.update('amount')}
                 placeholder="Donation Amount"/>
-              <input type="submit" value="CHECK OUT" />
+              <input className="submit-btn cntr-btn" type="submit" value="CHECK OUT" />
             </form>
           </div>
         </div>

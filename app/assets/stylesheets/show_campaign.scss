@@ -1,9 +1,11 @@
 .show-camp-scope {
   padding-top: 40px;
-  margin-right: auto;
-  margin-left: auto;
-  padding-left: 15px;
-  padding-right: 15px;
+  width: 95%;
+  margin: 0 auto;
+  // margin-right: auto;
+  // margin-left: auto;
+  // padding-left: 15px;
+  // padding-right: 15px;
 }
 
 @media (min-width: 1280px) {
@@ -15,5 +17,194 @@
 }
 
 .camp-summary-scope {
+  margin-bottom: 30px;
+  margin-left: -20px;
+  margin-right: -20px;
+}
 
+.camp-summary-cont {
+  display: flex;
+  justify-content: row;
+}
+
+.media-box {
+  display: block;
+  position: relative;
+}
+
+
+@media (min-width: 1280px) {
+  .media-box {
+    position: relative;
+    width: 58.33%;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+.media-box > img {
+  width: 100%;
+  height: 100%;
+}
+
+.camp-show-header {
+  width: 44%;
+  padding-left: 20px;
+  padding-right: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.camp-title {
+  line-height: 35px;
+  font-size: 26px;
+  letter-spacing: 0;
+  font-weight: 500;
+}
+
+.camp-tagline {
+  margin-top: 10px;
+  font-size: 20px;
+  line-height: 26px;
+  letter-spacing: 0;
+  font-weight: 300;
+  color: #6A6A6A;
+}
+
+.camp-creator {
+  margin-top: 30px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.creator-pic {
+  align-self: flex-start;
+  border-radius: 50%;
+  width: 50px;
+  vertical-align: middle;
+  border: 0;
+}
+
+.creator-details {
+  margin-left: 10px;
+  margin-right: 5px;
+  white-space: normal;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: space-between;
+}
+
+.details-name {
+  font-size: 14px;
+  line-height: 18px;
+  color: #6A6A6A;
+  font-weight: 300;
+}
+
+.details-link {
+  font-size: 14px;
+  line-height: 18px;
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
+  font-weight: 300;
+}
+
+.details-link > a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.camp-progress {
+  margin-top: 35px;
+}
+
+.progress-raised {
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: 0;
+  line-height: 25px;
+}
+
+.total-amount {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 26px;
+}
+
+.camp-goal-bar {
+  height: 10px;
+  background-color: #DDDDDD;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.camp-prog-bar {
+  background-color: #0EB4B6;
+  height: 100%;
+}
+
+.camp-progress-details {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 25px;
+}
+
+.contribute-section {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.contribution-action {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.contr-non-active {
+  flex: 43;
+  margin-right: 20px;
+}
+
+.contribute-form {
+  display: flex;
+  align-items: baseline;
+  width: 100%;
+}
+
+.open-contr-btn {
+  margin-top: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+  width: 50%;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.contr-input  {
+  width: 50%;
+  margin-bottom: 0;
+  margin-right: 15px;
+}
+
+.contr-input:focus {
+  border: 1px solid black;
+}
+
+.contr-active {
+  display: flex;
+  flex-direction: row;
+  // width: 50%;
+  margin-right: 0;
+  flex: 43;
+}
+
+.cntr-btn {
+  width: 50%;
+  margin-bottom: 0;
+  margin-right: 0;
 }

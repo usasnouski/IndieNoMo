@@ -17,7 +17,6 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-  debugger;
   return {
     requestSingleCampaign: (id) => dispatch(requestSingleCampaign(id)),
     createContribution: (contribution) => dispatch(createContribution(contribution)),

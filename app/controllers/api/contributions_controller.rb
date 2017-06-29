@@ -5,7 +5,7 @@ class Api::ContributionsController < ApplicationController
       render json: { login: "Please sign up or log in" }, status: 401
       return
     end
-    # debugger;
+
     @contribution = Contribution.new(contribution_params)
     @contribution.user_id = current_user.id
 
