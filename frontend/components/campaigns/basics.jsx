@@ -34,7 +34,7 @@ class Basics extends React.Component {
     return (
       <div className="basics-scope">
         {this.renderControllBar()}
-        <form onSubmit={this.handleSubmit} className="basics-form camp-form">
+        <form onSubmit={this.props.goToStory} className="basics-form camp-form">
             <div className="entre-section">
               <div className="entre-header">Basics</div>
               <div className="entre-subheader">

@@ -30,8 +30,10 @@ class Campaign < ApplicationRecord
   validates_attachment_content_type :image_url, content_type: /\Aimage\/.*\z/
 
   belongs_to :user
-
+  # belongs_to :category
   has_many :contributions
+
+  has_many :backers, through: :contributions, source: :user
 
 
   # def category=(category)

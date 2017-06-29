@@ -55,7 +55,8 @@ class EditForm extends React.Component {
     // <Redirect push to={`campaigns/${this.props.id}/edit/basics`} />
   }
 
-  handleRedirectToStory() {
+  handleRedirectToStory(e) {
+    e.preventDefault();
     this.setState({
       tab: 'story'
     });
@@ -123,7 +124,8 @@ class EditForm extends React.Component {
         sendUpdate={this.sendUpdate}
         handleUpdate={this.handleUpdate}
         updateFile={this.updateFile}
-        updateDate={this.updateDate} />
+        updateDate={this.updateDate}
+        goToStory={this.handleRedirectToStory}/>
     );
   }
 

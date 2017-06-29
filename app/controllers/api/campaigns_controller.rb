@@ -18,7 +18,6 @@ class Api::CampaignsController < ApplicationController
       render json: "Please sign up or log in", status: 401
       return
     end
-
     @campaign = Campaign.new(campaign_params)
     @campaign.user_id = current_user.id
     if @campaign.save
@@ -59,7 +58,7 @@ class Api::CampaignsController < ApplicationController
       .require(:campaign)
       .permit(
       :title, :tagline, :description, :overview,
-      :goal_amount, :end_date, :image_url, :launch,
+      :goal_amount, :backers, :end_date, :image_url, :launch,
       :category_id
       )
   end

@@ -82,6 +82,7 @@ class SessionForm extends React.Component {
                 className="auth-input"
                 value={this.state.email}
                 placeholder={`Email`}
+                pattern="\S+@\S+\.\S+"
                 onChange={this.update('email')}
               />
               <input type="password"

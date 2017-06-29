@@ -29,6 +29,9 @@ class User < ApplicationRecord
   has_many :campaigns
   has_many :contributions
 
+  has_many :backed_campaigns, through: :contributions, source: :campaign
+
+
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)
     user && user.is_password?(password) ? user : nil

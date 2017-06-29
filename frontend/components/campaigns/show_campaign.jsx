@@ -97,15 +97,17 @@ class ShowCampaign extends React.Component {
   renderCampProgress() {
     const { progress } = this.props.campaign;
     const percentage = `${progress}%`;
+    const backersNum = this.props.campaign.backers + '';
+    const backersStr = (backersNum.includes('1') ? 'backer' : 'backers')
     return (
       <div className="camp-progress">
         <div className="progress-raised">
           <span className="total-amount">${this.props.campaign.current_amount} </span>
            USD
-          <span> raised by XXX backers</span>
+          <span> raised by {this.props.campaign.backers} {backersStr}</span>
         </div>
         <div className="camp-goal-bar">
-          <div className="camp-prog-bar" style={{ width: `${percentage}` }}></div>
+          <div className="camp-prog-bar" style={{ width: `${percentage}`, maxWidth: '100%' }}></div>
         </div>
         <div className="camp-progress-details">
           <em>{percentage}</em> of ${this.props.campaign.goal_amount}
@@ -153,8 +155,8 @@ class ShowCampaign extends React.Component {
       <div className="show-camp-scope">
         {this.renderCampSummary()}
         <div>
-          <h1>CAMPAIGN IN DA HOUSE!!!!!!!</h1>
-          <div>{this.props.campaign.title}</div>
+          <h1>Overview</h1>
+          <div>{this.props.campaign.Overview}</div>
         </div>
       </div>
     );
