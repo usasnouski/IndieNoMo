@@ -1,13 +1,18 @@
 import { connect } from 'react-redux';
+import { requestAllCampaigns } from '../../actions/campaign_actions';
 
 import Homepage from './homepage.jsx';
 
 const mapStateToProps = (store) => {
-  return {};
+  return {
+    campaign: store.campaign,
+  };
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return {};
+  return {
+    requestAllCampaigns : () => dispatch(requestAllCampaigns()),
+  };
 }
 
 export default connect(

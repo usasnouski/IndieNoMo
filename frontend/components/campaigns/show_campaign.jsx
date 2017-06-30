@@ -81,12 +81,13 @@ class ShowCampaign extends React.Component {
   }
 
   renderCreatorBox() {
+    const { user } = this.props;
     return (
       <div className="camp-creator">
         <img src="http://www.avatarsdb.com/avatars/homer_beer_belly.gif"
           className="creator-pic"/>
         <div className="creator-details">
-          <div className="details-name">Creator Name</div>
+          <div className="details-name">{user.first_name} {user.last_name}</div>
           Manhattan, NY
           <div className="details-link">
             <Link to="/">About</Link>

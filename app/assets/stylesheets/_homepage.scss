@@ -6,6 +6,8 @@
   padding-right: 30px;
   display: block;
   max-width: 1280px;
+  display: flex;
+  flex-direction: row;
 }
 
 .camps-discover-bar {
@@ -74,4 +76,12 @@ a {
 
 .front-image {
 
+}
+
+.projects {
+  display: flex;
+}
+
+.footer-scope {
+  padding-bottom: 70px;
 }
