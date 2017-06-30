@@ -4,6 +4,7 @@ import { Route, withRouter, Link, Redirect } from 'react-router-dom';
 import Sidebar from './sidebar';
 import Basics from './basics';
 import Story from './story';
+import Perks from '../rewards/create_reward_container';
 
 class EditForm extends React.Component {
   constructor(props) {
@@ -25,6 +26,7 @@ class EditForm extends React.Component {
 
     this.handleRedirectToBasics = this.handleRedirectToBasics.bind(this);
     this.handleRedirectToStory = this.handleRedirectToStory.bind(this);
+    this.handleRedirectToPerks = this.handleRedirectToPerks.bind(this);
     this.sendUpdate = this.sendUpdate.bind(this);
     this.handleUpdate = this.handleUpdate.bind(this);
     this.updateFile = this.updateFile.bind(this);
@@ -62,6 +64,15 @@ class EditForm extends React.Component {
     });
 
     this.props.history.push(`/campaigns/${this.state.id}/edit/story`);
+  }
+
+  handleRedirectToPerks(e) {
+    e.preventDefault();
+    this.setState({
+      tab: 'perks'
+    });
+
+    this.props.history.push(`/campaigns/${this.state.id}/edit/perks`);
   }
 
   handleUpdate(field) {
@@ -138,15 +149,37 @@ class EditForm extends React.Component {
     );
   }
 
+  renderPerks() {
+    return(
+      <Perks campaign={this.state}
+        handleUpdate={this.handleUpdate}/>
+    );
+  }
+
+  renderTab() {
+    switch (this.state.tab) {
+      case 'basics':
+        return this.renderBasics();
+      case 'story':
+        return this.renderStory();
+      case 'perks':
+        return this.renderPerks();
+      default:
+        return this.renderBasics();
+    }
+  }
+
   render() {
+    console.log("RENDER EDIT")
     const formType = this.props.match.params.formType;
     let tabPage = '';
     return (
       <div className="edit-p"><Sidebar
         handleRedirectToBasics={this.handleRedirectToBasics}
         handleRedirectToStory={this.handleRedirectToStory}
+        handleRedirectToPerks={this.handleRedirectToPerks}
         campaign={this.state} />
-      {formType === 'basics' ? this.renderBasics() : this.renderStory()}
+      {this.renderTab()}
       </div>
     )
   }

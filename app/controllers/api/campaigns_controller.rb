@@ -7,6 +7,7 @@ class Api::CampaignsController < ApplicationController
     @campaign = Campaign.find(params[:id])
     if @campaign
       @amount = @campaign.contributions.sum(:amount)
+      @rewards = @campaign.rewards.order(:price)
       render :show
     else
       render json: "No campaign found", status: 422
@@ -19,7 +20,15 @@ class Api::CampaignsController < ApplicationController
       return
     end
     @campaign = Campaign.new(campaign_params)
+
     @campaign.user_id = current_user.id
+    # campaign_params[:rewards].each do |reward| 
+    #   new_reward = Reward.new(reward)
+    #   new_reward.save!
+    # end
+    #
+    #
+    #
     if @campaign.save
       render :show
     else

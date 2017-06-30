@@ -18,6 +18,7 @@ class Sidebar extends React.Component {
     const { tab, id } = this.props.campaign;
     const basicsClass = (tab === 'basics' ? 'active-tab' : 'passive-tab');
     const storyClass = (tab === 'story' ? 'active-tab' : 'passive-tab');
+    const perksClass = (tab === 'perks' ? 'active-tab' : 'passive-tab');
 
     return (
       <div className="sidebar-layout">
@@ -49,7 +50,13 @@ class Sidebar extends React.Component {
                 </button>
               </div>
             </li>
-            <li><div className="tab">3. &nbsp;Perks</div></li>
+            <li>
+              <div className={perksClass}>
+                <button onClick={this.props.handleRedirectToPerks}>
+                  3. &nbsp;Perks
+                </button>
+              </div>
+            </li>
             <li><div className="tab">4. &nbsp;Items</div></li>
             <li><div className="tab">5. &nbsp;Team</div></li>
             <li><div className="tab">6. &nbsp;Funding</div></li>

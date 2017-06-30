@@ -227,3 +227,24 @@ user_id: user55.id,
 campaign_id: camp08.id,
 amount: 12.15
 )
+
+reward1 = Reward.create!(
+  title: 'Reward 1',
+  description: 'Am terminated it excellence invitation projection as.',
+  price: 5,
+  campaign_id: camp01.id
+)
+
+reward2 = Reward.create!(
+  title: 'Reward 2',
+  description: 'Am terminated it excellence invitation projection as.',
+  price: 10,
+  campaign_id: camp01.id
+)
+
+reward3 = Reward.create!(
+  title: 'Reward 3',
+  description: 'Am terminated it excellence invitation projection as.',
+  price: 25,
+  campaign_id: camp01.id
+)

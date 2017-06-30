@@ -34,6 +34,7 @@ class Story extends React.Component {
 
 
   render() {
+    console.log("RENDER STORY");
     return (
       <div className="story-scope">
         {this.renderControllBar()}

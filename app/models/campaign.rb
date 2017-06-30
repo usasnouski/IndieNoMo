@@ -32,6 +32,7 @@ class Campaign < ApplicationRecord
   belongs_to :user
   # belongs_to :category
   has_many :contributions
+  has_many :rewards
 
   has_many :backers, through: :contributions, source: :user
 

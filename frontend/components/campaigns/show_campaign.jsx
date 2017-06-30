@@ -27,7 +27,7 @@ class ShowCampaign extends React.Component {
   }
 
   handleSubmit(e) {
-    e.preventDefault;
+    e.preventDefault();
     const contribution = Object.assign(
     {},
     {
@@ -98,7 +98,7 @@ class ShowCampaign extends React.Component {
     const { progress } = this.props.campaign;
     const percentage = `${progress}%`;
     const backersNum = this.props.campaign.backers + '';
-    const backersStr = (backersNum[backersNum.length - 1] === '1' ? 'backer' : 'backers')
+    const backersStr = (backersNum === '1' ? 'backer' : 'backers')
     return (
       <div className="camp-progress">
         <div className="progress-raised">
@@ -151,6 +151,7 @@ class ShowCampaign extends React.Component {
   }
 
   render() {
+    debugger;
     return (
       <div className="show-camp-scope">
         {this.renderCampSummary()}

@@ -24,7 +24,8 @@
 
 .camp-summary-cont {
   display: flex;
-  justify-content: row;
+  flex-direction: row;
+  max-height: 460px;
 }
 
 .media-box {
