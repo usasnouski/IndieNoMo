@@ -170,7 +170,6 @@ class EditForm extends React.Component {
   }
 
   render() {
-    console.log("RENDER EDIT")
     const formType = this.props.match.params.formType;
     let tabPage = '';
     return (

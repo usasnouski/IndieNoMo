@@ -44,8 +44,6 @@ class NewRewardForm extends React.Component {
   }
 
   render() {
-    // debugger;
-    console.log('RENDER PERKS');
     return (
     <div className="basics-scope">
       {this.renderControllBar()}

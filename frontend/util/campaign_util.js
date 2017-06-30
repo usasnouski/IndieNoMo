@@ -33,6 +33,6 @@ export const editCampaign = (campaign, id) => {
 export const deleteCampaign = (id) => {
   return $.ajax({
     method: 'DELETE',
-    url: `api/campaigns${id}`,
+    url: `api/campaigns/${id}`,
   });
 };

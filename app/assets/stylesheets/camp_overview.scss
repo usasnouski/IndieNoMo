@@ -1,0 +1,32 @@
+.show-camp-body {
+  display: flex;
+  margin-bottom: 20px;
+  flex-direction: row;
+}
+
+.body-lead-section{
+  display: flex;
+  width: 58.33%;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.camp-overview {
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.overview-header {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 0;
+  color: #A8A8A8;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-transform: uppercase;
+  border-bottom: 1px solid #DDDDDD;
+}

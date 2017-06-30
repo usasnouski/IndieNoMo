@@ -31,7 +31,6 @@ class Basics extends React.Component {
   }
 
   render() {
-    console.log("RENDER BASIC");
     return (
       <div className="basics-scope">
         {this.renderControllBar()}

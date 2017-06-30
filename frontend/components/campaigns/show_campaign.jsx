@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link, Route, withRouter } from 'react-router-dom';
 
+import RewardTile from '../rewards/reward_tile';
+
 class ShowCampaign extends React.Component {
   constructor(props) {
     super(props);
@@ -9,21 +11,17 @@ class ShowCampaign extends React.Component {
       amount: 0,
       campaign_id: this.props.campaignId
     }
-
+    this.renderPerks = this.renderPerks.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleOpenContributions = this.handleOpenContributions.bind(this);
   }
 
   componentDidMount() {
     const id = this.props.campaignId
-    if (!this.props.campaign[id]) {
+    if (true) {
       this.props.requestSingleCampaign(id)
         .then(action => this.props.history.push(`/campaigns/${id}`));
     }
-  }
-
-  componentWillReceiveProps(nextProps) {
-    console.log(nextProps.campaign);
   }
 
   handleSubmit(e) {
@@ -36,9 +34,7 @@ class ShowCampaign extends React.Component {
     });
 
     this.props.createContribution(contribution)
-      // .then(action => console.log('yo'));
       .then(action => this.props.requestSingleCampaign(this.props.campaignId));
-    // this.setState({ amount: 0 });
   }
 
   update(field) {
@@ -150,14 +146,48 @@ class ShowCampaign extends React.Component {
     );
   }
 
+  renderOverview() {
+    return (
+      <div className="camp-overview">
+        <div className="overview-header">
+          <div className="-show-header-title">
+            Overview
+          </div>
+        </div>
+        <div className="overview-content">
+          {this.props.campaign.overview}
+        </div>
+      </div>
+    );
+  }
+
+  renderPerks() {
+    const { rewards } = this.props.campaign;
+    const rewardTiles = rewards.map((reward, i) => (
+      <RewardTile handleSubmit={this.handleSubmit} key={i} reward={reward} />)
+    );
+    return rewardTiles;
+  }
+
   render() {
-    debugger;
+    const { rewards } = this.props.campaign;
+    if (!rewards) { return null }
+
     return (
       <div className="show-camp-scope">
         {this.renderCampSummary()}
-        <div>
-          <h1>Overview</h1>
-          <div>{this.props.campaign.Overview}</div>
+        <div className="show-camp-body">
+          <div className="body-lead-section">
+            {this.renderOverview()}
+          </div>
+          <div className="body-final-section">
+            <div className="perks-list">
+              <div className="perks-title">
+                Perks
+              </div>
+              {this.renderPerks()}
+            </div>
+          </div>
         </div>
       </div>
     );

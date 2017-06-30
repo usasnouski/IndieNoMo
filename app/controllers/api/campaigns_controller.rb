@@ -22,7 +22,7 @@ class Api::CampaignsController < ApplicationController
     @campaign = Campaign.new(campaign_params)
 
     @campaign.user_id = current_user.id
-    # campaign_params[:rewards].each do |reward| 
+    # campaign_params[:rewards].each do |reward|
     #   new_reward = Reward.new(reward)
     #   new_reward.save!
     # end

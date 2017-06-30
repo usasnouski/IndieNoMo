@@ -1,0 +1,99 @@
+.body-final-section {
+  display: flex;
+  // justify-content: flex-start;
+  width: 44%;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.perks-title {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 0;
+  color: #A8A8A8;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-transform: uppercase;
+  border-bottom: 1px solid #DDDDDD;
+}
+
+.camp-perk {
+  display: block;
+  margin-top: 20px;
+}
+
+.camp-perk-box {
+  margin-bottom: 20px;
+  box-shadow: 0 0 0 1px #DDDDDD;
+  cursor: pointer;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+
+.perk-body {
+  padding: 30px 20px 20px;
+}
+
+.perk-amount {
+  display: inline;
+  padding-bottom: 10px;
+}
+
+.perk-value {
+  display: inline-block;
+  padding-right: 5px;
+  margin-bottom: 5px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 26px;
+}
+
+.perk-currency {
+  display: inline-block;
+  color: #6A6A6A;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 300;
+}
+
+.perk-body-title {
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 300;
+  letter-spacing: 0;
+}
+
+.perk-description {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 20px;
+}
+
+.perk-get {
+  width: 92%;
+  border: none;
+  background-color: #FAFAFA;
+  color: #6A6A6A;
+  border-radius: 0;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+  padding: 11px 18px;
+}
+
+.camp-perk-box:hover {
+  .perk-get {
+    color: white;
+    background-color: #EB1478;
+    // border: 2px solid #EB1478;
+  }
+}

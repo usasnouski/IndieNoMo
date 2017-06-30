@@ -7,6 +7,7 @@
     json.backers campaign.backers.length
     json.current_amount campaign.contributions.sum(:amount)
     json.end_date campaign.end_date
+    json.rewards campaign.rewards
     json.launch campaign.launch
     json.image_url asset_path(campaign.image_url)
   end
