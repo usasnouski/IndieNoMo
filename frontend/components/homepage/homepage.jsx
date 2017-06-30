@@ -9,7 +9,6 @@ class Homepage extends React.Component {
   }
 
   componentDidMount() {
-    // debugger;
     this.props.requestAllCampaigns()
       .then(action => this.props.history.push('/'));
   }
