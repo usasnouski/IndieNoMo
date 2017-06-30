@@ -100,7 +100,7 @@ class EditForm extends React.Component {
   }
 
   sendUpdate(e) {
-    e.preventDefault();
+    // e.preventDefault();
 
     if (!this.validate()) { return; }
 
@@ -145,7 +145,8 @@ class EditForm extends React.Component {
       <Story campaign={this.state}
       sendUpdate={this.sendUpdate}
       handleUpdate={this.handleUpdate}
-      updateFile={this.updateFile}/>
+      updateFile={this.updateFile}
+      goToPerks={this.handleRedirectToPerks}/>
     );
   }
 

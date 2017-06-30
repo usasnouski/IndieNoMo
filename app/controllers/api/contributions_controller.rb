@@ -8,7 +8,7 @@ class Api::ContributionsController < ApplicationController
 
     @contribution = Contribution.new(contribution_params)
     @contribution.user_id = current_user.id
-
+          # debugger;
     if @contribution.save
       # @campaign = @contribution.campaign
       # @amount = @campaign.contributions.sum(:amount)

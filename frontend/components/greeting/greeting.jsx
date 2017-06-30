@@ -15,7 +15,7 @@ const sessionLinks = (handleLogin, handleSignup, guestLogin) => {
 
 const personalGreeting = (currentUser, logout) => (
   <nav className="logged-in">
-    <span className="nav-btn">{currentUser.email}</span>
+    <span className="nav-btn">{currentUser.first_name} {currentUser.last_name}</span>
     <button className="nav-btn" onClick={logout}>Log Out</button>
 	</nav>
 );

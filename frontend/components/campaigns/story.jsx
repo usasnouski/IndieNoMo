@@ -37,7 +37,7 @@ class Story extends React.Component {
     return (
       <div className="story-scope">
         {this.renderControllBar()}
-        <form onSubmit={this.handleSubmit} className="basics-form story-form camp-form">
+        <form onSubmit={this.props.goToPerks} className="basics-form story-form camp-form">
             <div className="entre-section">
               <div className="entre-header">Campaign Overview</div>
               <div className="entre-subheader">

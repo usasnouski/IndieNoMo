@@ -7,7 +7,10 @@ class Homepage extends React.Component {
   render() {
     return (
       <div>
-      <div className="carousel-img"></div>
+      <div className="carousel-img">
+        <img className="front-image"
+          src="https://grow.indiegogo.com/wp-content/uploads/2017/01/hero_desktop.jpg" />
+      </div>
       <div className="homepage-discovery">
         <div className="camps-discover-bar">
           <div className="discovery-tabs">

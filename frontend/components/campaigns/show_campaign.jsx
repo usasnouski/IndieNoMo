@@ -13,6 +13,7 @@ class ShowCampaign extends React.Component {
     }
     this.renderPerks = this.renderPerks.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handlePerkSubmit = this.handlePerkSubmit.bind(this);
     this.handleOpenContributions = this.handleOpenContributions.bind(this);
   }
 
@@ -34,6 +35,11 @@ class ShowCampaign extends React.Component {
     });
 
     this.props.createContribution(contribution)
+      .then(action => this.props.requestSingleCampaign(this.props.campaignId));
+  }
+
+  handlePerkSubmit(price) {
+    this.props.createContribution({ amount: price, campaign_id: this.state.campaign_id })
       .then(action => this.props.requestSingleCampaign(this.props.campaignId));
   }
 
@@ -164,7 +170,7 @@ class ShowCampaign extends React.Component {
   renderPerks() {
     const { rewards } = this.props.campaign;
     const rewardTiles = rewards.map((reward, i) => (
-      <RewardTile handleSubmit={this.handleSubmit} key={i} reward={reward} />)
+      <RewardTile handleSubmit={this.handlePerkSubmit} key={i} reward={reward} />)
     );
     return rewardTiles;
   }

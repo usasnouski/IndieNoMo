@@ -4,13 +4,18 @@ class RewardTile extends React.Component {
   constructor(props) {
     super(props);
 
+    this.submitPerk = this.submitPerk.bind(this);
+  }
+
+  submitPerk() {
+    this.props.handleSubmit(this.props.reward.price)
   }
 
   render() {
     const { reward } = this.props;
     return (
       <div className="camp-perk">
-        <div className="camp-perk-box" onClick={this.props.handleSubmit}>
+        <div className="camp-perk-box" onClick={this.submitPerk}>
           <div className="perk-body">
             <div className="perk-amount">
               <div className="perk-value">${reward.price}</div>
