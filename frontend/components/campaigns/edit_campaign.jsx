@@ -101,7 +101,7 @@ class EditForm extends React.Component {
 
   sendUpdate(e) {
     // e.preventDefault();
-
+    debugger;
     if (!this.validate()) { return; }
 
     const formData = new FormData();

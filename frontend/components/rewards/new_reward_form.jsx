@@ -22,7 +22,14 @@ class NewRewardForm extends React.Component {
   }
 
   handleSubmit(e) {
-    this.props.createReward(this.state);
+    this.props.createReward(this.state)
+
+    this.setState( {
+      title: 'New Perk',
+      description: '',
+      price: 0,
+      campaign_id: this.props.campaign.id
+    } );
   }
 
   renderControllBar() {

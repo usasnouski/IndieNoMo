@@ -8,8 +8,8 @@ class Story extends React.Component {
   }
 
   handleSubmit(e) {
-    e.preventDefault();
-    this.props.sendUpdate(e);
+    debugger;
+    this.props.sendUpdate();
   }
 
 
@@ -23,7 +23,7 @@ class Story extends React.Component {
           </div>
           <div className="control-bar-controls">
             <button className="launch-btn btn-purple"
-              onClick={this.props.handleSubmit}>
+              onClick={this.handleSubmit}>
               Review & Launch
             </button>
           </div>

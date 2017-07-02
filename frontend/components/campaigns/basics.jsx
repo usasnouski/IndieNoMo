@@ -7,9 +7,8 @@ class Basics extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleSubmit(e) {
-    e.preventDefault();
-    this.props.sendUpdate(e);
+  handleSubmit() {
+    this.props.sendUpdate();
   }
 
   renderControllBar() {
@@ -21,7 +20,7 @@ class Basics extends React.Component {
           </div>
           <div className="control-bar-controls">
             <button className="launch-btn btn-purple"
-              onClick={this.props.handleSubmit}>
+              onClick={this.handleSubmit}>
               Review & Launch
             </button>
           </div>
@@ -48,6 +47,7 @@ class Basics extends React.Component {
                 <div className="field-sublabel">What is the title of your campaign?</div>
                 <input className="text-field"
                   value={this.props.campaign.title}
+                  maxLength="50"
                   onChange={this.props.handleUpdate('title')}/>
               </div>
               <div className="entre-field">
