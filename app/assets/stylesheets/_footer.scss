@@ -71,6 +71,13 @@
   color: black;
 }
 
+.fa-github {
+  position: absolute;
+  top: -4px;
+  left: -1px;
+  font-size: 3em;
+}
+
 .fa-twitter {
   position: absolute;
   left: 7px;
@@ -92,6 +99,14 @@
   top: 4px;
   left: 8px;
   font-size: 1.8em;
+}
+
+.git-link:hover {
+  background: black;
+
+  .fa-github {
+    color: white;
+  }
 }
 
 .fb-link:hover {

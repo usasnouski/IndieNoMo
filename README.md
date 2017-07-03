@@ -1,24 +1,8 @@
-# README
+#IndieNoMo
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[IndieNoMo love][heroku]
 
-Things you may want to cover:
+[heroku]: https://indienomo.herokuapp.com/
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+IndieNoMo is a full-stack crowd-funding web application inspired by IndieGoGo. It incorporates a Ruby on
+Rails backend, a PostgreSQL database, and a React.js frontend with a Redux architectural framework for state management.

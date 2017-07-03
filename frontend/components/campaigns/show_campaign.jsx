@@ -20,8 +20,8 @@ class ShowCampaign extends React.Component {
   componentDidMount() {
     const id = this.props.campaignId
     if (true) {
-      this.props.requestSingleCampaign(id)
-        .then(action => this.props.history.push(`/campaigns/${id}`));
+      this.props.requestSingleCampaign(id);
+        // .then(action => this.props.history.push(`/campaigns/${id}`));
     }
   }
 
@@ -170,6 +170,7 @@ class ShowCampaign extends React.Component {
 
   renderPerks() {
     const { rewards } = this.props.campaign;
+    if (!rewards) { return null }
     const rewardTiles = rewards.map((reward, i) => (
       <RewardTile handleSubmit={this.handlePerkSubmit} key={i} reward={reward} />)
     );
@@ -177,8 +178,8 @@ class ShowCampaign extends React.Component {
   }
 
   render() {
-    const { rewards } = this.props.campaign;
-    if (!rewards) { return null }
+    // const { rewards } = this.props.campaign;
+    // if (!rewards) { return null }
 
     return (
       <div className="show-camp-scope">

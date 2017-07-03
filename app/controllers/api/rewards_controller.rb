@@ -5,7 +5,6 @@ class Api::RewardsController < ApplicationController
 
   def create
     @reward = Reward.new(reward_params)
-    # debugger
     if @reward.save
       # render :show
       render "api/campaigns/show"

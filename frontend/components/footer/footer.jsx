@@ -16,6 +16,9 @@ class Footer extends React.Component {
             <div className="right-footer">
               <div className="footer-header">Follow Us</div>
               <div className="social-links">
+                <a className="icon-link git-link" href="https://github.com/usasnouski">
+                  <i className="fa fa-github fa-2"></i>
+                </a>
                 <Link className="icon-link fb-link" to="/">
                   <i className="fa fa-facebook fa-2"></i>
                 </Link>
@@ -28,9 +31,9 @@ class Footer extends React.Component {
                 <Link className="icon-link insta-link" to="/">
                   <i className="fa fa-instagram fa-2"></i>
                 </Link>
-                <Link className="icon-link linkedin-link" to="/">
+                <a className="icon-link linkedin-link" href="https://www.linkedin.com/in/vlad-sasnouski-a80015127/">
                   <i className="fa fa-linkedin" aria-hidden="true"></i>
-                </Link>
+                </a>
               </div>
             </div>
           </div>

@@ -8,7 +8,6 @@ class Story extends React.Component {
   }
 
   handleSubmit(e) {
-    debugger;
     this.props.sendUpdate();
   }
 
