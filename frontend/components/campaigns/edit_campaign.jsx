@@ -100,7 +100,7 @@ class EditForm extends React.Component {
   }
 
   sendUpdate(e) {
-    if (!this.validate()) { return; }
+    // if (!this.validate()) { return; }
 
     const formData = new FormData();
     let copyObj = Object.assign(this.state, {['launch']: true});

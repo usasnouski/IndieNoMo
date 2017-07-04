@@ -57,11 +57,6 @@ class Sidebar extends React.Component {
                 </button>
               </div>
             </li>
-            <li><div className="tab">4. &nbsp;Items</div></li>
-            <li><div className="tab">5. &nbsp;Team</div></li>
-            <li><div className="tab">6. &nbsp;Funding</div></li>
-            <li><div className="tab">7. &nbsp;Extras</div></li>
-            <li><div className="tab">8. &nbsp;Indemand</div></li>
           </ul>
         </div>
       </div>
