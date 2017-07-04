@@ -70,7 +70,7 @@ class Basics extends React.Component {
                     <input type="file"
                       className="enter-image-file"
                       onChange={this.props.updateFile} />
-                    <img src="http://www.iconsplace.com/icons/preview/7a69b3/slr-camera-256.png"
+                    <img src="https://www.iconsplace.com/icons/preview/7a69b3/slr-camera-256.png"
                       className="camera-img" />
                   </div>
                   <img className="camera-img" src={this.props.campaign.image_url} />
