@@ -7,4 +7,6 @@ export const selectCampaign = ({ campaign }, id) => {
 
 export const selectAllCampaigns = ({ campaign }) => values(campaign);
 
-export const selectLaunchedCamps = ({ campaign }) => values(pickBy(campaign, v => (v.launch === true)));
+export const selectLaunchedCamps = ({ campaign }) => values(
+  pickBy(campaign, v => (v.launch === true))
+);

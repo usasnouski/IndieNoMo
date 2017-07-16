@@ -6,13 +6,11 @@ import { requestSingleCampaign } from '../../actions/campaign_actions';
 
 import ShowCampaign from './show_campaign';
 
-const mapStateToProps = (state, ownProps) => {
-  const campaignId = parseInt(ownProps.match.params.campaignId);
-  const campaign = selectCampaign(state, campaignId);
+const mapStateToProps = ({ campaign }, ownProps) => {
+  const campaignId = ownProps.match.params.campaignId;
   return {
-    user: state.session.currentUser,
+    campaign: campaign[ownProps.match.params.campaignId],
     campaignId,
-    campaign
   };
 };
 

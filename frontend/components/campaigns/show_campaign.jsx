@@ -9,7 +9,7 @@ class ShowCampaign extends React.Component {
     this.state = {
       backIt: false,
       amount: 0,
-      campaign_id: this.props.campaignId
+      campaign_id: this.props.campaignId,
     }
     this.renderPerks = this.renderPerks.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -18,12 +18,14 @@ class ShowCampaign extends React.Component {
   }
 
   componentDidMount() {
-    const id = this.props.campaignId
-    if (true) {
-      this.props.requestSingleCampaign(id);
-        // .then(action => this.props.history.push(`/campaigns/${id}`));
-    }
+    this.props.requestSingleCampaign(this.props.campaignId);
   }
+
+  // componentWillReceiveProps(nextProps) {
+  //   if (this.props.match.params.campaignId !== nextProps.match.params.campaignId) {
+  //     this.props.requestSingleCampaign(this.props.campaignId);
+  //   }
+  // }
 
   handleSubmit(e) {
     e.preventDefault();
@@ -81,13 +83,13 @@ class ShowCampaign extends React.Component {
   }
 
   renderCreatorBox() {
-    const { user } = this.props;
+    const { creator } = this.props.campaign;
     return (
       <div className="camp-creator">
         <img src="https://avatarko.ru/img/avatar/1/multfilm_gomer.png"
           className="creator-pic"/>
         <div className="creator-details">
-          <div className="details-name">{user.first_name} {user.last_name}</div>
+          <div className="details-name">{creator.f_name} {creator.l_name}</div>
           Manhattan, NY
           <div className="details-link">
             <Link to="/">About</Link>
@@ -178,8 +180,10 @@ class ShowCampaign extends React.Component {
   }
 
   render() {
-    // const { rewards } = this.props.campaign;
-    // if (!rewards) { return null }
+    const { campaign } = this.props;
+    if (!campaign) {
+      return null;
+    }
 
     return (
       <div className="show-camp-scope">

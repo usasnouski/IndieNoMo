@@ -5,9 +5,14 @@ class Api::CampaignsController < ApplicationController
 
   def show
     @campaign = Campaign.find(params[:id])
+
     if @campaign
       @amount = @campaign.contributions.sum(:amount)
-      # @rewards = @campaign.rewards.order(:price)
+      @creator = {
+        f_name: @campaign.user.first_name,
+        l_name: @campaign.user.last_name
+        }
+
       render :show
     else
       render json: "No campaign found", status: 422
@@ -67,7 +72,7 @@ class Api::CampaignsController < ApplicationController
       .require(:campaign)
       .permit(
       :title, :tagline, :description, :overview,
-      :goal_amount, :backers, :end_date, :image_url, :launch,
+      :goal_amount, :creator, :backers, :end_date, :image_url, :launch,
       :category_id
       )
   end

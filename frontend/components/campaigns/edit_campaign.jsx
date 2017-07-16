@@ -34,7 +34,7 @@ class EditForm extends React.Component {
   }
 
   componentDidMount() {
-    let id = this.props.match.params.campaignId
+    let id = this.props.match.params.campaignId;
     if (this.props.match.params.campaignId) {
       this.props.requestSingleCampaign(parseInt(id))
       .then(() => {

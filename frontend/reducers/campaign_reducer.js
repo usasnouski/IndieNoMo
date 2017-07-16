@@ -14,7 +14,7 @@ const CampaignReducer = (state = {}, action) => {
       return merge({}, state, action.campaigns);
     case RECEIVE_CAMPAIGN:
       const campaign = action.campaign;
-      return merge({}, state, {[action.campaign.id]: action.campaign});
+      return merge({}, state, {[campaign.id]: campaign});
     default:
       return state;
   }
