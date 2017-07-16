@@ -2,12 +2,14 @@ import { connect } from 'react-redux';
 
 import CampaignIndex from './campaign_index';
 import { requestAllCampaigns } from '../../actions/campaign_actions';
-import { selectAllCampaigns } from '../../reducers/selectors';
+import { selectAllCampaigns, selectLaunchedCamps } from '../../reducers/selectors';
 // import { goga } from './goga';
 
 const mapStateToProps = (state) => {
+  debugger;
   return {
-    campaigns : selectAllCampaigns(state)
+    campaigns : selectAllCampaigns(state),
+    launchedCamps : selectLaunchedCamps(state),
   };
 };
 

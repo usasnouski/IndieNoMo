@@ -1,4 +1,4 @@
-import { values } from 'lodash';
+import { values, pickBy } from 'lodash';
 
 export const selectCampaign = ({ campaign }, id) => {
   const camp = campaign[id] || {};
@@ -6,3 +6,5 @@ export const selectCampaign = ({ campaign }, id) => {
 }
 
 export const selectAllCampaigns = ({ campaign }) => values(campaign);
+
+export const selectLaunchedCamps = ({ campaign }) => values(pickBy(campaign, v => (v.launch === true)));

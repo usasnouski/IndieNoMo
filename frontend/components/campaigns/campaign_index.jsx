@@ -7,22 +7,28 @@ class CampaignIndex extends React.Component {
     this.props.requestAllCampaigns();
   }
 
+  // selectLaunchedCamps() {
+  //   let activeCampaigns = [];
+  //   this.props.campaigns.forEach(campaign => {
+  //     if (campaign.launch) {
+  //       activeCampaigns.push(<CampaignTile
+  //       key={campaign.id}
+  //       campaign={campaign} />);
+  //     }
+  //   });
+  //   return activeCampaigns;
+  // }
+
   selectLaunchedCamps() {
-    let activeCampaigns = [];
-    this.props.campaigns.forEach(campaign => {
-      if (campaign.launch) {
-        activeCampaigns.push(<CampaignTile
-        key={campaign.id}
-        campaign={campaign} />);
-      }
-    });
-    return activeCampaigns;
+    return this.props.launchedCamps.map(campaign =>
+      (<CampaignTile key={campaign.id} campaign={campaign} />)
+    );
   }
 
   render() {
     const { campaigns } = this.props;
     let launchedCampaigns = this.selectLaunchedCamps();
-
+    debugger;
     return (
       <div className="allcamps-scope">
         <h1 className="all-header">Emerging tech starts here</h1>

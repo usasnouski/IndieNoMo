@@ -84,7 +84,7 @@ class ShowCampaign extends React.Component {
     const { user } = this.props;
     return (
       <div className="camp-creator">
-        <img src="https://www.avatarsdb.com/avatars/homer_beer_belly.gif"
+        <img src="https://avatarko.ru/img/avatar/1/multfilm_gomer.png"
           className="creator-pic"/>
         <div className="creator-details">
           <div className="details-name">{user.first_name} {user.last_name}</div>
