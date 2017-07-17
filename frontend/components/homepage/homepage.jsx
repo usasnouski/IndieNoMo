@@ -8,14 +8,14 @@ class Homepage extends React.Component {
     super(props);
   }
 
-  // componentDidMount() {
-  //   this.props.requestAllCampaigns()
-  //     // .then(action => this.props.history.push('/'));
-  // }
-
-  componentWillMount() {
-    this.props.requestAllCampaigns();
+  componentDidMount() {
+    this.props.requestAllCampaigns()
+      // .then(action => this.props.history.push('/'));
   }
+
+  // componentWillMount() {
+  //   this.props.requestAllCampaigns();
+  // }
 
   launchedCampaigns() {
     return this.props.campaigns.map(campaign =>
@@ -49,7 +49,7 @@ class Homepage extends React.Component {
     return (
       <div>
       <div className="carousel-img">
-
+        <img src="https://grow.indiegogo.com/wp-content/uploads/2017/01/hero_desktop.jpg"></img>
       </div>
       <div className="homepage-discovery">
         <div className="camps-discover-bar">

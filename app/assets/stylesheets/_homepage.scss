@@ -54,6 +54,11 @@
   background: #FF9999;
 }
 
+.carousel-img > img {
+  width: 100%;
+  height: 100%;
+}
+
 @media (min-width: 670px) {
   .carousel-img {
     height: 450px;

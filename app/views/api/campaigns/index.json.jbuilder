@@ -7,7 +7,9 @@
     json.goal_amount campaign.goal_amount
     json.creator ({ f_name: campaign.user.first_name, l_name: campaign.user.last_name })
     json.backers campaign.backers.length
-    json.current_amount campaign.contributions.sum(:amount)
+    sum = campaign.contributions.sum(:amount)
+    json.current_amount sum
+    json.progress (sum * 100 / campaign.goal_amount).round
     json.end_date campaign.end_date
     json.rewards campaign.rewards
     json.launch campaign.launch
