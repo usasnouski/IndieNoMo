@@ -9,8 +9,16 @@ class Homepage extends React.Component {
   }
 
   componentDidMount() {
-    this.props.requestAllCampaigns()
-      .then(action => this.props.history.push('/'));
+    debugger;
+    this.props.requestAllCampaigns();
+      // .then(action => this.props.history.push('/'));
+    console.log("yo")
+  }
+
+  launchedCampaigns() {
+    return this.props.campaigns.map(campaign =>
+      (<CampaignTile key={campaign.id} campaign={campaign} />)
+    );
   }
 
   shuffle(a) {
@@ -21,26 +29,22 @@ class Homepage extends React.Component {
   }
 
   renderTiles() {
-    let tilesArr = Object.values(this.props.campaign);
+    let tilesArr = this.props.campaigns;
+    this.shuffle(tilesArr);
 
-    let shufTiles = this.shuffle(tilesArr);
-    let mappedArr = [];
-
-
-    for (let i = 0; i <= 3; i++) {
-      let campaign = tilesArr[i];
-      mappedArr.push(<CampaignTile
-      key={campaign.id}
-      campaign={campaign} />);
-    }
-
-
-    return mappedArr;
+    return tilesArr.slice(0, 4).map(campaign =>
+      (<CampaignTile key={campaign.id} campaign={campaign} />)
+    );
   }
 
 
   render() {
-    if (Object.keys(this.props.campaign).length === 0) { return null }
+    debugger;
+    // if (Object.keys(this.props.campaign).length === 0) { return null }
+    const { campaigns } = this.props;
+    const tiles = this.renderTiles();
+    // let launchedCampaigns = this.launchedCampaigns();
+    if (campaigns.length === 0) { return null; }
 
     return (
       <div>
@@ -57,7 +61,7 @@ class Homepage extends React.Component {
             <Link to="/">Tech & Innovation</Link>
             <Link to="/">Creative Works</Link>
           </div>
-          <ul className="projects">{this.renderTiles()}</ul>
+          <ul className="projects">{tiles}</ul>
         </div>
       </div>
       </div>

@@ -21,11 +21,15 @@ class ShowCampaign extends React.Component {
     this.props.requestSingleCampaign(this.props.campaignId);
   }
 
-  // componentWillReceiveProps(nextProps) {
-  //   if (this.props.match.params.campaignId !== nextProps.match.params.campaignId) {
-  //     this.props.requestSingleCampaign(this.props.campaignId);
-  //   }
+  // componentWillMount() {
+  //   this.props.requestSingleCampaign(this.props.campaignId);
   // }
+
+  componentWillReceiveProps(nextProps) {
+    if (this.props.match.params.campaignId !== nextProps.match.params.campaignId) {
+      this.props.requestSingleCampaign(this.props.campaignId);
+    }
+  }
 
   handleSubmit(e) {
     e.preventDefault();
@@ -180,8 +184,9 @@ class ShowCampaign extends React.Component {
   }
 
   render() {
+    debugger;
     const { campaign } = this.props;
-    if (!campaign) {
+    if (!campaign || !campaign.creator) {
       return null;
     }
 
