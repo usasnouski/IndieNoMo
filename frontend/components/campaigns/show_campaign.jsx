@@ -18,7 +18,6 @@ class ShowCampaign extends React.Component {
   }
 
   componentDidMount() {
-    debugger;
     if (!this.props.campaign) {
       this.props.requestSingleCampaign(this.props.campaignId);
     }
