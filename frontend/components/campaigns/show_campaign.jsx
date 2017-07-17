@@ -18,18 +18,20 @@ class ShowCampaign extends React.Component {
   }
 
   componentDidMount() {
-    this.props.requestSingleCampaign(this.props.campaignId);
+    if (!this.props.campaign) {
+      this.props.requestSingleCampaign(this.props.campaignId);
+    }
   }
 
   // componentWillMount() {
   //   this.props.requestSingleCampaign(this.props.campaignId);
   // }
 
-  componentWillReceiveProps(nextProps) {
-    if (this.props.match.params.campaignId !== nextProps.match.params.campaignId) {
-      this.props.requestSingleCampaign(this.props.campaignId);
-    }
-  }
+  // componentWillReceiveProps(nextProps) {
+  //   if (this.props.match.params.campaignId !== nextProps.match.params.campaignId) {
+  //     this.props.requestSingleCampaign(this.props.campaignId);
+  //   }
+  // }
 
   handleSubmit(e) {
     e.preventDefault();
@@ -184,8 +186,8 @@ class ShowCampaign extends React.Component {
   }
 
   render() {
-    debugger;
     const { campaign } = this.props;
+
     if (!campaign || !campaign.creator) {
       return null;
     }

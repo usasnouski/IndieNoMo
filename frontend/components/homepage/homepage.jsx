@@ -8,11 +8,13 @@ class Homepage extends React.Component {
     super(props);
   }
 
-  componentDidMount() {
-    debugger;
+  // componentDidMount() {
+  //   this.props.requestAllCampaigns()
+  //     // .then(action => this.props.history.push('/'));
+  // }
+
+  componentWillMount() {
     this.props.requestAllCampaigns();
-      // .then(action => this.props.history.push('/'));
-    console.log("yo")
   }
 
   launchedCampaigns() {
@@ -39,11 +41,9 @@ class Homepage extends React.Component {
 
 
   render() {
-    debugger;
-    // if (Object.keys(this.props.campaign).length === 0) { return null }
     const { campaigns } = this.props;
     const tiles = this.renderTiles();
-    // let launchedCampaigns = this.launchedCampaigns();
+
     if (campaigns.length === 0) { return null; }
 
     return (

@@ -11,7 +11,7 @@ class Api::CampaignsController < ApplicationController
       @creator = {
         f_name: @campaign.user.first_name,
         l_name: @campaign.user.last_name
-        }
+      }
 
       render :show
     else
