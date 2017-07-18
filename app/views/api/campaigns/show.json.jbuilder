@@ -10,4 +10,4 @@ end
 json.backers @campaign.backers.length
 json.image_url asset_path(@campaign.image_url)
 
-json.rewards @campaign.rewards.order(:price)
+json.rewards @rewards

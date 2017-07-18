@@ -1,17 +1,19 @@
 class Api::CampaignsController < ApplicationController
   def index
-    @campaigns = Campaign.all
+    @campaigns = Campaign.all.includes(:rewards, :contributions, :backers, :user).where(launch: true)
   end
 
   def show
-    @campaign = Campaign.find(params[:id])
-
+    @campaign = Campaign.includes(:contributions, :backers).find(params[:id])
+    @rewards = Reward.all.where(campaign_id: @campaign.id).order(:price)
+    
     if @campaign
-      @amount = @campaign.contributions.sum(:amount)
+      @amount = @campaign.contributions.inject(0) { |sum, n| sum + n.amount }.round(2)
       @creator = {
         f_name: @campaign.user.first_name,
         l_name: @campaign.user.last_name
       }
+
 
       render :show
     else

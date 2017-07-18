@@ -61,6 +61,10 @@
   position: relative;
 }
 
+.portfolio-link {
+  font-size: 1.5em;
+}
+
 .fa {
   width: 20px;
   height: 20px;
@@ -97,8 +101,13 @@
 
 .fa-linkedin {
   top: 4px;
-  left: 8px;
+  left: 7px;
   font-size: 1.8em;
+}
+
+.fa-user-circle {
+  top: 0px;
+  left: 0px;
 }
 
 .git-link:hover {
@@ -146,5 +155,13 @@
 
   .fa-linkedin {
     color: #fff;
+  }
+}
+
+.portfolio-link:hover {
+  background-color: #EDB5BF;
+
+  .fa-user-circle {
+    // color: #D3D3D3;
   }
 }

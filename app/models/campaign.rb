@@ -29,10 +29,12 @@ class Campaign < ApplicationRecord
   has_attached_file :image_url, default_url: "default.jpg"
   validates_attachment_content_type :image_url, content_type: /\Aimage\/.*\z/
 
-  belongs_to :user
+  belongs_to :user, inverse_of: :campaigns
   # belongs_to :category
-  has_many :contributions
-  has_many :rewards
+  has_many :contributions, inverse_of: :campaign
+
+  has_many :rewards, inverse_of: :campaign
+  accepts_nested_attributes_for :rewards, allow_destroy: true
 
   has_many :backers, through: :contributions, source: :user
 

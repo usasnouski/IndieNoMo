@@ -18,6 +18,7 @@ class ShowCampaign extends React.Component {
   }
 
   componentDidMount() {
+    window.scrollTo(0, 0);
     if (!this.props.campaign) {
       this.props.requestSingleCampaign(this.props.campaignId);
     }
@@ -187,7 +188,6 @@ class ShowCampaign extends React.Component {
 
   render() {
     const { campaign } = this.props;
-
     if (!campaign || !campaign.creator) {
       return null;
     }

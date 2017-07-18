@@ -32,7 +32,7 @@ class Homepage extends React.Component {
 
   renderTiles() {
     let tilesArr = this.props.campaigns;
-    this.shuffle(tilesArr);
+    // this.shuffle(tilesArr);
 
     return tilesArr.slice(0, 4).map(campaign =>
       (<CampaignTile key={campaign.id} campaign={campaign} />)
