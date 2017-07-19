@@ -56,10 +56,6 @@ class Homepage extends React.Component {
           <div className="discovery-tabs">
             <Link to="/campaigns/all" className="see-all">See all</Link>
             <Link to="/">Top picks for you</Link>
-            <Link to="/">Popular near you</Link>
-            <Link to="/">Trending</Link>
-            <Link to="/">Tech & Innovation</Link>
-            <Link to="/">Creative Works</Link>
           </div>
           <ul className="projects">{tiles}</ul>
         </div>

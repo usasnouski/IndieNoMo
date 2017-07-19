@@ -42,12 +42,14 @@
   line-height: 25px;
   margin-right: 20px;
   color: #2A2A2A;
+  cursor: default;
 }
 
-.discovery-tabs > a:focus:not(:first-child) {
-    border-bottom: 3px solid #EB1478;
-    color: #EB1478
-  }
+// .discovery-tabs > a:focus:not(:first-child) {
+//     border-bottom: 3px solid #EB1478;
+//     color: #EB1478;
+//     padding-bottom: 2px;
+//   }
 
 .carousel-img {
   position: relative;

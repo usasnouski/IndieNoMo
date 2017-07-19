@@ -103,9 +103,8 @@ class NavBar extends React.Component {
     <nav className="nav-bar">
       <div className="left">
         <Link to="/"><h1>IndieNoMo</h1></Link>
-        <button className="nav-btn">Explore</button>
-        <button className="nav-btn">How It Works</button>
-        <button className="nav-btn">Equity Offerings</button>
+        <a className="nav-btn" target="_blank" href="http://github.com/usasnouski">Github Repo</a>
+        <a className="nav-btn" target="_blank" href="http://vsasnouski.me">My Portfolio</a>
       </div>
       <div className="right">
         <Link to="/start-a-campaign" className="nav-right-btn">Start a campaign</Link>
