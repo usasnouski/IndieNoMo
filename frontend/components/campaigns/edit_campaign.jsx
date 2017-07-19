@@ -21,7 +21,8 @@ class EditForm extends React.Component {
       end_date: '',
       category_id: 86,
       launch: false,
-      tab: 'basics'
+      tab: 'basics',
+      rewards: []
     }
 
     this.handleRedirectToBasics = this.handleRedirectToBasics.bind(this);
@@ -34,6 +35,7 @@ class EditForm extends React.Component {
   }
 
   componentDidMount() {
+    window.scrollTo(0, 0);
     let id = this.props.match.params.campaignId;
     if (this.props.match.params.campaignId) {
       this.props.requestSingleCampaign(parseInt(id))
@@ -169,6 +171,7 @@ class EditForm extends React.Component {
   }
 
   render() {
+    window.scrollTo(0, 0);
     const formType = this.props.match.params.formType;
     let tabPage = '';
     return (

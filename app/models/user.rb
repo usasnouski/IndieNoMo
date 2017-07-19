@@ -12,6 +12,8 @@
 #  profile_img_content_type :string
 #  profile_img_file_size    :integer
 #  profile_img_updated_at   :datetime
+#  first_name               :string
+#  last_name                :string
 #
 
 class User < ApplicationRecord

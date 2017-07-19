@@ -23,6 +23,7 @@
 .camp-perk {
   display: block;
   margin-top: 20px;
+  width: 100%;
 }
 
 .camp-perk-box {
@@ -100,4 +101,12 @@
 
 .perks-list {
   width: 62.7%;
+}
+
+.add-perks-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+  width: 23%;
 }

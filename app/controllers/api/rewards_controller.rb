@@ -6,7 +6,7 @@ class Api::RewardsController < ApplicationController
   def create
     @reward = Reward.new(reward_params)
     if @reward.save
-      # render :show
+      @campaign = @reward.campaign
       render "api/campaigns/show"
     else
       render json: @reward.errors.full_messages, status: 422

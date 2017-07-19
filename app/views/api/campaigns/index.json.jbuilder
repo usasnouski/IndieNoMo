@@ -14,7 +14,7 @@
     json.current_amount total
     json.progress (total * 100 / campaign.goal_amount).round
     json.end_date campaign.end_date
-    json.rewards campaign.rewards
+    json.rewards campaign.rewards.order(:price)
     json.launch campaign.launch
     json.image_url asset_path(campaign.image_url)
   end

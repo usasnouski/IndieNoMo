@@ -1,6 +1,8 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 
+import RewardTile from '../rewards/reward_tile';
+
 class NewRewardForm extends React.Component {
   constructor(props) {
     super(props);
@@ -22,7 +24,9 @@ class NewRewardForm extends React.Component {
   }
 
   handleSubmit(e) {
-    this.props.createReward(this.state)
+    this.props.campaign.rewards.unshift(this.state);
+    this.props.createReward(this.state);
+
 
     this.setState( {
       title: 'New Perk',
@@ -30,6 +34,15 @@ class NewRewardForm extends React.Component {
       price: 0,
       campaign_id: this.props.campaign.id
     } );
+  }
+
+  renderPerks() {
+    const { rewards } = this.props.campaign;
+    if (rewards.length === 0) { return null }
+    const rewardTiles = rewards.map((reward, i) => (
+      <RewardTile key={i} reward={reward} />)
+    );
+    return rewardTiles;
   }
 
   renderControllBar() {
@@ -51,9 +64,14 @@ class NewRewardForm extends React.Component {
   }
 
   render() {
+    debugger;
     return (
     <div className="basics-scope">
       {this.renderControllBar()}
+           <div className="add-perks-list">
+              {this.renderPerks()}
+            </div>
+
       <form className="basics-form camp-form">
           <div className="entre-section">
             <div className="entre-header">Perk Details</div>

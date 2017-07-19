@@ -5,9 +5,9 @@
 #  id          :integer          not null, primary key
 #  user_id     :integer          not null
 #  campaign_id :integer          not null
-#  amount      :integer
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  amount      :float
 #
 
 class Contribution < ApplicationRecord
