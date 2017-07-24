@@ -28,8 +28,9 @@ const App = () => {
         <Route exact path="/" component={Homepage} />
         <Route path="/campaigns/all" component={CampaignIndexContainer} />
         <ProtectedRoute exact path="/campaigns/:campaignId/edit/:formType" component={EditCampaignContainer} />
-        <Route path ="/campaigns/:campaignId" component={ShowCampaignContainer} />
+        <Route path="/campaigns/:campaignId" component={ShowCampaignContainer} />
         <ProtectedRoute exact path="/start-a-campaign" component={NewCampaignContainer} />
+        <Route path="/individuals/:userId" />
       </Switch>
       <Footer />
     </div>

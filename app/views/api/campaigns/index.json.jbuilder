@@ -7,7 +7,6 @@
     json.goal_amount campaign.goal_amount
     json.creator ({ f_name: campaign.user.first_name, l_name: campaign.user.last_name })
     json.backers campaign.backers.length
-    # sum = campaign.contributions.sum(:amount)
 
     total = campaign.contributions.inject(0) { |sum, n| sum + n.amount }.round(2)
 

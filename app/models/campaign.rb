@@ -42,4 +42,8 @@ class Campaign < ApplicationRecord
   # def category=(category)
   #   self.category_id = Category.find_by(category[:id])
   # end
+
+  # def find_rewards
+  #   self.rewards.order(:price).includes(:campaign)
+  # end
 end

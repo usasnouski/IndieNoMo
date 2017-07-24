@@ -91,6 +91,7 @@ class ShowCampaign extends React.Component {
 
   renderCreatorBox() {
     const { creator } = this.props.campaign;
+    const id = this.props.campaign.user_id;
     return (
       <div className="camp-creator">
         <img src="https://avatarko.ru/img/avatar/1/multfilm_gomer.png"
@@ -99,7 +100,7 @@ class ShowCampaign extends React.Component {
           <div className="details-name">{creator.f_name} {creator.l_name}</div>
           Manhattan, NY
           <div className="details-link">
-            <Link to="/">About</Link>
+            <Link to={`/individuals/${id}`}>About</Link>
           </div>
         </div>
       </div>
