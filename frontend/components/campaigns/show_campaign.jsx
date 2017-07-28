@@ -19,9 +19,7 @@ class ShowCampaign extends React.Component {
 
   componentDidMount() {
     window.scrollTo(0, 0);
-    if (!this.props.campaign) {
-      this.props.requestSingleCampaign(this.props.campaignId);
-    }
+    this.props.requestSingleCampaign(this.props.campaignId);
   }
 
   // componentWillMount() {

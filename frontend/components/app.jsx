@@ -16,7 +16,8 @@ import Footer from './footer/footer';
 import CampaignIndexContainer from './campaigns/campaign_index_container';
 import NewCampaignContainer from './campaigns/new_campaign_container';
 import EditCampaignContainer from './campaigns/edit_campaign_container';
-import ShowCampaignContainer from './campaigns/show_campaign_container'
+import ShowCampaignContainer from './campaigns/show_campaign_container';
+import ShowUserContainer from './users/show_user_container';
 
 
 
@@ -30,7 +31,7 @@ const App = () => {
         <ProtectedRoute exact path="/campaigns/:campaignId/edit/:formType" component={EditCampaignContainer} />
         <Route path="/campaigns/:campaignId" component={ShowCampaignContainer} />
         <ProtectedRoute exact path="/start-a-campaign" component={NewCampaignContainer} />
-        <Route path="/individuals/:userId" />
+        <Route path="/individuals/:userId" component={ShowUserContainer} />
       </Switch>
       <Footer />
     </div>

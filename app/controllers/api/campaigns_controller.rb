@@ -5,7 +5,7 @@ class Api::CampaignsController < ApplicationController
   end
 
   def show
-    @campaign = Campaign.includes(:contributions, :rewards, :backers).find(params[:id])
+    @campaign = Campaign.includes(:contributions, :backers).find(params[:id])
     @rewards = Reward.all.where(campaign_id: @campaign.id).order(:price)
 
     if @campaign
