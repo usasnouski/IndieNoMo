@@ -7,15 +7,15 @@ const mapStateToProps = ({ user, session }) => {
   return ({
     user: user,
     currentUser: session.currentUser,
-  })
-}
+  });
+};
 
 const mapDispatchToProps = (dispatch) => {
-  return {
+  return ({
     requestUser: (id) => dispatch(requestUser(id)),
     requestUserInfo: (id) => dispatch(requestUserInfo(id)),
-  }
-}
+  });
+};
 
 export default connect(
   mapStateToProps,

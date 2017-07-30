@@ -1,6 +1,6 @@
 #IndieNoMo
 
-[IndieNoMo love][heroku]
+[IndieNoMo live][heroku]
 
 [heroku]: https://indienomo.herokuapp.com/
 
