@@ -9,7 +9,6 @@ class UserCampaigns extends React.Component {
   }
 
   // componentDidMount() {
-  //   debugger;
   //   // this.props.requestUserInfo(location.hash.match(/\d+/)[0]);
   // }
 

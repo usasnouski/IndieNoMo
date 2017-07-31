@@ -1,0 +1,125 @@
+.user-name-cont {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+@media (min-width: 768px) {
+  .user-name-cont {
+    padding-left: 10px;
+    padding-right: 10px;
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1002px) {
+  .user-name-cont {
+    padding-left: 12px;
+    padding-right: 12px;
+    max-width: 1002px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .user-name-cont {
+    padding-left: 30px;
+    padding-right: 30px;
+    max-width: 1280px;
+  }
+}
+
+.user-name-wrap {
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+.account-name {
+  margin-bottom: 20px;
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 50px;
+  font-weight: 800;
+  line-height: 58px;
+  letter-spacing: 1px;
+  margin-top: 0;
+}
+
+.tab-links {
+  display: flex;
+  border-bottom: 1px solid #DDDDDD;
+}
+
+.i-tab {
+  position: relative;
+  padding: 0 5px;
+  margin: 7px 0;
+  margin-right: 20px;
+}
+
+.i-tab > a {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 26px;
+  text-align: center;
+  color: black;
+}
+
+.i-tab-selected:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  bottom: -7px;
+  height: 3px;
+  background-color: #eb1478;
+}
+
+.i-tab-selected > a {
+  color: #eb1478;
+}
+
+.profile-container {
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+.profile-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+ .prof-img {
+  width: 460px;
+}
+
+.prof-img > img {
+  display: block;
+  max-width: 100%;
+}
+
+@media (min-width: 768px) {
+  .profile-content, .prof-img {
+    height: 285px;
+  }
+}
+
+.about-me {
+  margin-bottom: 20px;
+}
+
+.about-me > span {
+  margin-left: 10px;
+  vertical-align: middle;
+  font-family: "Helvetica";
+  font-size: 24px;
+  line-height: 35px;
+  color: #6A6A6A;
+}
+
+.user-pic {
+  vertical-align: middle;
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+}
