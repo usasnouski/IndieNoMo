@@ -56,12 +56,16 @@
   margin-right: 20px;
 }
 
-.i-tab > a {
+.i-tab-nonselected {
   font-size: 16px;
   font-weight: 600;
   line-height: 26px;
   text-align: center;
   color: black;
+}
+
+.i-tab-selected {
+  color: #eb1478;
 }
 
 .i-tab-selected:after {
@@ -72,10 +76,6 @@
   bottom: -7px;
   height: 3px;
   background-color: #eb1478;
-}
-
-.i-tab-selected > a {
-  color: #eb1478;
 }
 
 .profile-container {

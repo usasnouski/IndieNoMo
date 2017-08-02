@@ -3,28 +3,26 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { requestUserInfo } from '../../../actions/user_actions';
 
-class UserCampaigns extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+const UserCampaigns = ({userInfo}) => {
+  // constructor(props) {
+  //   super(props);
+  // }
 
   // componentDidMount() {
   //   // this.props.requestUserInfo(location.hash.match(/\d+/)[0]);
   // }
 
-  render() {
-    const { userInfo } = this.props;
+    // const { userInfo } = this.props;
     if (!userInfo) {
       return null;
     }
-
+    debugger;
     return (
-      <div>{this.props.userInfo.created_campaigns[0].title}</div>
+      <div>{userInfo.created_campaigns[0].title}</div>
     );
-  }
-}
+};
 
-export {UserCampaigns};
+export default UserCampaigns;
 
 // const mapStateToProps = ({ user }) => {
 //   return ({

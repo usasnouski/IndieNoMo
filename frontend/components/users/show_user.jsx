@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link, Route, Switch } from 'react-router-dom';
+import { Link, Route, Switch, withRouter } from 'react-router-dom';
 
-import { UserCampaigns } from '../users/showpage_body/user_campaigns';
+import UserCampaigns from '../users/showpage_body/user_campaigns';
 import ProfileNavbar from '../users/showpage_body/profile_navbar';
 
 class ShowUser extends React.Component {
