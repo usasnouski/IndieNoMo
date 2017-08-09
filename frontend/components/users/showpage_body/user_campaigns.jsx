@@ -3,24 +3,45 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { requestUserInfo } from '../../../actions/user_actions';
 
-const UserCampaigns = ({userInfo}) => {
-  // constructor(props) {
-  //   super(props);
-  // }
+import UserCampaignTile from './user_campaigns_tile';
+
+class UserCampaigns extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
   // componentDidMount() {
+  //   debugger;
   //   // this.props.requestUserInfo(location.hash.match(/\d+/)[0]);
   // }
+  createdCampaigns(userInfo) {
+    return userInfo.created_campaigns.map(campaign =>
+      (
+      <UserCampaignTile key={campaign.id} campaign={campaign} />
+      )
+    );
+  }
 
-    // const { userInfo } = this.props;
+  render() {
+    const { userInfo } = this.props;
     if (!userInfo) {
       return null;
     }
-    debugger;
+    // debugger;
+    console.log(location.hash);
     return (
-      <div>{userInfo.created_campaigns[0].title}</div>
+      <div className="user-name-cont profile-container">
+        <div className="prof-campaigns-section">
+          <h3>Campaigns I'm On</h3>
+          <ul>
+            {this.createdCampaigns(userInfo)}
+          </ul>
+        </div>
+        <div>{this.props.userInfo.created_campaigns[0].title}</div>
+      </div>
     );
-};
+  }
+}
 
 export default UserCampaigns;
 

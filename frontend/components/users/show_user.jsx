@@ -15,7 +15,10 @@ class ShowUser extends React.Component {
     .then(this.props.requestUserInfo(this.props.match.params.userId));
   }
 
-  profile(user) {
+  profile(user, userInfo) {
+    const campsNum = userInfo.created_campaigns.length;
+    const contrNum = userInfo.backed_campaigns.length;
+
     if (location.hash === `#/individuals/${user.id}`) {
       return (
         <div className="profile-container user-name-cont">
@@ -28,6 +31,10 @@ class ShowUser extends React.Component {
                 <img src={user.profile_img} className="user-pic"></img>
                 <span>About Me</span>
               </div>
+              <div className="stats">
+                <div><span>{campsNum}</span> Campaigns</div>
+                <div><span>{contrNum}</span> Contributions</div>
+              </div>
             </div>
           </div>
         </div>
@@ -37,7 +44,7 @@ class ShowUser extends React.Component {
 
   render() {
     const { user, userInfo } = this.props.user;
-    if (!user) {
+    if (!user || !userInfo) {
       return null;
     }
 
@@ -57,7 +64,7 @@ class ShowUser extends React.Component {
             component={() => (<UserCampaigns userInfo={userInfo}/>)}
           />
         </Switch>
-        {this.profile(user)}
+        {this.profile(user, userInfo)}
       </div>
     );
   }

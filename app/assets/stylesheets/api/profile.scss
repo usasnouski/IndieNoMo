@@ -90,7 +90,7 @@
 }
 
  .prof-img {
-  width: 460px;
+  width: 60%;
 }
 
 .prof-img > img {
@@ -122,4 +122,77 @@
   width: 60px;
   height: 60px;
   border-radius: 30px;
+}
+
+.user-brief {
+  width: 34%;
+}
+
+.stats {
+  width: 40%;
+}
+
+.stats > div {
+  font-size: 17px;
+  line-height: 26px;
+  font-weight: 300;
+  color: #6a6a6a;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.stats > div > span {
+  font-size: 24px;
+  font-weight: 800;
+  color: #2A2A2A;
+  margin-right: 2px;
+}
+
+.prof-campaigns-section {
+  margin-bottom: 50px;
+}
+
+.prof-campaigns-section > h3 {
+  font-size: 24px;
+  line-height: 35px;
+  letter-spacing: 0;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+// @media (min-width: 768px) {
+//   .camps-on, .img-profile {}
+// }
+.camps-on {
+  border-top: 1px solid #dddddd;
+  padding: 20px 0;
+  display: flex;
+}
+
+.primary-img > img {
+  width: 200px;
+  height: 200px;
+}
+
+.campaigns-content {
+  margin-left: 20px;
+  margin-top: 3px;
+}
+
+.campaign-title > a {
+  font-size: 24px;
+  line-height: 34px;
+  font-weight: 500;
+  color: #2A2A2A;
+}
+
+.campaign-title > a:hover, .campaign-author > a:hover {
+  text-decoration: underline;
+}
+
+.campaign-author {
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: 500;
+  color: #6A6A6A;
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink, withRouter } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 class ProfileNavbar extends React.Component {
   constructor(props) {
@@ -43,7 +43,7 @@ class ProfileNavbar extends React.Component {
             </div>
           <div className="i-tab">
             <NavLink to={`/individuals/${id}/campaigns`}
-              className="i-tab-nonselected"  
+              className="i-tab-nonselected"
               activeClassName="i-tab-selected">
               Campaigns
             </NavLink>
