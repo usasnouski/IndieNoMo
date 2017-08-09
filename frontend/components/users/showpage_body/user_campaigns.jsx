@@ -37,7 +37,6 @@ class UserCampaigns extends React.Component {
             {this.createdCampaigns(userInfo)}
           </ul>
         </div>
-        <div>{this.props.userInfo.created_campaigns[0].title}</div>
       </div>
     );
   }

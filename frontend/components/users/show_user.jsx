@@ -10,6 +10,7 @@ class ShowUser extends React.Component {
   }
 
   componentDidMount() {
+    debugger;
     window.scrollTo(0, 0);
     this.props.requestUser(this.props.match.params.userId)
     .then(this.props.requestUserInfo(this.props.match.params.userId));
@@ -47,7 +48,7 @@ class ShowUser extends React.Component {
     if (!user || !userInfo) {
       return null;
     }
-
+    debugger;
     return(
       <div className="user-show-container">
         <div className="user-name-cont">
@@ -61,8 +62,7 @@ class ShowUser extends React.Component {
         <Switch>
           <Route exact path={`/individuals/${user.id}`} />
           <Route path={`/individuals/${user.id}/campaigns`}
-            component={() => (<UserCampaigns userInfo={userInfo}/>)}
-          />
+            component={() => (<UserCampaigns userInfo={userInfo}/>)} />
         </Switch>
         {this.profile(user, userInfo)}
       </div>

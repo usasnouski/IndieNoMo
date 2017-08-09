@@ -12,9 +12,14 @@ const UserCampaignTile = ({ campaign }) => {
      <div className="campaigns-content">
        <div className="campaign-title">
          <Link to={`/campaigns/${campaign.id}`}>{campaign.title}</Link>
-         </div>
+       </div>
        <div className="campaign-author">
-         by <Link to={`/individuals/${campaign.user_id}`}>Vlad</Link>
+         by <Link to={`/individuals/${campaign.user_id}`}>
+           {campaign.f_name} {campaign.l_name}
+         </Link>
+       </div>
+       <div className="campaign-tagline">
+         {campaign.tagline}
        </div>
      </div>
    </div>

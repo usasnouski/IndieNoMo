@@ -20,6 +20,7 @@ class ProfileNavbar extends React.Component {
   // }
 
   render() {
+    debugger;
    const { id } = this.props.user;
   //  let profile, camps;
 
@@ -35,12 +36,12 @@ class ProfileNavbar extends React.Component {
       <div className="user-name-cont">
         <div className="tab-links">
           <div className="i-tab">
-          <NavLink to={`/individuals/${id}`}
-            className="i-tab-nonselected"
-            exact activeClassName="i-tab-selected">
-            Profile
-          </NavLink>
-            </div>
+            <NavLink to={`/individuals/${id}`}
+              className="i-tab-nonselected"
+              exact activeClassName="i-tab-selected">
+              Profile
+            </NavLink>
+          </div>
           <div className="i-tab">
             <NavLink to={`/individuals/${id}/campaigns`}
               className="i-tab-nonselected"

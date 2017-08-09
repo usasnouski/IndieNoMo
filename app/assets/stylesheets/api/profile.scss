@@ -1,3 +1,7 @@
+.user-show-container {
+  min-height: 62vh;
+}
+
 .user-name-cont {
   margin-right: auto;
   margin-left: auto;
@@ -194,5 +198,13 @@
   font-size: 16px;
   line-height: 26px;
   font-weight: 500;
+  color: #6A6A6A;
+}
+
+.campaign-tagline {
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 26px;
   color: #6A6A6A;
 }
