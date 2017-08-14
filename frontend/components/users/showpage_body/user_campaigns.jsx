@@ -11,7 +11,6 @@ class UserCampaigns extends React.Component {
   }
 
   // componentDidMount() {
-  //   debugger;
   //   // this.props.requestUserInfo(location.hash.match(/\d+/)[0]);
   // }
   createdCampaigns(userInfo) {
@@ -27,8 +26,7 @@ class UserCampaigns extends React.Component {
     if (!userInfo) {
       return null;
     }
-    // debugger;
-    console.log(location.hash);
+
     return (
       <div className="user-name-cont profile-container">
         <div className="prof-campaigns-section">

@@ -20,7 +20,6 @@ class ProfileNavbar extends React.Component {
   // }
 
   render() {
-    debugger;
    const { id } = this.props.user;
   //  let profile, camps;
 

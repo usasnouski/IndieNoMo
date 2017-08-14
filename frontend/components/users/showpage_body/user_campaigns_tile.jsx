@@ -3,7 +3,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const UserCampaignTile = ({ campaign }) => {
-  // debugger;
   return (
    <div className="camps-on">
      <Link className="primary-img" to={`/campaigns/${campaign.id}`}>
