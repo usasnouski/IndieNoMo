@@ -1,6 +1,6 @@
-export const fetchCarouselCampaigns = () => (
-  $.ajax({
+export const fetchCarouselCampaigns = () => {
+  return $.ajax({
     method: 'GET',
     url: 'api/carousel'
   })
-);
+};

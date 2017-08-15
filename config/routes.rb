@@ -3,12 +3,15 @@ Rails.application.routes.draw do
     resources :users, only: [:create, :show] do
       get :info, to: 'users#info'
     end
-    
+
     resource :session, only: [:create, :destroy, :show]
     resources :campaigns
     resources :contributions, only: [:create]
     resources :rewards, only: [:index, :create, :show]
+    
+    get 'carousel', to: 'carousels#carousel'
   end
+
 
   root "static_pages#root"
 end

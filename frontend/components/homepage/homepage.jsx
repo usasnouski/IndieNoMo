@@ -2,6 +2,7 @@ import React from 'react';
 // import { Link } from 'react-router';
 import { Route, Link } from 'react-router-dom';
 import CampaignTile from '../campaigns/campaign_index_item';
+import CarouselContainer from './carousel_container';
 
 class Homepage extends React.Component {
   constructor(props) {
@@ -49,7 +50,7 @@ class Homepage extends React.Component {
     return (
       <div>
       <div className="carousel-img">
-        <img src="https://grow.indiegogo.com/wp-content/uploads/2017/01/hero_desktop.jpg"></img>
+        <CarouselContainer />
       </div>
       <div className="homepage-discovery">
         <div className="camps-discover-bar">
