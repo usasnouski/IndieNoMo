@@ -1,0 +1,139 @@
+.carousel {
+  height: 250px;
+  overflow: hidden;
+  position: relative;
+  background: black;
+}
+
+.carousel-tile {
+  width: 100%;
+  height: 250px;
+  display: inline-block;
+  position: relative;
+  display: inline-block;
+  background-size: cover;
+  background-position: center;
+}
+
+.side-tile {
+  display: none;
+}
+
+@media (min-width: 670px) {
+  .carousel {
+    height: 350px;
+  }
+
+  .carousel-tiles {
+    width: 3350px;
+    margin-left: -1650px;
+    position: absolute;
+    left: 50%;
+  }
+
+  .carousel-tile {
+    width: 670px;
+    height: 350px;
+  -webkit-transition: background-size 0.2s ease-in-out;
+  }
+
+  .carousel-tile:not(:nth-child(3)) {
+    background-size: 101.5%;
+  }
+
+  .carousel-tile:not(:nth-child(3)):hover {
+    cursor: pointer;
+    background-size: 100%;
+  }
+
+}
+
+.carousel-tiles {
+  margin-left: -1650px;
+  overflow: hidden;
+  display: flex;
+}
+
+.left-slide {
+  animation-duration: 4s;
+  animation-name: slideleft;
+}
+
+/*.right-slide {
+  animation-delay: 0.3s;
+  animation-duration: 4s;
+  animation-name: slideright;
+}*/
+
+
+@keyframes slideleft {
+  from {}
+
+   to {
+     transform: translate(-670px);
+  }
+}
+
+/*@keyframes slideright {
+  from {}
+  to {
+    transform: translate(670px);
+  }
+}*/
+
+
+
+/*
+.slide-enter {
+  transform: translate(-670px);
+
+}
+
+.slide-enter-active {
+  animation: slide-in 3000ms ease-out forwards;
+}
+
+.slide-leave {
+  transform: translate(670px);
+}
+
+.slide-leave-active {
+  animation: slide-out 3000ms ease-out forwards;
+}
+
+@keyframes slide-in {
+  from {}
+  to {
+    transform: translate(-670px);
+  }
+}
+
+@keyframes slide-out {
+  from {}
+  to {
+    transform: translate(670px);
+  }
+}
+
+
+.example-enter {
+  opacity: 0.01;
+  transform: translateX(10vw);
+}
+
+.example-enter.example-enter-active {
+  opacity: 1;
+  transition: 7000ms ease-out;
+  transform: translateX(45%);
+}
+
+.example-leave {
+  opacity: 1;
+  transform: translateX(-11vw);
+}
+
+.example-leave.example-leave-active {
+  opacity: 0.01;
+  transition: 7000ms ease-out;
+  transform: translateX(-11vw);*/
+}

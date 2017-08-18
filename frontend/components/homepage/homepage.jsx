@@ -49,7 +49,7 @@ class Homepage extends React.Component {
 
     return (
       <div>
-      <div className="carousel-img">
+      <div className="carousel">
         <CarouselContainer />
       </div>
       <div className="homepage-discovery">
