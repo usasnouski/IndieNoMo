@@ -1,3 +1,7 @@
+.ReactModal__Overlay, .ReactModal__Overlay--after-open {
+  z-index: 3;
+}
+
 .auth-divider {
   color: #A8A8A8;
   position: relative;
