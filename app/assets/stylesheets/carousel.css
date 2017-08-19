@@ -54,86 +54,42 @@
   display: flex;
 }
 
-.left-slide {
-  animation-duration: 4s;
-  animation-name: slideleft;
+.details-visible {
+  animation-name: fade-in;
+  animation-duration: 0.5s;
 }
 
-/*.right-slide {
-  animation-delay: 0.3s;
-  animation-duration: 4s;
-  animation-name: slideright;
-}*/
+@keyframes fade-in {
+  0% { opacity: 0.0; }
+  100% { opacity: 1.0; }
+}
 
+.details-invisible {
+  animation-name: fade-out;
+  animation-duration: 0.5s;
+}
 
-@keyframes slideleft {
+@keyframes fade-out {
+  0%{ opacity: 1.0; }
+  100%{ opacity: 0.0; }
+}
+
+.slides-right {
+  animation-name: slide-right;
+  animation-duration: 0.5s;
+}
+
+@keyframes slide-right {
   from {}
-
-   to {
-     transform: translate(-670px);
-  }
+  to { transform: translateX(670px); }
 }
 
-/*@keyframes slideright {
+.slides-left {
+  animation-name: slide-left;
+  animation-duration: 0.5s;
+}
+
+@keyframes slide-left {
   from {}
-  to {
-    transform: translate(670px);
-  }
-}*/
-
-
-
-/*
-.slide-enter {
-  transform: translate(-670px);
-
-}
-
-.slide-enter-active {
-  animation: slide-in 3000ms ease-out forwards;
-}
-
-.slide-leave {
-  transform: translate(670px);
-}
-
-.slide-leave-active {
-  animation: slide-out 3000ms ease-out forwards;
-}
-
-@keyframes slide-in {
-  from {}
-  to {
-    transform: translate(-670px);
-  }
-}
-
-@keyframes slide-out {
-  from {}
-  to {
-    transform: translate(670px);
-  }
-}
-
-
-.example-enter {
-  opacity: 0.01;
-  transform: translateX(10vw);
-}
-
-.example-enter.example-enter-active {
-  opacity: 1;
-  transition: 7000ms ease-out;
-  transform: translateX(45%);
-}
-
-.example-leave {
-  opacity: 1;
-  transform: translateX(-11vw);
-}
-
-.example-leave.example-leave-active {
-  opacity: 0.01;
-  transition: 7000ms ease-out;
-  transform: translateX(-11vw);*/
+  to { transform: translateX(-670px); }
 }
