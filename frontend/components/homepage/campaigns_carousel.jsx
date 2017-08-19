@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { Link } from 'react-router-dom';
-import { CarouselTile } from './carousel_tile';
 
 class CampaignsCarousel extends React.Component {
   constructor(props) {
@@ -55,7 +54,9 @@ class CampaignsCarousel extends React.Component {
             <h3>{campaign.title}</h3>
             <p>{campaign.tagline}</p>
           </div>
-          <Link to={`campaigns/${campaign.id}`}>LEARN MORE</Link>
+          <Link className="carousel-btn submit-btn" to={`campaigns/${campaign.id}`} >
+            <span>LEARN MORE</span>
+          </Link>
         </div>
       </div>
     );
@@ -120,7 +121,7 @@ class CampaignsCarousel extends React.Component {
     const carouselTiles = this.carouselTiles();
 
     return (
-      <div className={`carousel-tiles`}>
+      <div className="carousel-tiles">
         {carouselTiles}
       </div>
     )
