@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Link, hashHistory } from 'react-router-dom';
+import { Link, hashHistory, withRouter } from 'react-router-dom';
 import Modal from 'react-modal';
 
 import GreetingContainer from '../greeting/greeting_container';
@@ -52,6 +52,7 @@ class NavBar extends React.Component {
     this.handleClose = this.handleClose.bind(this);
     this.changeForm = this.changeForm.bind(this);
     this.guestLogin = this.guestLogin.bind(this);
+    this.redirect = this.redirect.bind(this);
 
   }
 
@@ -97,7 +98,15 @@ class NavBar extends React.Component {
       this.setState({ formType: 'login' });
     }
   }
-  //if logged in start start campaign works else open module
+
+  redirect() {
+    if (!this.props.currentUser.currentUser) {
+      this.handleLogin();
+    } else {
+      this.props.history.push("/start-a-campaign");
+    }
+  }
+
   render() {
   return (
     <nav className="nav-bar">
@@ -107,7 +116,7 @@ class NavBar extends React.Component {
         <a className="nav-btn" target="_blank" href="http://vsasnouski.me">My Portfolio</a>
       </div>
       <div className="right">
-        <Link to="/start-a-campaign" className="nav-right-btn">Start a campaign</Link>
+        <button className="nav-right-btn" onClick={this.redirect}>Start a campaign</button>
         <GreetingContainer
           onClick={this.handleOpen}
           handleLogin={this.handleLogin}
@@ -128,4 +137,4 @@ class NavBar extends React.Component {
   }
 }
 
-export default NavBar;
+export default withRouter(NavBar);

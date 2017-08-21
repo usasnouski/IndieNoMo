@@ -7,16 +7,21 @@ import CarouselContainer from './carousel_container';
 class Homepage extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = { camps: [] };
   }
 
   componentDidMount() {
     this.props.requestAllCampaigns()
+      .then(campaigns => {
+        return this.setState({ camps: campaigns });});
+
       // .then(action => this.props.history.push('/'));
   }
 
-  // componentWillMount() {
-  //   this.props.requestAllCampaigns();
-  // }
+  componentWillReceiveProps(newProps) {
+
+  }
 
   launchedCampaigns() {
     return this.props.campaigns.map(campaign =>
@@ -34,7 +39,6 @@ class Homepage extends React.Component {
   renderTiles() {
     let tilesArr = this.props.campaigns;
     // this.shuffle(tilesArr);
-
     return tilesArr.slice(0, 4).map(campaign =>
       (<CampaignTile key={campaign.id} campaign={campaign} />)
     );
