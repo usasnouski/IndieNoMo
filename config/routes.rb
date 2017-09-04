@@ -8,8 +8,9 @@ Rails.application.routes.draw do
     resources :campaigns
     resources :contributions, only: [:create]
     resources :rewards, only: [:index, :create, :show]
-    
+
     get 'carousel', to: 'carousels#carousel'
+    get 'search/:q', to: 'search#search'
   end
 
 

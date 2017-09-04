@@ -18,6 +18,7 @@ import NewCampaignContainer from './campaigns/new_campaign_container';
 import EditCampaignContainer from './campaigns/edit_campaign_container';
 import ShowCampaignContainer from './campaigns/show_campaign_container';
 import ShowUserContainer from './users/show_user_container';
+import SearchContainer from './search/search_container';
 
 
 
@@ -32,6 +33,7 @@ const App = () => {
         <Route path="/campaigns/:campaignId" component={ShowCampaignContainer} />
         <ProtectedRoute exact path="/start-a-campaign" component={NewCampaignContainer} />
         <Route path="/individuals/:userId" component={ShowUserContainer} />
+        <Route path='/search' component={SearchContainer} /> 
       </Switch>
       <Footer />
     </div>
