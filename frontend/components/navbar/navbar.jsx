@@ -44,15 +44,18 @@ class NavBar extends React.Component {
     this.state = {
       isOpen: false,
       formType: '',
+      query: '',
     }
 
     this.handleLogin= this.handleLogin.bind(this);
     this.handleSignup = this.handleSignup.bind(this);
     this.handleOpen = this.handleOpen.bind(this);
     this.handleClose = this.handleClose.bind(this);
+    this.handleSearch = this.handleSearch.bind(this);
     this.changeForm = this.changeForm.bind(this);
     this.guestLogin = this.guestLogin.bind(this);
     this.redirect = this.redirect.bind(this);
+    this.update = this.update.bind(this);
 
   }
 
@@ -81,12 +84,25 @@ class NavBar extends React.Component {
     this.props.clearErrors();
   }
 
+  update(field) {
+    return e => this.setState({
+      [field]: e.currentTarget.value
+    });
+  }
+
   handleClose() {
     this.setState({ isOpen: false });
   }
 
   handleOpen() {
     this.setState({ isOpen: true });
+  }
+
+  handleSearch(e) {
+    e.preventDefault();
+    this.setState({ query: '' });
+    debugger;
+    this.props.history.push(`/search?q=${this.state.query}`);
   }
 
   changeForm(e) {
@@ -114,6 +130,9 @@ class NavBar extends React.Component {
         <Link to="/"><h1>IndieNoMo</h1></Link>
         <a className="nav-btn" target="_blank" href="http://github.com/usasnouski">Github Repo</a>
         <a className="nav-btn" target="_blank" href="http://vsasnouski.me">My Portfolio</a>
+        <form className="search-form" onSubmit={this.handleSearch}>
+          <input onChange={this.update("query")} value={this.state.query}/>
+        </form>
       </div>
       <div className="right">
         <button className="nav-right-btn" onClick={this.redirect}>Start a campaign</button>
