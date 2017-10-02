@@ -4,13 +4,6 @@ import ReactDOM from 'react-dom';
 import Root from './components/root';
 import configureStore from './store/store';
 
-//test
-// import { signup, login, logout } from './util/session_api_util'
-// import { login } from './actions/session_actions';
-// // window.signup = signup
-// window.login = login
-// window.logout = logout
-
 import { fetchAllCampaigns } from './util/campaign_util';
 import { requestAllCampaigns } from './actions/campaign_actions';
 window.fetchAllCampaigns = fetchAllCampaigns;
@@ -28,10 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore();
   }
 
-  //TEST
-  window.getState = store.getState;
-  window.dispatch = store.dispatch;
-  // //TEST
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={ store }/>, root);
 });

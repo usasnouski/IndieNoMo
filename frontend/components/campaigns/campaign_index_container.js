@@ -7,7 +7,6 @@ import { selectAllCampaigns, selectLaunchedCamps } from '../../reducers/selector
 const mapStateToProps = (state) => {
   return {
     campaigns: selectAllCampaigns(state),
-    launchedCamps: selectLaunchedCamps(state),
   };
 };
 
@@ -20,4 +19,4 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(CampaignIndex)
+)(CampaignIndex);

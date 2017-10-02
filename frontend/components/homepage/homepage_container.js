@@ -1,12 +1,12 @@
 import { connect } from 'react-redux';
 import { requestAllCampaigns } from '../../actions/campaign_actions';
-import { selectLaunchedCamps } from '../../reducers/selectors';
+import { selectAllCampaigns } from '../../reducers/selectors';
 
 import Homepage from './homepage.jsx';
 
 const mapStateToProps = (state) => {
   return {
-    campaigns: selectLaunchedCamps(state),
+    campaigns: selectAllCampaigns(state),
   };
 }
 

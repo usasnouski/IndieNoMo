@@ -38,6 +38,19 @@ class Campaign < ApplicationRecord
 
   has_many :backers, through: :contributions, source: :user
 
+  attr_reader :total
+
+  def self.launched_campaigns
+    where(launch: true).includes(:contributions)
+  end
+
+  def current_amount
+    @total = contributions.inject(0) { |sum, n| sum + n.amount }.round(2)
+  end
+
+  def progress
+    (total * 100 / goal_amount).round
+  end
 
   # def category=(category)
   #   self.category_id = Category.find_by(category[:id])

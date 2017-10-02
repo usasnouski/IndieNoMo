@@ -1,7 +1,6 @@
 class Api::CampaignsController < ApplicationController
   def index
-    @campaigns = Campaign.all.includes(:rewards, :contributions, :backers, :user).where(launch: true)
-
+    @campaigns = Campaign.launched_campaigns
   end
 
   def show

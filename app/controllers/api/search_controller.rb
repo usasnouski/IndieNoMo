@@ -1,6 +1,6 @@
 class Api::SearchController < ApplicationController
   def search
-    debugger
+    # debugger
     if params[:q].present?
       query = params[:q]
       @search_result = Campaign.where("title % ? OR tagline % ? OR overview % ?", query, query, query).limit(5)

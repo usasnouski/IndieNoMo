@@ -6,7 +6,6 @@ import {
 } from 'react-router-dom';
 
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
-import Modal from 'react-modal'
 
 // import GreetingContainer from './greeting/greeting_container';
 // import SessionFormContainer from './session_form/session_form_container';
@@ -33,7 +32,7 @@ const App = () => {
         <Route path="/campaigns/:campaignId" component={ShowCampaignContainer} />
         <ProtectedRoute exact path="/start-a-campaign" component={NewCampaignContainer} />
         <Route path="/individuals/:userId" component={ShowUserContainer} />
-        <Route path='/search' component={SearchContainer} /> 
+        <Route path='/search' component={SearchContainer} />
       </Switch>
       <Footer />
     </div>

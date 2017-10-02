@@ -18,7 +18,7 @@ class CampaignIndex extends React.Component {
 
   render() {
     const { campaigns } = this.props;
-    // let launchedCampaigns = this.selectLaunchedCamps();
+
     const camps = campaigns.map(campaign =>
         (<CampaignTile key={campaign.id} campaign={campaign} />)
       );
@@ -37,7 +37,6 @@ class CampaignIndex extends React.Component {
         </div>
       </div>
     );
-
   }
 }
 
