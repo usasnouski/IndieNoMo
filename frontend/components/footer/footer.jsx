@@ -20,7 +20,7 @@ class Footer extends React.Component {
                   <i className="fa fa-github fa-2"></i>
                 </a>
 
-                <a className="icon-link linkedin-link" target="_blank" href="https://www.linkedin.com/in/vlad-sasnouski-a80015127/">
+                <a className="icon-link linkedin-link" target="_blank" href="https://www.linkedin.com/in/vlad-sasnouski">
                   <i className="fa fa-linkedin" aria-hidden="true"></i>
                 </a>
                 <a className="icon-link portfolio-link" target="_blank" href="http://vsasnouski.me/">
