@@ -9,6 +9,10 @@ export const selectAllCampaigns = ({ campaign }) => {
   return values(campaign);
 }
 
+export const selectSearchedCampaigns = ({ search }) => {
+  return values(search);
+}
+
 export const selectLaunchedCamps = ({ campaign }) => values(
   // pickBy(campaign, v => (v.launch === true));
 );

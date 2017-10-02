@@ -11,5 +11,5 @@ export const receiveSearch = (searchResult) => {
 
 export const implementSearch = (query) => (dispatch) => {
   return SearchAPIUtil.sendQuery(query)
-  .then(query => dispatch(result => receiveSearch(result)));
+  .then(result => dispatch(receiveSearch(result)));
 }

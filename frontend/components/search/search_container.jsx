@@ -1,11 +1,12 @@
 import { connect } from 'react-redux';
 import { implementSearch } from '../../actions/search_actions';
+import { selectSearchedCampaigns } from '../../reducers/selectors';
 
 import Search from './search';
 
-const mapStateToProps = ({ search }) => {
+const mapStateToProps = (state) => {
   return ({
-    search: search,
+    search: selectSearchedCampaigns(state),
   })
 };
 

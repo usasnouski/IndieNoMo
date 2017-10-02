@@ -1,32 +1,48 @@
 import React from 'react';
 
+import CampaignTile from '../campaigns/campaign_index_item';
+
 class Search extends React.Component {
   constructor(props) {
     super(props);
 
-    //let urlQuery = this.props.location.query;
-
     this.state = {
       query: this.props.location.search.slice(3)
     }
+
+    this.performSearch = this.performSearch.bind(this);
   }
 
   componentDidMount() {
-    debugger;
-    // let locationQuery = this.props.location.query;
-  //   if (locationQuery.q === undefined) {
-  //    return;
-  //  }
+    if (this.props.location.search === undefined) { return }
 
-  //  this.props.implementSearch(this.state);
-   this.props.implementSearch(this.props.location.search.slice(3));
+    this.props.implementSearch(this.state.query);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    const newQuery = this.props.history.location.search.slice(3);
+    if (this.state.query !== newQuery) {
+      this.setState({ query: newQuery }, this.performSearch);
+    }
+  }
+
+  performSearch() {
+    return this.props.implementSearch(this.state.query);
+  }
+
+  searchResult() {
+    return this.props.search.map(campaign =>
+      (<CampaignTile key={campaign.id} campaign={campaign} />)
+    );
   }
 
   render() {
-    debugger;
+    if (this.props.search.length === 0) {
+      return null;
+    }
     return (
       <div>
-      YO
+      YO {this.searchResult()}
     </div>
   );
   }

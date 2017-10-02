@@ -45,7 +45,7 @@ class Campaign < ApplicationRecord
   end
 
   def creator
-    campaign_creator = user;
+    campaign_creator = user
     @creator = {
       f_name: campaign_creator.first_name,
       l_name: campaign_creator.last_name
@@ -62,9 +62,5 @@ class Campaign < ApplicationRecord
 
   # def category=(category)
   #   self.category_id = Category.find_by(category[:id])
-  # end
-
-  # def find_rewards
-  #   self.rewards.order(:price).includes(:campaign)
   # end
 end

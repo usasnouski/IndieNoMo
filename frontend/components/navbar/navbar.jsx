@@ -29,8 +29,6 @@ const customStyles = {
     textAlign             : 'center',
     color                 : '#6A6A6A',
     justifyContent        : 'center',
-    // backgroundColor: 'rgb(127, 127, 127)'
-    // opacity               : '1'
   },
 
   overlay: {
@@ -56,7 +54,6 @@ class NavBar extends React.Component {
     this.guestLogin = this.guestLogin.bind(this);
     this.redirect = this.redirect.bind(this);
     this.update = this.update.bind(this);
-
   }
 
   componentWillMount() {
@@ -101,7 +98,7 @@ class NavBar extends React.Component {
   handleSearch(e) {
     e.preventDefault();
     this.setState({ query: '' });
-    debugger;
+
     this.props.history.push(`/search?q=${this.state.query}`);
   }
 

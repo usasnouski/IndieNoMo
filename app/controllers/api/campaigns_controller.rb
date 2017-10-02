@@ -6,7 +6,7 @@ class Api::CampaignsController < ApplicationController
   def show
     @campaign = Campaign.includes(:contributions, :rewards).find(params[:id])
     @rewards = @campaign.rewards.order(:price)
-    
+
     if @campaign
       render :show
     else
@@ -19,8 +19,8 @@ class Api::CampaignsController < ApplicationController
       render json: "Please sign up or log in", status: 401
       return
     end
-    @campaign = Campaign.new(campaign_params)
 
+    @campaign = Campaign.new(campaign_params)
     @campaign.user_id = current_user.id
 
     if @campaign.save
@@ -41,6 +41,7 @@ class Api::CampaignsController < ApplicationController
     js_date = campaign_params[:end_date]
     campaign_params[:end_date] = js_date.to_date
     #can user edit other users' campaigns
+    
     if @campaign.update(campaign_params)
       render :show
     else

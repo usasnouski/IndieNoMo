@@ -11,6 +11,7 @@ class ShowCampaign extends React.Component {
       amount: 0,
       campaign_id: this.props.campaignId,
     }
+
     this.renderPerks = this.renderPerks.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handlePerkSubmit = this.handlePerkSubmit.bind(this);
@@ -19,7 +20,9 @@ class ShowCampaign extends React.Component {
 
   componentDidMount() {
     window.scrollTo(0, 0);
-    this.props.requestSingleCampaign(this.props.campaignId);
+    if (this.props.campaign.creator === undefined) {
+      this.props.requestSingleCampaign(this.props.campaignId);
+    }
   }
 
   // componentWillMount() {
