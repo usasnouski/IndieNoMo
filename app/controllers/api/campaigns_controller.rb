@@ -4,16 +4,10 @@ class Api::CampaignsController < ApplicationController
   end
 
   def show
-    @campaign = Campaign.includes(:contributions, :backers).find(params[:id])
-    @rewards = Reward.all.where(campaign_id: @campaign.id).order(:price)
-
+    @campaign = Campaign.includes(:contributions, :rewards).find(params[:id])
+    @rewards = @campaign.rewards.order(:price)
+    
     if @campaign
-      @amount = @campaign.contributions.inject(0) { |sum, n| sum + n.amount }.round(2)
-      @creator = {
-        f_name: @campaign.user.first_name,
-        l_name: @campaign.user.last_name
-      }
-
       render :show
     else
       render json: "No campaign found", status: 422

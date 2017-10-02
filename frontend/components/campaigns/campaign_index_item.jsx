@@ -69,7 +69,7 @@ class CampaignTile extends React.Component {
               <div>{campaign.tagline}</div>
             </div>
             <div className="tile-bottom">
-              <span>${campaign.goal_amount}</span>
+              <span>${campaign.current_amount.toLocaleString()}</span>
               &nbsp;
               <span>USD</span>
               <div className="progress-bar" style={{width: `${progress}%`, maxWidth: '100%'}} />

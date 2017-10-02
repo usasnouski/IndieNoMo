@@ -38,10 +38,18 @@ class Campaign < ApplicationRecord
 
   has_many :backers, through: :contributions, source: :user
 
-  attr_reader :total
+  attr_reader :creator, :total
 
   def self.launched_campaigns
     where(launch: true).includes(:contributions)
+  end
+
+  def creator
+    campaign_creator = user;
+    @creator = {
+      f_name: campaign_creator.first_name,
+      l_name: campaign_creator.last_name
+    }
   end
 
   def current_amount

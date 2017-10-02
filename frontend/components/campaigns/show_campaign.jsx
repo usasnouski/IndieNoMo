@@ -106,22 +106,24 @@ class ShowCampaign extends React.Component {
   }
 
   renderCampProgress() {
-    const { progress } = this.props.campaign;
+    const { campaign } = this.props;
+    const { progress } = campaign;
     const percentage = `${progress}%`;
-    const backersNum = this.props.campaign.backers + '';
-    const backersStr = (backersNum === '1' ? 'backer' : 'backers')
+    const backersNum = campaign.backers + '';
+    const backersStr = (backersNum === '1' ? 'backer' : 'backers');
+
     return (
       <div className="camp-progress">
         <div className="progress-raised">
-          <span className="total-amount">${this.props.campaign.current_amount} </span>
+          <span className="total-amount">${campaign.current_amount.toLocaleString()} </span>
            USD
-          <span> raised by {this.props.campaign.backers} {backersStr}</span>
+          <span> raised by {campaign.backers} {backersStr}</span>
         </div>
         <div className="camp-goal-bar">
           <div className="camp-prog-bar" style={{ width: `${percentage}`, maxWidth: '100%' }}></div>
         </div>
         <div className="camp-progress-details">
-          <em>{percentage}</em> of ${this.props.campaign.goal_amount}
+          <em>{percentage}</em> of ${campaign.goal_amount.toLocaleString()}
         </div>
       </div>
     )
