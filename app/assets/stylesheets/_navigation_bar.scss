@@ -3,20 +3,6 @@
 }
 
 .nav-bar {
-  // display: flex;
-  // height: 74px;
-  // margin-left: auto;
-  // margin-right: auto;
-  // padding: 0 20px;
-  // white-space: nowrap;
-  // align-items: center;
-  // justify-content: space-around;
-  // box-sizing: border-box;
-  // font-family: 'Libre Franklin', sans-serif;
-  // font-size: 14px;
-  // color: #2A2A2A;
-
-  // width: 100%;
   margin-left: auto;
   margin-right: auto;
   padding: 0 20px;
@@ -109,7 +95,7 @@ button:focus {
   font-weight: 400;
   line-height: 20px;
   display: block;
-  width: 95%;
+  width: 100%;
   padding: 5px 15px;
   background-color: #ffffff;
   border: 1px solid #dddddd;
@@ -118,7 +104,7 @@ button:focus {
 .nav-search-bar {
   padding-left: 30px;
   width: 10em;
-  height: 25px;
+  height: 35px;
   transition: all .3s ease-out;
 }
 

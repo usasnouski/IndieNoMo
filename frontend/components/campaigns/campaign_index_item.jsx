@@ -61,25 +61,29 @@ class CampaignTile extends React.Component {
 
     return (
       <div className="camp-tile">
-        <Link className="tile-link" to={`/campaigns/${campaign.id}` }>
-            <img className="tile-img" src={campaign.image_url}></img>
-          <div className="tile-info">
-            <div className="tile-title-tagline">
-              <div>{campaign.title}</div>
-              <div>{campaign.tagline}</div>
+        <div>
+          <Link className="tile-link" to={`/campaigns/${campaign.id}` }>
+            <div className="image-wrapper">
+              <div className="card-image" style={{backgroundImage: `url(${campaign.image_url})`}}></div>
             </div>
+            <div className="tile-info">
+              <div className="tile-title-tagline">
+                <div>{campaign.title}</div>
+                <div>{campaign.tagline}</div>
+              </div>
             <div className="tile-bottom">
               <span>${campaign.current_amount.toLocaleString()}</span>
               &nbsp;
               <span>USD</span>
-              <div className="progress-bar" style={{width: `${progress}%`, maxWidth: '100%'}} />
+              <div className="progress-bar" style={{width: `${progress}%`, maxWidth: '100%'}}></div>
               <div className="progress-label">
                 <div className="tile-percent">{progress}%</div>
                 <div>{this.daysLeft()} days left</div>
               </div>
             </div>
           </div>
-        </Link>
+          </Link>
+        </div>
       </div>
     );
   }

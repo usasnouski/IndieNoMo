@@ -14,8 +14,6 @@
 }
 
 .control-bar {
-  // position: fixed;
-  // z-index: 1000;
   display: flex;
   background: #F5F5F5;
   width: 100%;
@@ -170,11 +168,6 @@
   font-weight: 300;
 }
 
-.image-wrapper {
-  position: relative;
-  width: 400px;
-}
-
 .entre-image {
   width: 400px;
   height: 400px;
@@ -227,8 +220,6 @@ input[type=date] {
   width: 756px;
 }
 
-
-
 .select-cat {
   background-color: #FFFFFF;
   border-radius: 1px;
@@ -248,10 +239,3 @@ input[type=date] {
   width: 320px;
   border-radius: 1px;
 }
-
-// select:focus
-// {
-//   background-color: #FFFFFF;
-//   color: #2A2A2A;
-//   outline-offset: 0px;
-// }

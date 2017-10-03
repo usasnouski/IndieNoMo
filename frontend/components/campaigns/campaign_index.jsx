@@ -14,8 +14,6 @@ class CampaignIndex extends React.Component {
   //   );
   // }
 
-
-
   render() {
     const { campaigns } = this.props;
 
@@ -24,16 +22,14 @@ class CampaignIndex extends React.Component {
       );
 
     return (
-      <div className="allcamps-scope">
+      <div className="cont">
         <h1 className="all-header">Emerging tech starts here</h1>
         <div className="campaigns">
           <div className="allcamps-text">
             <span>Showing results for:</span>
             <span className="allcamps-span">All Campaigns</span>
           </div>
-          <div className="camp-list">
-          {camps}
-          </div>
+          <div className="camp-list">{camps}</div>
         </div>
       </div>
     );
