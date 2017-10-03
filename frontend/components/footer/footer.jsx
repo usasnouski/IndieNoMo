@@ -14,7 +14,7 @@ class Footer extends React.Component {
           <div className="row">
             <div className="left-footer"></div>
             <div className="right-footer">
-              <div className="footer-header">Follow Us</div>
+              <div className="footer-header">Follow Me</div>
               <div className="social-links">
                 <a className="icon-link git-link" href="https://github.com/usasnouski">
                   <i className="fa fa-github fa-2"></i>
