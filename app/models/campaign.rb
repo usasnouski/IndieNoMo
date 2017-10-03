@@ -47,6 +47,7 @@ class Campaign < ApplicationRecord
   def creator
     campaign_creator = user
     @creator = {
+      id: campaign_creator.id,
       f_name: campaign_creator.first_name,
       l_name: campaign_creator.last_name
     }

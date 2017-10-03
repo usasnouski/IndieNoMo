@@ -1,25 +1,48 @@
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
 .search-page {
   margin-bottom: 50px;
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 768px) {
+  .cont {
+    padding-left: 10px;
+    padding-right: 10px;
+    max-width: 768px;
+  }
+
   .search-page-section {
-    margin-left: -20px;
-    margin-right: -20px;
+    margin-left: -10px;
+    margin-right: -10px;
   }
 }
 
 @media (min-width: 1002px) {
+  .cont {
+    padding-left: 12px;
+    padding-right: 12px;
+    max-width: 1002px;
+  }
+
   .search-page-section {
     margin-left: -15px;
     margin-right: -15px;
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1280px) {
+  .cont {
+    padding-left: 30px;
+    padding-right: 30px;
+    max-width: 1280px;
+  }
+
   .search-page-section {
-    margin-left: -10px;
-    margin-right: -10px;
+    margin-left: -20px;
+    margin-right: -20px;
   }
 }
 
@@ -28,8 +51,14 @@
   margin-right: -15px;
 }
 
+.search-page-section::before {
+  content: " ";
+  display: table;
+}
+
 .search-bar-container {
   margin-top: 50px;
+  padding-left: 15px;
   padding-bottom: 15px;
 }
 
@@ -62,6 +91,7 @@ p {
 .search-bar-field {
   padding: 10px 0px 10px 46px;
   font-size: 22px;
+  font-weight: 300;
   line-height: 28px;
   border-radius: 2px;
   margin: 0;

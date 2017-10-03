@@ -92,7 +92,7 @@ class ShowCampaign extends React.Component {
 
   renderCreatorBox() {
     const { creator } = this.props.campaign;
-    const id = this.props.campaign.user_id;
+    const { id } = creator;
     return (
       <div className="camp-creator">
         <img src="https://avatarko.ru/img/avatar/1/multfilm_gomer.png"
