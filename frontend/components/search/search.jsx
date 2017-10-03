@@ -15,6 +15,7 @@ class Search extends React.Component {
   }
 
   componentDidMount() {
+    window.scrollTo(0, 0);
     if (this.props.location.search === undefined) { return }
     this.props.implementSearch(this.state.query);
   }
@@ -37,7 +38,6 @@ class Search extends React.Component {
   }
 
   render() {
-    debugger;
     let searchOutput = "Results for ";
 
     if (this.props.search.length === 0) {

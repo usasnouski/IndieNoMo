@@ -43,7 +43,7 @@ camp01 = Campaign.create!(
   assistant control and picture taking easier than ever before. You can also
   sync and share the audio with your friends. Enjoy it with only half of the market price.',
   goal_amount: rand(1000..3000),
-  end_date: 'Feb-30-2018',
+  end_date: 'Feb-28-2018',
   user_id: user.id,
   category_id: 4,
   launch: true,
