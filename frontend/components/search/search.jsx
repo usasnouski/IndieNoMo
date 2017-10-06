@@ -8,10 +8,12 @@ class Search extends React.Component {
     super(props);
 
     this.state = {
-      query: this.props.location.search.slice(3)
+      query: this.props.location.search.slice(3),
+      nextQuery: ''
     }
 
     this.performSearch = this.performSearch.bind(this);
+    this.updateQuery = this.updateQuery.bind(this);
   }
 
   componentDidMount() {
@@ -22,9 +24,14 @@ class Search extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     const newQuery = this.props.history.location.search.slice(3);
+
     if (this.state.query !== newQuery) {
       this.setState({ query: newQuery }, this.performSearch);
     }
+  }
+
+  newSearch() {
+    this.props.history.push(`search?q=${this.state.nextQuery}`);
   }
 
   performSearch() {
@@ -35,6 +42,10 @@ class Search extends React.Component {
     return this.props.search.map(campaign =>
       (<CampaignTile key={campaign.id} campaign={campaign} />)
     );
+  }
+
+  updateQuery(e) {
+    this.setState({ nextQuery: e.currentTarget.value });
   }
 
   render() {
@@ -54,8 +65,8 @@ class Search extends React.Component {
                   {searchOutput} <span className="search-query">{this.state.query}</span>
                 </p>
               </div>
-              <form className="search-bar-form">
-                <input className="nav-search-input search-bar-field" placeholder="Search for campaigns"></input>
+              <form className="search-bar-form" onSubmit={this.newSearch.bind(this)}>
+                <input className="nav-search-input search-bar-field" placeholder="Search for campaigns" onChange={this.updateQuery}></input>
                 <SearchIcon />
               </form>
             </div>
