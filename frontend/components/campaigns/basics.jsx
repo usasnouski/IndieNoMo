@@ -65,7 +65,7 @@ class Basics extends React.Component {
                   <br/>
                     640 x 640 recommended resolution, 220 x 220 minimum resolution.
                 </div>
-                <div className="image-wrapper">
+                <div className="upload-image-wrapper">
                   <div className="entre-image">
                     <input type="file"
                       className="enter-image-file"
