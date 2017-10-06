@@ -76,7 +76,7 @@ camp03 = Campaign.create!(
   description: 'The description u have been waiting for',
   overview: "The Riptide R1 Electric Skateboard packs massive power (1800W)
   into a compact, 31'' deck. The R1 has up to 8 miles of range and a top speed of
-   20 mph, and packs in features such as handles, a kick tail, headlights / tail lights, and an airline friendly battery.",
+  20 mph, and packs in features such as handles, a kick tail, headlights / tail lights, and an airline friendly battery.",
   goal_amount: rand(100000..120000),
   end_date: 'Apr-15-2018',
   user_id: user.id,

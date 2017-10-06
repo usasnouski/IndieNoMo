@@ -41,7 +41,7 @@ class Search extends React.Component {
     let searchOutput = "Results for ";
 
     if (this.props.search.length === 0) {
-      searchOutput = "Sorry, we couldn't find ant campaigns for ";
+      searchOutput = "Sorry, we couldn't find any campaigns for ";
     }
 
     return (

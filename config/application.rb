@@ -11,8 +11,10 @@ class ActiveRecord::ConnectionAdapters::PostgreSQLAdapter
   def configure_connection
     default_configure_connection
     begin
+      puts "begin"
       execute("SELECT set_limit(0.1);")
     rescue ActiveRecord::StatementInvalid
+      puts "error"
       Rails.logger.warn("pg_trgm extension not enabled yet")
     end
   end
