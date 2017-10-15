@@ -81,7 +81,7 @@ class CampaignsCarousel extends React.Component {
     return () => {
       clearInterval(this.intervalId);
 
-      if (idx === 1) {
+      if (idx <= 1) {
         this.setState({ active: true, direction: 'right' });
       } else if (idx === 3) {
         this.setState({ active: true, direction: 'left' });
