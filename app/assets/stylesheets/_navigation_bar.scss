@@ -116,16 +116,17 @@ button:focus {
   border: 1px solid #2a2a2a;
 }
 
+.search-icon {
+  position: absolute;
+  top: 9px;
+  left: 7px;
+  width: 18px;
+  height: 18px;
+  fill: #2a2a2a;
+}
+
 @media (min-width: 1002px) {
   .search-icon {
     fill: #a8a8a8;
-    position: absolute;
-    top: 9px;
-    left: 7px;
   }
-}
-
-.search-icon {
-  width: 18px;
-  height: 18px;
 }
