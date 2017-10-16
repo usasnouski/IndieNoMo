@@ -3,12 +3,11 @@ import { Link } from 'react-router-dom';
 import Modal from 'react-modal';
 
 
-const sessionLinks = (handleLogin, handleSignup, guestLogin) => {
+const sessionLinks = (handleLogin, handleSignup) => {
   return (
     <nav className="login-signup">
     <button className="nav-btn" onClick={handleSignup}>Sign Up</button>
     <button className="nav-btn" onClick={handleLogin}>Log In</button>
-    <button className="nav-btn" onClick={guestLogin}>Guest Log In</button>
   </nav>
   );
 };
@@ -22,8 +21,8 @@ const personalGreeting = (currentUser, logout) => (
 	</nav>
 );
 
-const Greeting = ({ currentUser, guestLogin, logout, handleLogin, handleSignup }) => (
-  currentUser ? personalGreeting(currentUser, logout) : sessionLinks(handleLogin, handleSignup, guestLogin)
+const Greeting = ({ currentUser, logout, handleLogin, handleSignup }) => (
+  currentUser ? personalGreeting(currentUser, logout) : sessionLinks(handleLogin, handleSignup)
 );
 
 export default Greeting;

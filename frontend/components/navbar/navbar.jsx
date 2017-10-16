@@ -52,7 +52,6 @@ class NavBar extends React.Component {
     this.handleClose = this.handleClose.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
     this.changeForm = this.changeForm.bind(this);
-    this.guestLogin = this.guestLogin.bind(this);
     this.redirect = this.redirect.bind(this);
     this.update = this.update.bind(this);
   }
@@ -64,17 +63,6 @@ class NavBar extends React.Component {
   handleLogin() {
     this.setState({ isOpen: true, formType: 'login' });
     this.props.clearErrors();
-  }
-
-  guestLogin() {
-    const guestUser = { user:
-      {
-        email: 'guestuser@mail.com',
-        password: 'password',
-      }
-    };
-
-    this.props.login(guestUser);
   }
 
   handleSignup() {
@@ -142,7 +130,7 @@ class NavBar extends React.Component {
               onClick={this.handleOpen}
               handleLogin={this.handleLogin}
               handleSignup={this.handleSignup}
-              guestLogin={this.guestLogin}/>
+            />
             <Modal
               isOpen={this.state.isOpen}
               onRequestClose={this.handleClose}
