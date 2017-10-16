@@ -3,23 +3,6 @@ require_relative 'boot'
 require 'rails/all'
 require 'active_record/connection_adapters/postgresql_adapter'
 
-# Monkey patch configure_connection because set_limit() must be called on a per-connection basis.
-class ActiveRecord::ConnectionAdapters::PostgreSQLAdapter
-  private
-  alias_method :default_configure_connection, :configure_connection
-
-  def configure_connection
-    default_configure_connection
-    begin
-      puts "begin"
-      execute("SELECT set_limit(0.1);")
-    rescue ActiveRecord::StatementInvalid
-      puts "error"
-      Rails.logger.warn("pg_trgm extension not enabled yet")
-    end
-  end
-end
-
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)

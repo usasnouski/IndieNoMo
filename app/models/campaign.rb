@@ -21,6 +21,8 @@
 #
 
 class Campaign < ApplicationRecord
+  include PgSearch
+
   validates :title, :goal_amount, :category_id, :user_id, presence: true
   validates :title, length: { maximum: 50, allow_nil: true }
   validates :goal_amount, numericality: { greater_than: 499 }
@@ -38,6 +40,8 @@ class Campaign < ApplicationRecord
 
   has_many :backers, through: :contributions, source: :user
 
+  pg_search_scope :search, against: [:title, :tagline], using: { trigram: { threshold: 0.02 } }
+
   attr_reader :creator, :total
 
   def self.launched_campaigns
@@ -49,7 +53,8 @@ class Campaign < ApplicationRecord
     @creator = {
       id: campaign_creator.id,
       f_name: campaign_creator.first_name,
-      l_name: campaign_creator.last_name
+      l_name: campaign_creator.last_name,
+      profile_img: campaign_creator.profile_img
     }
   end
 
