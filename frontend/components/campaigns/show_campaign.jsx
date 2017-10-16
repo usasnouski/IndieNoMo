@@ -49,7 +49,10 @@ class ShowCampaign extends React.Component {
 
     this.props
       .createContribution(contribution)
-      .then(action => this.props.requestSingleCampaign(this.props.campaignId));
+      .then(
+        action => this.props.requestSingleCampaign(this.props.campaignId),
+        error => (alert("Oooops! You need to be logged in if you want to contribute to the project."))
+      );
   }
 
   handlePerkSubmit(price) {
@@ -58,7 +61,10 @@ class ShowCampaign extends React.Component {
         amount: price,
         campaign_id: this.state.campaign_id
       })
-      .then(action => this.props.requestSingleCampaign(this.props.campaignId));
+      .then(
+        action => this.props.requestSingleCampaign(this.props.campaignId),
+        error => (alert("Oooops! You need to be logged in if you want to contribute to the project."))
+      );
   }
 
   update(field) {
@@ -159,8 +165,7 @@ class ShowCampaign extends React.Component {
           <div className="contr-non-active">
             <button
               className="open-contr-btn submit-btn"
-              onClick={this.handleOpenContributions}
-            >
+              onClick={this.handleOpenContributions}>
               Back It
             </button>
           </div>
