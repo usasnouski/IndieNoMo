@@ -10,6 +10,18 @@ User.delete_all
 Campaign.delete_all
 Reward.delete_all
 
+profile_images_urls = [
+  "http://sguru.org/wp-content/uploads/2017/06/steam-avatar-profile-picture-0194.jpg",
+  "http://sguru.org/wp-content/uploads/2017/06/steam-avatar-profile-picture-0201.jpg",
+  "http://sguru.org/wp-content/uploads/2017/06/steam-avatar-profile-picture-0233.jpg",
+  "http://sguru.org/wp-content/uploads/2017/06/steam-avatar-profile-picture-0246.jpg",
+  "http://sguru.org/wp-content/uploads/2017/06/steam-avatar-profile-picture-0244.jpg",
+  "http://sguru.org/wp-content/uploads/2017/06/steam-avatar-profile-picture-0277.jpg",
+  "http://sguru.org/wp-content/uploads/2017/06/steam-avatar-profile-picture-0287.jpg",
+  "http://sguru.org/wp-content/uploads/2017/06/steam-avatar-profile-picture-0415.jpg",
+  "http://sguru.org/wp-content/uploads/2017/06/steam-avatar-profile-picture-0727.jpg",
+  "https://avatarfiles.alphacoders.com/107/107813.jpg"
+]
 users = [];
 
 10.times do
@@ -17,7 +29,8 @@ users = [];
     email: Faker::Internet.unique.email,
     password: 'password',
     first_name: Faker::Name.unique.first_name,
-    last_name: Faker::Name.unique.last_name
+    last_name: Faker::Name.unique.last_name,
+    profile_img: profile_images_urls.pop
   )
   users.push(user)
 end
@@ -26,7 +39,8 @@ user01 = User.create!(
   email: 'guestuser@mail.com',
   password: 'password',
   first_name: 'Amazing',
-  last_name: 'User'
+  last_name: 'User',
+  profile_img: "http://sguru.org/wp-content/uploads/2017/06/steam-avatar-profile-picture-0966.jpg"
 )
 
 users.push(user01)
